@@ -76,7 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-47c8cf7ff55844f8c264c5168c4d0312.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-de051ad00509e84ba6e2befa5e3054ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-251cbba1ea67bf7b8e7024ba5bc5f6c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,6 +106,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -128,10 +132,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank"> 
-<span class="menu-text">在 Colab 開啟</span></a>
-  </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Benjamin-Teng/learn-python-with-ai" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
@@ -175,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#第-3-章第一支程式不要怕" id="toc-第-3-章第一支程式不要怕" class="nav-link" data-scroll-target="#第-3-章第一支程式不要怕">第 3 章：第一支程式——不要怕</a>
   <ul class="collapse">
-  <li><a href="#換你試試" id="toc-換你試試" class="nav-link" data-scroll-target="#換你試試">換你試試</a></li>
+  <li><a href="#換你試試" id="toc-換你試試" class="nav-link" data-scroll-target="#換你試試">3.1 換你試試</a></li>
   </ul></li>
   <li><a href="#第-4-章程式的核心零件核心邏輯" id="toc-第-4-章程式的核心零件核心邏輯" class="nav-link" data-scroll-target="#第-4-章程式的核心零件核心邏輯">第 4 章：程式的核心零件（核心邏輯）</a>
   <ul class="collapse">
@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#先搞懂網站是什麼組成的" id="toc-先搞懂網站是什麼組成的" class="nav-link" data-scroll-target="#先搞懂網站是什麼組成的">7.1 先搞懂「網站」是什麼組成的</a></li>
   <li><a href="#新手最快的捷徑streamlit" id="toc-新手最快的捷徑streamlit" class="nav-link" data-scroll-target="#新手最快的捷徑streamlit">7.2 新手最快的捷徑：Streamlit</a></li>
-  <li><a href="#第一步先在自己電腦上把它跑起來" id="toc-第一步先在自己電腦上把它跑起來" class="nav-link" data-scroll-target="#第一步先在自己電腦上把它跑起來">7.3 第一步：先在自己電腦上把它跑起來</a></li>
+  <li><a href="#第一步先在自己電腦上把它跑起來順便學會用-venv" id="toc-第一步先在自己電腦上把它跑起來順便學會用-venv" class="nav-link" data-scroll-target="#第一步先在自己電腦上把它跑起來順便學會用-venv">7.3 第一步：先在自己電腦上把它跑起來（順便學會用 venv）</a></li>
   <li><a href="#把工具免費部署到-streamlit-community-cloud重點章節" id="toc-把工具免費部署到-streamlit-community-cloud重點章節" class="nav-link" data-scroll-target="#把工具免費部署到-streamlit-community-cloud重點章節">7.4 把工具免費部署到 Streamlit Community Cloud（重點章節）</a></li>
   <li><a href="#部署之後更新限制與部署失敗排查" id="toc-部署之後更新限制與部署失敗排查" class="nav-link" data-scroll-target="#部署之後更新限制與部署失敗排查">7.5 部署之後：更新、限制與「部署失敗」排查</a></li>
   <li><a href="#想做真正的網站怎麼辦" id="toc-想做真正的網站怎麼辦" class="nav-link" data-scroll-target="#想做真正的網站怎麼辦">7.6 想做「真正的網站」怎麼辦？</a></li>
@@ -217,19 +217,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#新手最常見的五個陷阱" id="toc-新手最常見的五個陷阱" class="nav-link" data-scroll-target="#新手最常見的五個陷阱">8.3 新手最常見的五個陷阱</a></li>
   <li><a href="#結語" id="toc-結語" class="nav-link" data-scroll-target="#結語">結語</a></li>
   </ul></li>
-  <li><a href="#補充章節在本地端用-venv-跑-jupyter做網站前的準備" id="toc-補充章節在本地端用-venv-跑-jupyter做網站前的準備" class="nav-link" data-scroll-target="#補充章節在本地端用-venv-跑-jupyter做網站前的準備">補充章節：在本地端用 venv 跑 Jupyter（做網站前的準備）</a>
+  <li><a href="#補充章節-a為什麼要用-venv虛擬環境" id="toc-補充章節-a為什麼要用-venv虛擬環境" class="nav-link" data-scroll-target="#補充章節-a為什麼要用-venv虛擬環境">補充章節 A：為什麼要用 venv（虛擬環境）</a>
   <ul class="collapse">
-  <li><a href="#補a-1為什麼需要虛擬環境-venv" id="toc-補a-1為什麼需要虛擬環境-venv" class="nav-link" data-scroll-target="#補a-1為什麼需要虛擬環境-venv">補A-1：為什麼需要「虛擬環境 venv」？</a></li>
-  <li><a href="#補a-2四步驟在本機跑起-jupyter" id="toc-補a-2四步驟在本機跑起-jupyter" class="nav-link" data-scroll-target="#補a-2四步驟在本機跑起-jupyter">補A-2：四步驟，在本機跑起 Jupyter</a></li>
-  <li><a href="#補a-3幾個一定會遇到的小提醒" id="toc-補a-3幾個一定會遇到的小提醒" class="nav-link" data-scroll-target="#補a-3幾個一定會遇到的小提醒">補A-3：幾個一定會遇到的小提醒</a></li>
+  <li><a href="#補a-1問題所有專案共用一套工具遲早打架" id="toc-補a-1問題所有專案共用一套工具遲早打架" class="nav-link" data-scroll-target="#補a-1問題所有專案共用一套工具遲早打架">補A-1：問題——所有專案共用一套工具，遲早打架</a></li>
+  <li><a href="#補a-2解法一個專案一個乾淨的工具箱" id="toc-補a-2解法一個專案一個乾淨的工具箱" class="nav-link" data-scroll-target="#補a-2解法一個專案一個乾淨的工具箱">補A-2：解法——一個專案，一個乾淨的工具箱</a></li>
+  <li><a href="#補a-3兩個一定要記得的小習慣" id="toc-補a-3兩個一定要記得的小習慣" class="nav-link" data-scroll-target="#補a-3兩個一定要記得的小習慣">補A-3：兩個一定要記得的小習慣</a></li>
   </ul></li>
-  <li><a href="#補充章節用-uv-管理-python-專案與依賴進階" id="toc-補充章節用-uv-管理-python-專案與依賴進階" class="nav-link" data-scroll-target="#補充章節用-uv-管理-python-專案與依賴進階">補充章節：用 uv 管理 Python 專案與依賴（進階）</a>
+  <li><a href="#補充章節-b用-uv-管理-python-專案與依賴進階" id="toc-補充章節-b用-uv-管理-python-專案與依賴進階" class="nav-link" data-scroll-target="#補充章節-b用-uv-管理-python-專案與依賴進階">補充章節 B：用 uv 管理 Python 專案與依賴（進階）</a>
   <ul class="collapse">
-  <li><a href="#補-1uv-是什麼為什麼值得學" id="toc-補-1uv-是什麼為什麼值得學" class="nav-link" data-scroll-target="#補-1uv-是什麼為什麼值得學">補-1：uv 是什麼？為什麼值得學</a></li>
-  <li><a href="#補-2核心心智模型記住兩個檔案" id="toc-補-2核心心智模型記住兩個檔案" class="nav-link" data-scroll-target="#補-2核心心智模型記住兩個檔案">補-2：核心心智模型——記住兩個檔案</a></li>
-  <li><a href="#補-3你會用到的指令在終端機執行不是在-notebook-裡" id="toc-補-3你會用到的指令在終端機執行不是在-notebook-裡" class="nav-link" data-scroll-target="#補-3你會用到的指令在終端機執行不是在-notebook-裡">補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）</a></li>
-  <li><a href="#補-4一條龍用-uv-從零到部署-streamlit" id="toc-補-4一條龍用-uv-從零到部署-streamlit" class="nav-link" data-scroll-target="#補-4一條龍用-uv-從零到部署-streamlit">補-4：一條龍——用 uv 從零到部署 Streamlit</a></li>
-  <li><a href="#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" id="toc-補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="nav-link" data-scroll-target="#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</a>
+  <li><a href="#補b-1uv-是什麼為什麼值得學" id="toc-補b-1uv-是什麼為什麼值得學" class="nav-link" data-scroll-target="#補b-1uv-是什麼為什麼值得學">補B-1：uv 是什麼？為什麼值得學</a></li>
+  <li><a href="#補b-2核心心智模型記住兩個檔案" id="toc-補b-2核心心智模型記住兩個檔案" class="nav-link" data-scroll-target="#補b-2核心心智模型記住兩個檔案">補B-2：核心心智模型——記住兩個檔案</a></li>
+  <li><a href="#補b-3你會用到的指令在終端機執行不是在網頁裡" id="toc-補b-3你會用到的指令在終端機執行不是在網頁裡" class="nav-link" data-scroll-target="#補b-3你會用到的指令在終端機執行不是在網頁裡">補B-3：你會用到的指令（在「終端機」執行，不是在網頁裡）</a></li>
+  <li><a href="#補b-4一條龍用-uv-從零到部署-streamlit" id="toc-補b-4一條龍用-uv-從零到部署-streamlit" class="nav-link" data-scroll-target="#補b-4一條龍用-uv-從零到部署-streamlit">補B-4：一條龍——用 uv 從零到部署 Streamlit</a></li>
+  <li><a href="#補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉" id="toc-補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="nav-link" data-scroll-target="#補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</a>
   <ul class="collapse">
   <li><a href="#給同學的提問範本uv-版可直接複製" id="toc-給同學的提問範本uv-版可直接複製" class="nav-link" data-scroll-target="#給同學的提問範本uv-版可直接複製">給同學的提問範本（uv 版，可直接複製）</a></li>
   </ul></li>
@@ -270,35 +270,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="這份講義怎麼用" class="level3">
 <h3 class="anchored" data-anchor-id="這份講義怎麼用">這份講義怎麼用？</h3>
-<p>這是一份 <strong>Jupyter Notebook</strong>（互動式講義）。它由一格一格的「儲存格(cell)」組成，分成兩種：</p>
+<p>這是一份<strong>互動式講義</strong>：你不只是「讀」，還能<strong>直接動手把程式跑起來</strong>。內容由一段段文字和一格格「程式碼」組成：</p>
 <ul>
-<li><strong>文字格</strong>：像現在你正在讀的這段，用來說明觀念。</li>
-<li><strong>程式格</strong>：灰底、左邊有 <code>[ ]</code> 的，是可以「執行」的程式。</li>
+<li><strong>文字</strong>：像現在你正在讀的這段，用來說明觀念。</li>
+<li><strong>程式碼</strong>：灰底、附有 <strong><code>Run Code</code></strong> 按鈕的，是可以「執行」的程式。</li>
 </ul>
-<p><strong>操作方式（最重要的一個動作）</strong>： 用滑鼠點一下程式格，然後按鍵盤 <strong><code>Shift</code> + <code>Enter</code></strong>，程式就會執行，結果會印在下方。</p>
+<p><strong>操作方式（最重要的一個動作）</strong>： 看到程式碼，就<strong>直接改改看、按一下 <code>Run Code</code></strong>，結果會印在下方——完全在你的瀏覽器裡跑，不用安裝任何東西、也不用註冊任何帳號。</p>
 <blockquote class="blockquote">
-<p>💡 整份講義的精神：<strong>看到程式格，就動手按 Shift+Enter 跑跑看，再改改看。</strong> 程式不會因為你按錯而壞掉，大不了重跑一次。</p>
+<p>💡 整份講義的精神：<strong>看到程式碼，就動手改、按 Run 跑跑看。</strong> 程式不會因為你按錯而壞掉，大不了重跑一次。 ⏳ <strong>第一次</strong>按 Run 會先下載 Python 環境（約幾秒～十幾秒），之後就很快。</p>
 </blockquote>
-<p>先試一格 👇 (點它，按 Shift+Enter)</p>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>先試一格 👇（改改看裡面的字，再按 <code>Run Code</code>）</p>
+<div>
+<div id="pyodide-1" class="exercise-cell">
+
 </div>
-<div class="callout-body-container">
-<p><strong>想一邊讀、一邊動手跑程式？</strong> 這份講義的所有程式碼都能在 Google Colab 直接執行， 不用在自己電腦安裝任何東西。點下面按鈕會另開分頁，把整份講義載入 Colab：</p>
-<p><a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-</div>
-</div>
-</div>
-<div id="938af1dc" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"我成功執行了第一格程式！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>我成功執行了第一格程式！</code></pre>
-</div>
+<script type="pyodide-1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCLmiJHmiJDlip/ln7fooYzkuobnrKzkuIDmoLznqIvlvI/vvIFcIikifQ==
+</script>
 </div>
 <p>有看到下面跳出一行字嗎？恭喜，你已經「執行」了人生第一支程式 🎉</p>
-<p>現在把上面那格的文字改成你的名字，再按一次 <code>Shift+Enter</code>,看看結果會不會跟著變。</p>
+<p>現在把上面那格的文字改成你的名字，再按一次 <code>Run Code</code>，看看結果會不會跟著變。</p>
 <hr>
 </section>
 <section id="這份講義的地圖" class="level3">
@@ -359,8 +350,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>補充章節</td>
-<td>本地 venv ＋ 用 uv 管理專案（進階）</td>
-<td>在自己電腦上跑 Jupyter、做網站，與可重現的依賴管理</td>
+<td>為什麼要用 venv ＋ 用 uv 管理專案（進階）</td>
+<td>搞懂虛擬環境、做網站，與可重現的依賴管理</td>
 </tr>
 <tr class="even">
 <td>附錄</td>
@@ -387,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>這個架構還有兩個威力：<strong>能大量平行運算</strong>（訓練得更快），而且<strong>越大越強</strong>（資料和模型越大、表現越好，業界叫 scaling）。後面幾乎所有的 AI，都是從這裡長出來的。</p></li>
 <li><p><strong>2018–2020 年｜越養越大</strong>：OpenAI 接力推出 GPT-1、GPT-2、GPT-3，一代比一代大、一代比一代會「接話」。不過這時還主要是研究圈在玩。</p></li>
 <li><p><strong>2022 年 11 月｜AI 走進每個人家裡</strong>：<strong>ChatGPT</strong> 上線。第一次，一般人<strong>不用會任何程式</strong>，只要「用講的」就能叫 AI 幫忙寫文章、查資料、甚至寫程式。短短兩個月就突破上億用戶。</p></li>
-<li><p><strong>2021 年至今｜AI 變成「寫程式的夥伴」</strong>：寫程式專用的 AI 助手陸續出現（GitHub Copilot、Claude、Cursor 等），它們能讀懂你的需求、直接幫你寫出程式、還能幫你抓錯。到了 2025–2026 年，「<strong>不必是工程師，也能做出能用的軟體</strong>」已經是現實。</p></li>
+<li><p><strong>2023 年至今｜AI 變成「寫程式的夥伴」</strong>：寫程式專用的 AI 助手陸續出現（GitHub Copilot、Claude、Cursor 等），它們能讀懂你的需求、直接幫你寫出程式、還能幫你抓錯。到了 2025–2026 年，「<strong>不必是工程師，也能做出能用的軟體</strong>」已經是現實。</p></li>
 </ul>
 <p>把這段歷史接回你身上：<strong>正因為有了這些工具，一個期貨營業員，今天才有辦法自己架出一個交易小工具網站。</strong> 你要學的不是「贏過 AI」，而是「<strong>會指揮 AI、看得懂它、能驗證它</strong>」——這正是接下來這份講義要帶你練的事。</p>
 <table class="caption-top table">
@@ -420,7 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>一般人開始能「用講的」叫 AI 做事</td>
 </tr>
 <tr class="even">
-<td>2021–至今</td>
+<td>2023–至今</td>
 <td>AI 寫程式助手普及</td>
 <td><strong>你不必先成為工程師，也能開始動手做東西</strong></td>
 </tr>
@@ -491,13 +482,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="python-是什麼" class="level3">
 <h3 class="anchored" data-anchor-id="python-是什麼">2.1 Python 是什麼？</h3>
 <p>Python 是一種<strong>程式語言</strong>——也就是「人和電腦溝通的語言」之一。</p>
-<p>它之所以最適合新手，原因有三： - <strong>長得最像英文</strong>，最好讀； - <strong>用途超廣</strong>：資料分析、畫圖、自動化、做網站、串接 AI……都行； - <strong>資源最多</strong>：你遇到的問題，網路上幾乎都有答案，AI 也最熟它。</p>
+<p>它之所以最適合新手，原因有三：</p>
+<ul>
+<li><strong>長得最像英文</strong>，最好讀；</li>
+<li><strong>用途超廣</strong>：資料分析、畫圖、自動化、做網站、串接 AI……都行；</li>
+<li><strong>資源最多</strong>：你遇到的問題，網路上幾乎都有答案，AI 也最熟它。</li>
+</ul>
 <p>對金融背景的人來說，Python 還有個額外好處：它是量化分析、抓股價、跑回測最主流的語言。</p>
 <hr>
 </section>
 <section id="jupyter-notebook-是什麼" class="level3">
 <h3 class="anchored" data-anchor-id="jupyter-notebook-是什麼">2.2 Jupyter Notebook 是什麼？</h3>
-<p>就是<strong>你現在正在用的這個東西</strong>。它的特點是「邊寫程式、邊看結果、邊寫筆記」三合一，所以特別適合<strong>學習</strong>和<strong>做資料分析</strong>。</p>
+<p><strong>Jupyter Notebook</strong> 是一種「邊寫程式、邊看結果、邊寫筆記」三合一的工具，特別適合<strong>學習</strong>和<strong>做資料分析</strong>。</p>
+<blockquote class="blockquote">
+<p>你正在讀的這份講義，就是用同樣的精神做的——<strong>邊讀、邊改、邊跑</strong>。差別只在於：這裡的程式直接跑在<strong>你的瀏覽器</strong>裡（用一種叫 <strong>Pyodide</strong> 的技術），所以你連 Jupyter 都不用先裝，就能馬上動手。等到第 7 章要做網站、需要在自己電腦上長期開發時，才會用到「真正裝在本機的 Jupyter / 環境」（補充章節會說明）。</p>
+</blockquote>
 <hr>
 </section>
 <section id="ai-寫程式工具主要分兩類" class="level3">
@@ -533,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <blockquote class="blockquote">
-<p><strong>給 0 基礎的建議路線</strong>： <strong>先用「對話型 AI」+ 這份 Jupyter 講義</strong>，把基本邏輯摸熟（第 3～6 章）。 等你大概知道程式長怎樣、跑起來是什麼感覺了，<strong>再升級到「編輯器整合型」工具</strong>去做網站（第 7 章）。</p>
+<p><strong>給 0 基礎的建議路線</strong>： <strong>先用「對話型 AI」+ 這份互動講義</strong>，把基本邏輯摸熟（第 3～6 章）。 等你大概知道程式長怎樣、跑起來是什麼感覺了，<strong>再升級到「編輯器整合型」工具</strong>去做網站（第 7 章）。</p>
 <p>一開始就用太強的自動化工具，反而會因為「看不懂它在幹嘛」而失去判斷力。先學會走，再學會跑。</p>
 </blockquote>
 <hr>
@@ -541,52 +540,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="我要在哪裡跑-python兩條路" class="level3">
 <h3 class="anchored" data-anchor-id="我要在哪裡跑-python兩條路">2.4 我要在哪裡跑 Python？兩條路</h3>
 <p>你有兩條路可以選，差別在「要不要安裝」：</p>
-<p><strong>路線 A：線上環境（推薦新手，零安裝）</strong> 打開瀏覽器就能用，不用在電腦上裝任何東西。常見的有兩種： - <strong>JupyterLite</strong>：把「你現在用的這種 Jupyter」直接搬進瀏覽器。靠一種叫 WebAssembly 的技術，Python 整個跑在你的瀏覽器分頁裡，<strong>連伺服器都不需要</strong>。 - <strong>Google Colab</strong>：免費，介面跟這份講義幾乎一樣，背後是 Google 借你一台雲端機器。</p>
+<p><strong>路線 A：線上環境（推薦新手，零安裝）</strong> 打開瀏覽器就能用，不用在電腦上裝任何東西。<strong>這份講義本身就是路線 A</strong>——每一格程式都直接在你的瀏覽器裡跑。類似的線上環境還有：</p>
+<ul>
+<li><strong>JupyterLite</strong>：把「Jupyter」直接搬進瀏覽器。靠一種叫 WebAssembly 的技術，Python 整個跑在你的瀏覽器分頁裡，<strong>連伺服器都不需要</strong>（這份講義用的 Pyodide 也是同一類技術）。</li>
+<li><strong>Google Colab</strong>：免費，背後是 Google 借你一台雲端機器。</li>
+</ul>
 <p><strong>強烈建議第一個月都走線上路線</strong>，先把心力放在「學邏輯、跟 AI 練習」，把「安裝」的麻煩留到以後。</p>
 <blockquote class="blockquote">
-<p>⚠️ 線上環境有兩個限制要先知道： - <strong>存檔不會自動留著</strong>：像 JupyterLite 這種純瀏覽器環境，關掉分頁東西可能就不見了，記得<strong>自己下載 <code>.ipynb</code> 檔</strong>保存。 - <strong>不能拿來「架網站」</strong>：線上環境跑不了需要長時間開著的伺服器（例如第 7 章的 Streamlit）。所以——</p>
+<p>⚠️ 線上環境有兩個限制要先知道：</p>
+<ul>
+<li><strong>存檔不會自動留著</strong>：純瀏覽器環境（像這份講義或 JupyterLite），關掉分頁後你改過的程式碼不會自動保存，重要的東西記得自己複製下來。</li>
+<li><strong>不能拿來「架網站」</strong>：線上環境跑不了需要長時間開著的伺服器（例如第 7 章的 Streamlit）。所以——</li>
+</ul>
 </blockquote>
-<p><strong>路線 B：裝在自己電腦上（之後做網站必走）</strong> 等你要做第 7 章的網站、或想長期開發，就得把 Python 裝到自己電腦上。 這條路會多一個關鍵步驟：<strong>建立「虛擬環境 (venv)」</strong>——簡單說就是「幫每個專案準備一個獨立、乾淨的工具箱，彼此不打架」。 怎麼一步步建 venv、再用它跑 Jupyter，我整理在後面的<strong>補充章節〈在本地端用 venv 跑 Jupyter〉</strong>；想用更專業的工具，則可看〈用 uv 管理專案〉那章。</p>
-<blockquote class="blockquote">
-<p>💻 <strong>動手做（第一支程式）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-</blockquote>
+<p><strong>路線 B：裝在自己電腦上（之後做網站必走）</strong> 等你要做第 7 章的網站、或想長期開發，就得把 Python 裝到自己電腦上。 這條路會多一個關鍵步驟：<strong>建立「虛擬環境 (venv)」</strong>——簡單說就是「幫每個專案準備一個獨立、乾淨的工具箱，彼此不打架，也不弄髒整台電腦」。 <strong>為什麼</strong>要這樣做，我整理在<strong>補充章節 A〈為什麼要用 venv〉</strong>；<strong>怎麼做</strong>則直接寫在第 7 章「在本機把它跑起來」的步驟裡（做網站時自然會用到）。</p>
 </section>
 </section>
 <section id="第-3-章第一支程式不要怕" class="level1">
 <h1>第 3 章：第一支程式——不要怕</h1>
 <p>我們從最簡單的指令開始：<code>print()</code>。它的作用是「把括號裡的東西印出來」。</p>
-<p>下面每一格都按 <code>Shift+Enter</code> 跑跑看。</p>
-<div id="9b54eedb" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, 期貨營業員班的同學們！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, 期貨營業員班的同學們！</code></pre>
+<p>下面每一格都改改看、按 <code>Run Code</code> 跑跑看。</p>
+<div>
+<div id="pyodide-2" class="exercise-cell">
+
 </div>
+<script type="pyodide-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCJIZWxsbywg5pyf6LKo54ef5qWt5ZOh54+t55qE5ZCM5a245YCR77yBXCIpIn0=
+</script>
 </div>
 <p>引號 <code>" "</code> 裡面的，是<strong>文字</strong>（程式裡叫「字串」）。你可以放任何字。</p>
 <p>下面這格沒有引號，放的是<strong>數字</strong>，可以直接算數學：</p>
-<div id="a96bb027" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">100</span> <span class="op">*</span> <span class="dv">50</span>)   <span class="co"># 假設小台指漲 100 點，每點 50 元，賺多少？</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>8
-5000</code></pre>
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
 </div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoMyArIDUpXG5wcmludCgxMDAgKiA1MCkgICAjIOWBh+ioreWwj+WPsOaMh+a8siAxMDAg6bue77yM5q+P6bueIDUwIOWFg++8jOizuuWkmuWwke+8nyJ9
+</script>
 </div>
 <p>注意到 <code># 假設小台指...</code> 這段了嗎？</p>
 <p><code>#</code> 後面的文字叫<strong>註解</strong>：它<strong>不會被執行</strong>，純粹是寫給「人」看的備註。 養成寫註解的習慣，未來的你會感謝現在的你。</p>
 <hr>
 <section id="換你試試" class="level3">
-<h3 class="anchored" data-anchor-id="換你試試">換你試試</h3>
-<p>把下面這格改成「<strong>大台指漲 80 點，每點 200 元</strong>」的算式，然後執行：</p>
-<div id="86b921cf" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在這裡改：把 ? 換成正確的數字</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(? <span class="op">*</span> ?)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored" data-anchor-id="換你試試">3.1 換你試試</h3>
+<p>把下面這格改成「<strong>大台指漲 80 點，每點 200 元</strong>」的算式，然後按 <code>Run Code</code>：</p>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsIm1pbi1saW5lcyI6Mn0sImNvZGUiOiIjIOWcqOmAmeijoeaUue+8muaKiiA/IOaPm+aIkOato+eiuueahOaVuOWtl1xucHJpbnQoPyAqID8pIn0=
+</script>
 </div>
 <blockquote class="blockquote">
-<p>如果你按了 <code>Shift+Enter</code> 出現一堆紅字——<strong>太好了，這是你第一次看到「錯誤訊息」。</strong> 那是因為 <code>?</code> 不是合法的數字。把它改成數字（例如 <code>80 * 200</code>）再跑一次就好。 記住第 1 章說的：<strong>錯誤是過程，不是失敗。</strong></p>
-</blockquote>
-<blockquote class="blockquote">
-<p>💻 <strong>動手做（核心零件）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<p>如果你按了 <code>Run Code</code> 出現一堆紅字——<strong>太好了，這是你第一次看到「錯誤訊息」。</strong> 那是因為 <code>?</code> 不是合法的數字。把它改成數字（例如 <code>80 * 200</code>）再跑一次就好。 記住第 1 章說的：<strong>錯誤是過程，不是失敗。</strong></p>
 </blockquote>
 </section>
 </section>
@@ -600,18 +607,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="變數幫資料取一個名字" class="level2">
 <h2 class="anchored" data-anchor-id="變數幫資料取一個名字">4.1 變數：幫資料取一個名字</h2>
 <p>「變數」就是<strong>幫一個值取名字</strong>，方便之後重複使用、修改。 用 <code>=</code> 來「把右邊的值，存進左邊的名字」。</p>
-<div id="4af9f9bd" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>      <span class="co"># 假設小台指，每點 50 元</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>進場點數 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>出場點數 <span class="op">=</span> <span class="dv">18120</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"口數："</span>, 口數)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"每點價值："</span>, 每點價值)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>口數： 2
-每點價值： 50</code></pre>
+<div>
+<div id="pyodide-5" class="exercise-cell">
+
 </div>
+<script type="pyodide-5-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi5Y+j5pW4ID0gMlxu5q+P6bue5YO55YC8ID0gNTAgICAgICAjIOWBh+ioreWwj+WPsOaMh++8jOavj+m7niA1MCDlhYNcbumAsuWgtOm7nuaVuCA9IDE4MDAwXG7lh7rloLTpu57mlbggPSAxODEyMFxuXG5wcmludChcIuWPo+aVuO+8mlwiLCDlj6PmlbgpXG5wcmludChcIuavj+m7nuWDueWAvO+8mlwiLCDmr4/pu57lg7nlgLwpIn0=
+</script>
 </div>
 <blockquote class="blockquote">
 <p>Python 連中文變數名都能用，但<strong>業界習慣用英文</strong>（例如 <code>contracts</code>、<code>point_value</code>）。 初學階段為了好懂，我們先用中文；之後寫真正的專案再換英文。</p>
@@ -670,32 +672,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>下面這格用 <code>type()</code> 看看每個東西是什麼型態：</p>
-<div id="b164c926" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"多單"</span>))</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([<span class="dv">18000</span>, <span class="dv">18050</span>, <span class="dv">18120</span>]))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;
-&lt;class 'bool'&gt;
-&lt;class 'list'&gt;</code></pre>
+<div>
+<div id="pyodide-6" class="exercise-cell">
+
 </div>
+<script type="pyodide-6-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQodHlwZSgyKSlcbnByaW50KHR5cGUoMy4xNCkpXG5wcmludCh0eXBlKFwi5aSa5ZauXCIpKVxucHJpbnQodHlwZShUcnVlKSlcbnByaW50KHR5cGUoWzE4MDAwLCAxODA1MCwgMTgxMjBdKSkifQ==
+</script>
 </div>
 <p><strong>清單(list)</strong> 和 <strong>字典(dict)</strong> 特別重要，因為真實資料常常一大串。先看清單：</p>
-<div id="609dc2ba" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"總共幾天："</span>, <span class="bu">len</span>(每日收盤))      <span class="co"># len() 算長度</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第一天："</span>, 每日收盤[<span class="dv">0</span>])           <span class="co"># 注意！程式從 0 開始數</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"最後一天："</span>, 每日收盤[<span class="op">-</span><span class="dv">1</span>])         <span class="co"># -1 代表倒數第一個</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>總共幾天： 5
-第一天： 18000
-最後一天： 18300</code></pre>
+<div>
+<div id="pyodide-7" class="exercise-cell">
+
 </div>
+<script type="pyodide-7-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi5q+P5pel5pS255ukID0gWzE4MDAwLCAxODEyMCwgMTgwOTAsIDE4MjUwLCAxODMwMF1cblxucHJpbnQoXCLnuL3lhbHlub7lpKnvvJpcIiwgbGVuKOavj+aXpeaUtuebpCkpICAgICAgIyBsZW4oKSDnrpfplbfluqZcbnByaW50KFwi56ys5LiA5aSp77yaXCIsIOavj+aXpeaUtuebpFswXSkgICAgICAgICAgICMg5rOo5oSP77yB56iL5byP5b6eIDAg6ZaL5aeL5pW4XG5wcmludChcIuacgOW+jOS4gOWkqe+8mlwiLCDmr4/ml6XmlLbnm6RbLTFdKSAgICAgICAgICMgLTEg5Luj6KGo5YCS5pW456ys5LiA5YCLIn0=
+</script>
 </div>
 <blockquote class="blockquote">
 <p>🔑 <strong>新手最常踩的雷</strong>：程式世界裡，<strong>數數字從 0 開始</strong>。 所以「第一個」是 <code>[0]</code>，「第二個」是 <code>[1]</code>，以此類推。一開始不習慣很正常。</p>
@@ -704,41 +696,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="運算與比較" class="level2">
 <h2 class="anchored" data-anchor-id="運算與比較">4.3 運算與比較</h2>
 <p>除了加減乘除，最常用的是<strong>比較</strong>，結果會是 <code>True</code>(真) 或 <code>False</code>(假)：</p>
-<div id="77c1e864" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">18250</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"現價是否高於停損價？"</span>, 現價 <span class="op">&gt;</span> 停損價)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"是否已跌破停損？"</span>, 現價 <span class="op">&lt;</span> 停損價)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"兩者是否相等？"</span>, 現價 <span class="op">==</span> 停損價)   <span class="co"># 注意是「兩個等號」代表「相等嗎」</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>現價是否高於停損價？ True
-是否已跌破停損？ False
-兩者是否相等？ False</code></pre>
+<div>
+<div id="pyodide-8" class="exercise-cell">
+
 </div>
+<script type="pyodide-8-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi54++5YO5ID0gMTgyNTBcbuWBnOaQjeWDuSA9IDE4MDAwXG5cbnByaW50KFwi54++5YO55piv5ZCm6auY5pa85YGc5pCN5YO577yfXCIsIOePvuWDuSA+IOWBnOaQjeWDuSlcbnByaW50KFwi5piv5ZCm5bey6LeM56C05YGc5pCN77yfXCIsIOePvuWDuSA8IOWBnOaQjeWDuSlcbnByaW50KFwi5YWp6ICF5piv5ZCm55u4562J77yfXCIsIOePvuWDuSA9PSDlgZzmkI3lg7kpICAgIyDms6jmhI/mmK/jgIzlhanlgIvnrYnomZ/jgI3ku6PooajjgIznm7jnrYnll47jgI0ifQ==
+</script>
 </div>
 <blockquote class="blockquote">
-<p>🔑 <strong>超級重要</strong>： - 一個等號 <code>=</code> 是「<strong>指定/存入</strong>」（把值存進變數） - 兩個等號 <code>==</code> 是「<strong>相等嗎？</strong>」（問問題，得到 True/False）</p>
+<p>🔑 <strong>超級重要</strong>：</p>
+<ul>
+<li>一個等號 <code>=</code> 是「<strong>指定/存入</strong>」（把值存進變數）</li>
+<li>兩個等號 <code>==</code> 是「<strong>相等嗎？</strong>」（問問題，得到 True/False）</li>
+</ul>
 <p>搞混這兩個，是新手第一名常見錯誤。</p>
 </blockquote>
 </section>
 <section id="條件判斷-if-elif-else讓程式會做選擇" class="level2">
 <h2 class="anchored" data-anchor-id="條件判斷-if-elif-else讓程式會做選擇">4.4 條件判斷 if / elif / else：讓程式「會做選擇」</h2>
 <p>這是程式有「智慧」的開始：<strong>符合某條件，就做某件事。</strong> 這跟你做交易決策的邏輯一模一樣：「<strong>如果</strong>跌破停損，<strong>就</strong>出場。」</p>
-<div id="9b3a6b5d" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">17900</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>停利價 <span class="op">=</span> <span class="dv">18500</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 現價 <span class="op">&lt;=</span> 停損價:</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"⚠️ 已觸及停損，建議出場！"</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 現價 <span class="op">&gt;=</span> 停利價:</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"🎯 已達停利目標，可考慮獲利了結！"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"✅ 在區間內，續抱觀察。"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>⚠️ 已觸及停損，建議出場！</code></pre>
+<div>
+<div id="pyodide-9" class="exercise-cell">
+
 </div>
+<script type="pyodide-9-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi54++5YO5ID0gMTc5MDBcbuWBnOaQjeWDuSA9IDE4MDAwXG7lgZzliKnlg7kgPSAxODUwMFxuXG5pZiDnj77lg7kgPD0g5YGc5pCN5YO5OlxuICAgIHByaW50KFwi4pqg77iPIOW3suinuOWPiuWBnOaQje+8jOW7uuitsOWHuuWgtO+8gVwiKVxuZWxpZiDnj77lg7kgPj0g5YGc5Yip5YO5OlxuICAgIHByaW50KFwi8J+OryDlt7LpgZTlgZzliKnnm67mqJnvvIzlj6/ogIPmha7njbLliKnkuobntZDvvIFcIilcbmVsc2U6XG4gICAgcHJpbnQoXCLinIUg5Zyo5Y2A6ZaT5YWn77yM57qM5oqx6KeA5a+f44CCXCIpIn0=
+</script>
 </div>
 <p><strong>注意兩個關鍵格式</strong>（Python 很在意這個）： 1. 條件那行結尾要有 <strong>冒號 <code>:</code></strong> 2. 下一行要 <strong>往內縮排</strong>（通常按一下 Tab 或 4 個空格）。縮排代表「這是 if 底下要做的事」。</p>
 <blockquote class="blockquote">
@@ -748,47 +732,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="迴圈-for讓程式重複做" class="level2">
 <h2 class="anchored" data-anchor-id="迴圈-for讓程式重複做">4.5 迴圈 for：讓程式「重複做」</h2>
 <p>當你要對「一整串資料」逐筆處理時，就用迴圈。 例如：把每天的收盤價，逐筆印出來。</p>
-<div id="675137be" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 收盤 <span class="kw">in</span> 每日收盤:</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"今天收盤："</span>, 收盤)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"---- 印完了 ----"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>今天收盤： 18000
-今天收盤： 18120
-今天收盤： 18090
-今天收盤： 18250
-今天收盤： 18300
----- 印完了 ----</code></pre>
+<div>
+<div id="pyodide-10" class="exercise-cell">
+
 </div>
+<script type="pyodide-10-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi5q+P5pel5pS255ukID0gWzE4MDAwLCAxODEyMCwgMTgwOTAsIDE4MjUwLCAxODMwMF1cblxuZm9yIOaUtuebpCBpbiDmr4/ml6XmlLbnm6Q6XG4gICAgcHJpbnQoXCLku4rlpKnmlLbnm6TvvJpcIiwg5pS255ukKVxuXG5wcmludChcIi0tLS0g5Y2w5a6M5LqGIC0tLS1cIikifQ==
+</script>
 </div>
 <p>這段的意思是：「<strong>對於</strong> <code>每日收盤</code> 裡的<strong>每一個</strong>值（暫時叫它 <code>收盤</code>），<strong>就</strong>執行縮排內的動作。」</p>
 <p>迴圈真正強大的地方，是搭配「累加」。下面算<strong>這幾天每天相對前一天的損益總和</strong>（簡化示意）：</p>
-<div id="cf4f5194" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span>   <span class="co"># 先準備一個「存錢筒」，從 0 開始</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(每日收盤)):</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    當日變動點數 <span class="op">=</span> 每日收盤[i] <span class="op">-</span> 每日收盤[i<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    當日損益 <span class="op">=</span> 當日變動點數 <span class="op">*</span> 每點價值 <span class="op">*</span> 口數</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 當日損益       <span class="co"># 累加進存錢筒</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第 </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> 天：變動 </span><span class="sc">{當日變動點數}</span><span class="ss"> 點，損益 </span><span class="sc">{當日損益}</span><span class="ss"> 元"</span>)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=================="</span>)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"區間總損益："</span>, 總損益, <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>第 1 天：變動 120 點，損益 6000 元
-第 2 天：變動 -30 點，損益 -1500 元
-第 3 天：變動 160 點，損益 8000 元
-第 4 天：變動 50 點，損益 2500 元
-==================
-區間總損益： 15000 元</code></pre>
+<div>
+<div id="pyodide-11" class="exercise-cell">
+
 </div>
+<script type="pyodide-11-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoi5q+P5pel5pS255ukID0gWzE4MDAwLCAxODEyMCwgMTgwOTAsIDE4MjUwLCAxODMwMF1cbuavj+m7nuWDueWAvCA9IDUwXG7lj6PmlbggPSAxXG5cbue4veaQjeebiiA9IDAgICAjIOWFiOa6luWCmeS4gOWAi+OAjOWtmOmMouetkuOAje+8jOW+niAwIOmWi+Wni1xuXG5mb3IgaSBpbiByYW5nZSgxLCBsZW4o5q+P5pel5pS255ukKSk6XG4gICAg55W25pel6K6K5YuV6bue5pW4ID0g5q+P5pel5pS255ukW2ldIC0g5q+P5pel5pS255ukW2ktMV1cbiAgICDnlbbml6XmkI3nm4ogPSDnlbbml6Xororli5Xpu57mlbggKiDmr4/pu57lg7nlgLwgKiDlj6PmlbhcbiAgICDnuL3mkI3nm4ogPSDnuL3mkI3nm4ogKyDnlbbml6XmkI3nm4ogICAgICAgIyDntK/liqDpgLLlrZjpjKLnrZJcbiAgICBwcmludChmXCLnrKwge2l9IOWkqe+8muiuiuWLlSB755W25pel6K6K5YuV6bue5pW4fSDpu57vvIzmkI3nm4oge+eVtuaXpeaQjeebin0g5YWDXCIpXG5cbnByaW50KFwiPT09PT09PT09PT09PT09PT09XCIpXG5wcmludChcIuWNgOmWk+e4veaQjeebiu+8mlwiLCDnuL3mkI3nm4osIFwi5YWDXCIpIn0=
+</script>
 </div>
 <p>這格出現了一個好用的新東西：<code>f"..."</code>（叫做 <strong>f-string</strong>）。 只要在引號前加個 <code>f</code>，就能在文字裡用 <code>{ }</code> 直接塞變數，超方便。</p>
 <blockquote class="blockquote">
@@ -798,21 +758,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="函式-function把一段邏輯包起來重複用" class="level2">
 <h2 class="anchored" data-anchor-id="函式-function把一段邏輯包起來重複用">4.6 函式 (function)：把一段邏輯「包起來」重複用</h2>
 <p>如果「算損益」這件事你要做很多次，每次都重抄一遍很煩。 <strong>函式</strong>就是把一段邏輯打包、取個名字，之後一行就能呼叫。</p>
-<div id="5f1c9ca6" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    變動點數 <span class="op">=</span> 出場 <span class="op">-</span> 進場</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 變動點數 <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 損益    <span class="co"># return = 把算好的結果「交回去」</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 包好之後，要用幾次就用幾次：</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易A："</span>, 計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易B："</span>, 計算損益(<span class="dv">18500</span>, <span class="dv">18300</span>, <span class="dv">2</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易C："</span>, 計算損益(<span class="dv">17000</span>, <span class="dv">17500</span>, <span class="dv">3</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>交易A： 6000 元
-交易B： -20000 元
-交易C： 75000 元</code></pre>
+<div>
+<div id="pyodide-12" class="exercise-cell">
+
 </div>
+<script type="pyodide-12-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZGVmIOioiOeul+aQjeebiijpgLLloLQsIOWHuuWgtCwg5Y+j5pW4LCDmr4/pu57lg7nlgLwpOlxuICAgIOiuiuWLlem7nuaVuCA9IOWHuuWgtCAtIOmAsuWgtFxuICAgIOaQjeebiiA9IOiuiuWLlem7nuaVuCAqIOWPo+aVuCAqIOavj+m7nuWDueWAvFxuICAgIHJldHVybiDmkI3nm4ogICAgIyByZXR1cm4gPSDmiornrpflpb3nmoTntZDmnpzjgIzkuqTlm57ljrvjgI1cblxuIyDljIXlpb3kuYvlvozvvIzopoHnlKjlub7mrKHlsLHnlKjlub7mrKHvvJpcbnByaW50KFwi5Lqk5piTQe+8mlwiLCDoqIjnrpfmkI3nm4ooMTgwMDAsIDE4MTIwLCAxLCA1MCksIFwi5YWDXCIpXG5wcmludChcIuS6pOaYk0LvvJpcIiwg6KiI566X5pCN55uKKDE4NTAwLCAxODMwMCwgMiwgNTApLCBcIuWFg1wiKVxucHJpbnQoXCLkuqTmmJND77yaXCIsIOioiOeul+aQjeebiigxNzAwMCwgMTc1MDAsIDMsIDUwKSwgXCLlhYNcIikifQ==
+</script>
 </div>
 <ul>
 <li><code>def</code> = 我要「定義(define)」一個函式</li>
@@ -826,21 +778,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>到目前為止，「資料」（變數、清單）和「動作」（函式）是分開的。 但你其實<strong>早就</strong>在用一種把兩者綁在一起的東西了，只是還沒人幫它取名字——它叫 <strong>物件 (object)</strong>。</p>
 <p>一句話記住： &gt; <strong>物件 = 一包資料 ＋ 這包資料自己會的動作。</strong></p>
 <p>還記得這些寫法嗎？你一直在用：</p>
-<div id="ab5559e0" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 清單(list)就是一種物件，它自己「會」很多動作：</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>]</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>每日收盤.append(<span class="dv">18250</span>)        <span class="co"># .append() 是清單「自己會的動作」：在後面加一筆</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"加完之後："</span>, 每日收盤)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 文字(str)也是一種物件，它也有自己會的動作：</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>商品 <span class="op">=</span> <span class="st">"台指期"</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"變大寫："</span>, <span class="st">"tx"</span>.upper())   <span class="co"># .upper() 是文字「自己會的動作」</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"商品幾個字："</span>, <span class="bu">len</span>(商品))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>加完之後： [18000, 18120, 18090, 18250]
-變大寫： TX
-商品幾個字： 3</code></pre>
+<div>
+<div id="pyodide-13" class="exercise-cell">
+
 </div>
+<script type="pyodide-13-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyDmuIXllq4obGlzdCnlsLHmmK/kuIDnqK7nianku7bvvIzlroPoh6rlt7HjgIzmnIPjgI3lvojlpJrli5XkvZzvvJpcbuavj+aXpeaUtuebpCA9IFsxODAwMCwgMTgxMjAsIDE4MDkwXVxu5q+P5pel5pS255ukLmFwcGVuZCgxODI1MCkgICAgICAgICMgLmFwcGVuZCgpIOaYr+a4heWWruOAjOiHquW3seacg+eahOWLleS9nOOAje+8muWcqOW+jOmdouWKoOS4gOethlxucHJpbnQoXCLliqDlrozkuYvlvozvvJpcIiwg5q+P5pel5pS255ukKVxuXG4jIOaWh+WtlyhzdHIp5Lmf5piv5LiA56iu54mp5Lu277yM5a6D5Lmf5pyJ6Ieq5bex5pyD55qE5YuV5L2c77yaXG7llYblk4EgPSBcIuWPsOaMh+acn1wiXG5wcmludChcIuiuiuWkp+Wvq++8mlwiLCBcInR4XCIudXBwZXIoKSkgICAjIC51cHBlcigpIOaYr+aWh+Wtl+OAjOiHquW3seacg+eahOWLleS9nOOAjVxucHJpbnQoXCLllYblk4Hlub7lgIvlrZfvvJpcIiwgbGVuKOWVhuWTgSkpIn0=
+</script>
 </div>
 <p>看到中間那個 <strong><code>.</code>（點）</strong> 了嗎？它的意思就是：「<strong>叫這個物件，做它自己會的某個動作</strong>」。</p>
 <ul>
@@ -855,28 +799,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="選讀那這些物件是怎麼來的class" class="level4">
 <h4 class="anchored" data-anchor-id="選讀那這些物件是怎麼來的class">（選讀）那這些「物件」是怎麼來的？——<code>class</code></h4>
 <p>你不需要會自己建立物件，但看一眼它長怎樣，以後就不會怕。 <strong><code>class</code>（類別）就是「物件的設計圖」</strong>：先畫好一張「交易」的設計圖，之後就能照圖做出一個又一個交易物件。</p>
-<div id="ea829571" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># （選讀）用 class 畫一張「交易」的設計圖</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 交易:</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 定義這個物件有哪些「屬性」和「方法」：</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, 進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 下面這些是這個物件的「屬性」（它帶在身上的資料）</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.進場 <span class="op">=</span> 進場</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.出場 <span class="op">=</span> 出場</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.口數 <span class="op">=</span> 口數</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.每點價值 <span class="op">=</span> 每點價值</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 損益(<span class="va">self</span>):                       <span class="co"># 這是它的「方法」（它自己會的動作）</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.出場 <span class="op">-</span> <span class="va">self</span>.進場) <span class="op">*</span> <span class="va">self</span>.口數 <span class="op">*</span> <span class="va">self</span>.每點價值</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 照設計圖做出一個「交易物件」：</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> 交易(進場<span class="op">=</span><span class="dv">18000</span>, 出場<span class="op">=</span><span class="dv">18120</span>, 口數<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這筆交易的損益："</span>, A.損益(), <span class="st">"元"</span>)    <span class="co"># 叫物件 A 做它會的「損益」動作</span></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"它的進場價屬性："</span>, A.進場)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>這筆交易的損益： 6000 元
-它的進場價屬性： 18000</code></pre>
+<div>
+<div id="pyodide-14" class="exercise-cell">
+
 </div>
+<script type="pyodide-14-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyDvvIjpgbjoroDvvInnlKggY2xhc3Mg55Wr5LiA5by144CM5Lqk5piT44CN55qE6Kit6KiI5ZyWXG5jbGFzcyDkuqTmmJM6XG4gICAgIyDlrprnvqnpgJnlgIvnianku7bmnInlk6rkupvjgIzlsazmgKfjgI3lkozjgIzmlrnms5XjgI3vvJpcbiAgICBkZWYgX19pbml0X18oc2VsZiwg6YCy5aC0LCDlh7rloLQsIOWPo+aVuCwg5q+P6bue5YO55YC8PTUwKTpcbiAgICAgICAgIyDkuIvpnaLpgJnkupvmmK/pgJnlgIvnianku7bnmoTjgIzlsazmgKfjgI3vvIjlroPluLblnKjouqvkuIrnmoTos4fmlpnvvIlcbiAgICAgICAgc2VsZi7pgLLloLQgPSDpgLLloLRcbiAgICAgICAgc2VsZi7lh7rloLQgPSDlh7rloLRcbiAgICAgICAgc2VsZi7lj6PmlbggPSDlj6PmlbhcbiAgICAgICAgc2VsZi7mr4/pu57lg7nlgLwgPSDmr4/pu57lg7nlgLxcblxuICAgIGRlZiDmkI3nm4ooc2VsZik6ICAgICAgICAgICAgICAgICAgICAgICAjIOmAmeaYr+Wug+eahOOAjOaWueazleOAje+8iOWug+iHquW3seacg+eahOWLleS9nO+8iVxuICAgICAgICByZXR1cm4gKHNlbGYu5Ye65aC0IC0gc2VsZi7pgLLloLQpICogc2VsZi7lj6PmlbggKiBzZWxmLuavj+m7nuWDueWAvFxuXG4jIOeFp+ioreioiOWcluWBmuWHuuS4gOWAi+OAjOS6pOaYk+eJqeS7tuOAje+8mlxuQSA9IOS6pOaYkyjpgLLloLQ9MTgwMDAsIOWHuuWgtD0xODEyMCwg5Y+j5pW4PTEpXG5wcmludChcIumAmeethuS6pOaYk+eahOaQjeebiu+8mlwiLCBBLuaQjeebiigpLCBcIuWFg1wiKSAgICAjIOWPq+eJqeS7tiBBIOWBmuWug+acg+eahOOAjOaQjeebiuOAjeWLleS9nFxucHJpbnQoXCLlroPnmoTpgLLloLTlg7nlsazmgKfvvJpcIiwgQS7pgLLloLQpIn0=
+</script>
 </div>
 <blockquote class="blockquote">
 <p>🟡 看不懂 <code>class</code> / <code>self</code> / <code>__init__</code> 完全沒關係，<strong>現階段可以先跳過</strong>。 你只要記得「<strong>物件 = 資料 + 它會的動作，用 <code>.</code> 去叫它</strong>」就夠用了。真要自己寫 class 時，再請 AI 一行一行帶你。</p>
@@ -922,61 +851,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>前兩個你已經懂了，重點講第三個——<strong>裝飾器</strong>，因為你做網站時一定會遇到它。</p>
+<p>前兩個你已經懂了，重點講第三個——<strong>裝飾器</strong>。它在真實世界的程式裡（特別是網站框架）很常見，你遲早會遇到，所以先帶你認識。</p>
 <p><strong>它要解決什麼問題？</strong> 假設你有很多函式，想幫<strong>每一個</strong>都加上「執行前先印一行記錄」的功能。 笨方法是每個函式裡都貼一段重複的程式碼。裝飾器讓你<strong>寫一次、到處套</strong>，而且<strong>完全不用改原本的函式</strong>。</p>
 <p>寫法就是在函式上面加一行 <code>@某個裝飾器</code>：</p>
-<div id="ebd52289" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 先做一個「外掛包裝」：在原本的動作前後，各加一句記錄</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 加上記錄(原本的函式):</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 包裝後(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"👉 開始執行："</span>, 原本的函式.<span class="va">__name__</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> 原本的函式(<span class="op">*</span>args, <span class="op">**</span>kwargs)      <span class="co"># 這行才是真正去做原本的事</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"✅ 執行完畢，結果是："</span>, 結果)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> 結果</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 包裝後</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 用 @ 把這個包裝「戴」到函式頭上</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="at">@加上記錄</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 照常呼叫——但它已經自動多了「記錄」的行為</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>👉 開始執行： 計算損益
-✅ 執行完畢，結果是： 6000</code></pre>
+<div>
+<div id="pyodide-15" class="exercise-cell">
+
 </div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>6000</code></pre>
-</div>
+<script type="pyodide-15-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyAxKSDlhYjlgZrkuIDlgIvjgIzlpJbmjpvljIXoo53jgI3vvJrlnKjljp/mnKznmoTli5XkvZzliY3lvozvvIzlkITliqDkuIDlj6XoqJjpjIRcbmRlZiDliqDkuIroqJjpjIQo5Y6f5pys55qE5Ye95byPKTpcbiAgICBkZWYg5YyF6KOd5b6MKCphcmdzLCAqKmt3YXJncyk6XG4gICAgICAgIHByaW50KFwi8J+RiSDplovlp4vln7fooYzvvJpcIiwg5Y6f5pys55qE5Ye95byPLl9fbmFtZV9fKVxuICAgICAgICDntZDmnpwgPSDljp/mnKznmoTlh73lvI8oKmFyZ3MsICoqa3dhcmdzKSAgICAgICMg6YCZ6KGM5omN5piv55yf5q2j5Y675YGa5Y6f5pys55qE5LqLXG4gICAgICAgIHByaW50KFwi4pyFIOWft+ihjOWujOeVou+8jOe1kOaenOaYr++8mlwiLCDntZDmnpwpXG4gICAgICAgIHJldHVybiDntZDmnpxcbiAgICByZXR1cm4g5YyF6KOd5b6MXG5cbiMgMikg55SoIEAg5oqK6YCZ5YCL5YyF6KOd44CM5oi044CN5Yiw5Ye95byP6aCt5LiKXG5A5Yqg5LiK6KiY6YyEXG5kZWYg6KiI566X5pCN55uKKOmAsuWgtCwg5Ye65aC0LCDlj6PmlbgsIOavj+m7nuWDueWAvD01MCk6XG4gICAgcmV0dXJuICjlh7rloLQgLSDpgLLloLQpICog5Y+j5pW4ICog5q+P6bue5YO55YC8XG5cbiMgMykg54Wn5bi45ZG85Y+r4oCU4oCU5L2G5a6D5bey57aT6Ieq5YuV5aSa5LqG44CM6KiY6YyE44CN55qE6KGM54K6XG7oqIjnrpfmkI3nm4ooMTgwMDAsIDE4MTIwLCAxKSJ9
+</script>
 </div>
 <p>跑跑看：你只是呼叫 <code>計算損益(...)</code>，卻自動多印了「開始執行 / 執行完畢」兩行——這就是裝飾器替函式「加料」的效果，而 <code>計算損益</code> 本身<strong>一個字都沒改</strong>。</p>
 <p><code>@加上記錄</code> 這一行的意思就是：「<strong>把 <code>計算損益</code> 這個函式，用 <code>加上記錄</code> 包裝一下再用</strong>」。</p>
 <hr>
 <section id="真實場景st.cache_data-到底幫你省了什麼" class="level4">
 <h4 class="anchored" data-anchor-id="真實場景st.cache_data-到底幫你省了什麼">🔌 真實場景：<code>@st.cache_data</code> 到底幫你省了什麼？</h4>
-<p>到第 7 章做網站時，你會用 <strong>Streamlit</strong> 這個工具。它有一個很關鍵的特性：<strong>使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。</strong></p>
+<p>第 7 章會帶你用 <strong>Streamlit</strong> 做一個小網站。它有一個很關鍵的特性：<strong>使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。</strong></p>
 <p>這會出問題。假設你的網站一開頭要「去抓今天的期貨報價」，而這件事很慢（要連網路，可能要等 3 秒）：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)              <span class="co"># 假裝去網路抓資料，慢慢的…</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 使用者每點一下，這行就重跑 → 又卡 3 秒 😩</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)              <span class="co"># 假裝去網路抓資料，慢慢的…</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 使用者每點一下，這行就重跑 → 又卡 3 秒 😩</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>使用者每按一次就卡 3 秒，體驗很差。</p>
 <p><strong>解法：在這個函式頭上，戴一頂 <code>@st.cache_data</code> 的帽子。</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="at">@st.cache_data</span>                 <span class="co"># ← 裝飾器：幫這個函式「把結果記起來」</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第一次：真的去抓，等 3 秒</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第二次以後：直接拿上次記住的結果，0 秒！⚡</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">@st.cache_data</span>                 <span class="co"># ← 裝飾器：幫這個函式「把結果記起來」</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第一次：真的去抓，等 3 秒</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第二次以後：直接拿上次記住的結果，0 秒！⚡</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>差別在哪裡？</p>
 <ul>
 <li><strong>沒加</strong> → 每次重跑都重新抓一次資料，每次都乖乖等 3 秒。</li>
@@ -987,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>你<strong>完全不需要自己寫</strong>這個裝飾器，Streamlit 已經幫你做好了。你只要會兩件事： 1. 看到 <code>@</code> 開頭那一行，知道它是在「替下面的函式加料」； 2. 遇到「網站抓資料好慢」時，想起可以在那個函式上面加一行 <code>@st.cache_data</code>。</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>🟡 這節是進階補充，看不懂可以先跳過。等第 7 章真的動手做網站、遇到「怎麼一直在重抓資料、好慢」時，再回來看這個例子，會特別有感。</p>
+<p>🟡 這節是進階補充，看不懂可以先跳過。<strong>第 7 章那個損益計算機很單純，其實用不到 <code>@st.cache_data</code></strong>——這裡只是先讓你認識它。等你之後做的網站需要「抓資料、又不想每次重抓」時，再回來看這個例子，會特別有感。</p>
 </blockquote>
 <hr>
 </section>
@@ -1090,90 +1002,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="練習故意製造一個錯誤再學會讀它" class="level3">
 <h3 class="anchored" data-anchor-id="練習故意製造一個錯誤再學會讀它">5.6 練習：故意製造一個錯誤，再學會讀它</h3>
-<p>跑下面這格——它<strong>故意寫錯了</strong>（少了一個引號）。看看錯誤訊息長怎樣：</p>
-<div id="ff047254" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這行故意忘了打結尾的引號)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[15]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-red-fg">    </span><span class="ansi-red-fg">print("這行故意忘了打結尾的引號)</span>
-          ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated string literal (detected at line 1)
-</pre>
+<p>跑下面這格——它<strong>故意寫錯了</strong>（少了一個引號）。按 <code>Run Code</code>，看看錯誤訊息長怎樣：</p>
+<div>
+<div id="pyodide-16" class="exercise-cell">
+
 </div>
-</div>
+<script type="pyodide-16-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsIm1pbi1saW5lcyI6Mn0sImNvZGUiOiJwcmludChcIumAmeihjOaVheaEj+W/mOS6huaJk+e1kOWwvueahOW8leiZnykifQ==
+</script>
 </div>
 <p>看到類似 <code>SyntaxError</code> 的字了嗎？這就是「語法錯誤」。</p>
-<p><strong>現在做一次真實的除錯流程</strong>：把上面那格的程式 + 錯誤訊息複製起來，貼給你慣用的 AI，問：「這段為什麼錯？怎麼修？」 然後把它教你的正確版本貼回下面這格、跑跑看：</p>
-<div id="5421c974" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把修好的正確版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>現在做一次真實的除錯流程</strong>：把上面那格的程式 + 錯誤訊息複製起來，貼給你慣用的 AI，問：「這段為什麼錯？怎麼修？」 然後把它教你的正確版本貼回下面這格、按 <code>Run Code</code> 跑跑看：</p>
+<div>
+<div id="pyodide-17" class="exercise-cell">
+
 </div>
-<blockquote class="blockquote">
-<p>💻 <strong>動手做（實戰小專案）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-</blockquote>
+<script type="pyodide-17-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsIm1pbi1saW5lcyI6M30sImNvZGUiOiIjIOaKiuS/ruWlveeahOato+eiuueJiOacrOiyvOWcqOmAmeijoeWft+ihjCJ9
+</script>
+</div>
 </section>
 </section>
 <section id="第-6-章實戰小專案把零件組起來" class="level1">
 <h1>第 6 章：實戰小專案——把零件組起來</h1>
 <p>現在把第 4 章的核心零件，組成一個<strong>期貨交易記錄分析器</strong>。 這就是「拆小、逐步累加」的實際示範。先跑跑看完整版，再看下面的拆解。</p>
-<div id="a4e2144a" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ===== 一個小工具：分析多筆交易的總損益與勝率 =====</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>   <span class="co"># 假設小台指</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 每筆交易記成一個「字典」：有進場、出場、口數三個標籤</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>交易紀錄 <span class="op">=</span> [</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18000</span>, <span class="st">"出場"</span>: <span class="dv">18120</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18200</span>, <span class="st">"出場"</span>: <span class="dv">18050</span>, <span class="st">"口數"</span>: <span class="dv">2</span>},</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">17800</span>, <span class="st">"出場"</span>: <span class="dv">18100</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18400</span>, <span class="st">"出場"</span>: <span class="dv">18350</span>, <span class="st">"口數"</span>: <span class="dv">3</span>},</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 算單筆損益(交易):</span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    變動 <span class="op">=</span> 交易[<span class="st">"出場"</span>] <span class="op">-</span> 交易[<span class="st">"進場"</span>]</span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 變動 <span class="op">*</span> 交易[<span class="st">"口數"</span>] <span class="op">*</span> 每點價值</span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 逐筆統計</span></span>
-<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>獲利次數 <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 交易 <span class="kw">in</span> 交易紀錄:</span>
-<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 算單筆損益(交易)</span>
-<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 損益</span>
-<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>        獲利次數 <span class="op">=</span> 獲利次數 <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"獲利"</span></span>
-<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"虧損"</span></span>
-<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"進 </span><span class="sc">{交易</span>[<span class="st">'進場'</span>]<span class="sc">}</span><span class="ss"> → 出 </span><span class="sc">{交易</span>[<span class="st">'出場'</span>]<span class="sc">}</span><span class="ss">，</span><span class="sc">{交易</span>[<span class="st">'口數'</span>]<span class="sc">}</span><span class="ss"> 口：</span><span class="sc">{損益:+,}</span><span class="ss"> 元（</span><span class="sc">{結果}</span><span class="ss">）"</span>)</span>
-<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>勝率 <span class="op">=</span> 獲利次數 <span class="op">/</span> <span class="bu">len</span>(交易紀錄) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
-<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"總損益：</span><span class="sc">{總損益:+,}</span><span class="ss"> 元"</span>)</span>
-<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"交易筆數：</span><span class="sc">{</span><span class="bu">len</span>(交易紀錄)<span class="sc">}</span><span class="ss"> 筆"</span>)</span>
-<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"勝率：</span><span class="sc">{勝率:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>進 18000 → 出 18120，1 口：+6,000 元（獲利）
-進 18200 → 出 18050，2 口：-15,000 元（虧損）
-進 17800 → 出 18100，1 口：+15,000 元（獲利）
-進 18400 → 出 18350，3 口：-7,500 元（虧損）
-===================================
-總損益：-1,500 元
-交易筆數：4 筆
-勝率：50.0%</code></pre>
+<div>
+<div id="pyodide-18" class="exercise-cell">
+
 </div>
+<script type="pyodide-18-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyA9PT09PSDkuIDlgIvlsI/lt6XlhbfvvJrliIbmnpDlpJrnrYbkuqTmmJPnmoTnuL3mkI3nm4roiIfli53njocgPT09PT1cblxu5q+P6bue5YO55YC8ID0gNTAgICAjIOWBh+ioreWwj+WPsOaMh1xuXG4jIOavj+ethuS6pOaYk+iomOaIkOS4gOWAi+OAjOWtl+WFuOOAje+8muaciemAsuWgtOOAgeWHuuWgtOOAgeWPo+aVuOS4ieWAi+aomeexpFxu5Lqk5piT57SA6YyEID0gW1xuICAgIHtcIumAsuWgtFwiOiAxODAwMCwgXCLlh7rloLRcIjogMTgxMjAsIFwi5Y+j5pW4XCI6IDF9LFxuICAgIHtcIumAsuWgtFwiOiAxODIwMCwgXCLlh7rloLRcIjogMTgwNTAsIFwi5Y+j5pW4XCI6IDJ9LFxuICAgIHtcIumAsuWgtFwiOiAxNzgwMCwgXCLlh7rloLRcIjogMTgxMDAsIFwi5Y+j5pW4XCI6IDF9LFxuICAgIHtcIumAsuWgtFwiOiAxODQwMCwgXCLlh7rloLRcIjogMTgzNTAsIFwi5Y+j5pW4XCI6IDN9LFxuXVxuXG5kZWYg566X5Zau562G5pCN55uKKOS6pOaYkyk6XG4gICAg6K6K5YuVID0g5Lqk5piTW1wi5Ye65aC0XCJdIC0g5Lqk5piTW1wi6YCy5aC0XCJdXG4gICAgcmV0dXJuIOiuiuWLlSAqIOS6pOaYk1tcIuWPo+aVuFwiXSAqIOavj+m7nuWDueWAvFxuXG4jIOmAkOethue1seioiFxu57i95pCN55uKID0gMFxu542y5Yip5qyh5pW4ID0gMFxuXG5mb3Ig5Lqk5piTIGluIOS6pOaYk+e0gOmMhDpcbiAgICDmkI3nm4ogPSDnrpfllq7nrYbmkI3nm4oo5Lqk5piTKVxuICAgIOe4veaQjeebiiA9IOe4veaQjeebiiArIOaQjeebilxuICAgIGlmIOaQjeebiiA+IDA6XG4gICAgICAgIOeNsuWIqeasoeaVuCA9IOeNsuWIqeasoeaVuCArIDFcbiAgICAgICAg57WQ5p6cID0gXCLnjbLliKlcIlxuICAgIGVsc2U6XG4gICAgICAgIOe1kOaenCA9IFwi6Jmn5pCNXCJcbiAgICBwcmludChmXCLpgLIge+S6pOaYk1sn6YCy5aC0J119IOKGkiDlh7oge+S6pOaYk1sn5Ye65aC0J11977yMe+S6pOaYk1sn5Y+j5pW4J119IOWPo++8mnvmkI3nm4o6Kyx9IOWFg++8iHvntZDmnpx977yJXCIpXG5cbuWLneeOhyA9IOeNsuWIqeasoeaVuCAvIGxlbijkuqTmmJPntIDpjIQpICogMTAwXG5cbnByaW50KFwiPVwiICogMzUpXG5wcmludChmXCLnuL3mkI3nm4rvvJp757i95pCN55uKOissfSDlhYNcIilcbnByaW50KGZcIuS6pOaYk+ethuaVuO+8mntsZW4o5Lqk5piT57SA6YyEKX0g562GXCIpXG5wcmludChmXCLli53njofvvJp75Yud546HOi4xZn0lXCIpIn0=
+</script>
 </div>
 <p>看懂了嗎？這個小工具其實只用到你已經學過的東西： <strong>變數、字典/清單、函式、迴圈、條件判斷、f-string。</strong> 沒有任何新魔法。</p>
 <blockquote class="blockquote">
 <p><strong>換你練習（用 AI）</strong>：請你慣用的 AI 幫你擴充這個工具，加上「<strong>最大單筆獲利</strong>」和「<strong>最大單筆虧損</strong>」的統計。 記得用第 5 章的好提問公式：貼上這段程式，說清楚你要加什麼、希望保留中文註解。 拿到結果後，貼到下面跑跑看，並請 AI 逐行解釋它新增的部分。</p>
 </blockquote>
-<div id="a5df0b26" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把 AI 擴充後的版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div>
+<div id="pyodide-19" class="exercise-cell">
+
 </div>
-<blockquote class="blockquote">
-<p>💻 <strong>動手做（邁向自己的網站）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-</blockquote>
+<script type="pyodide-19-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsIm1pbi1saW5lcyI6M30sImNvZGUiOiIjIOaKiiBBSSDmk7TlhYXlvoznmoTniYjmnKzosrzlnKjpgJnoo6Hln7fooYwifQ==
+</script>
+</div>
 </section>
 <section id="第-7-章邁向自己的網站" class="level1">
 <h1>第 7 章：邁向「自己的網站」</h1>
@@ -1220,57 +1092,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="新手最快的捷徑streamlit">7.2 新手最快的捷徑：Streamlit</h3>
 <p><strong>Streamlit</strong> 是一個工具，讓你<strong>只用 Python</strong>（你已經在學的）就能做出一個<strong>互動式網頁</strong>，不用碰 HTML/CSS/JavaScript。</p>
 <p>它對金融人尤其友善：天生擅長「<strong>顯示數據、畫圖表、加滑桿讓人互動</strong>」——拿來做一個「損益計算機網頁」「個人交易儀表板」再適合不過。</p>
-<p>下面是一個<strong>最小可運行的網站</strong>程式。<strong>注意：這段不要在 Jupyter 裡跑</strong>，它是要存成檔案、在電腦上執行的（步驟在後面）。先讀懂它——你會發現裡面全是你學過的東西：</p>
-<div id="a641092e" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 檔名：app.py</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 這是一個「期貨損益計算機」網站，全部用 Python 寫成</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st   <span class="co"># 引入 Streamlit 工具</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>st.title(<span class="st">"📈 我的期貨損益計算機"</span>)   <span class="co"># 網頁大標題</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 下面這幾行會自動變成網頁上的「輸入框」和「滑桿」</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>進場 <span class="op">=</span> st.number_input(<span class="st">"進場點數"</span>, value<span class="op">=</span><span class="dv">18000</span>)</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>出場 <span class="op">=</span> st.number_input(<span class="st">"出場點數"</span>, value<span class="op">=</span><span class="dv">18120</span>)</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> st.number_input(<span class="st">"口數"</span>, value<span class="op">=</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> st.selectbox(<span class="st">"每點價值（元）"</span>, [<span class="dv">50</span>, <span class="dv">200</span>])   <span class="co"># 50=小台, 200=大台</span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 這就是你第 4 章學的函式！</span></span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>損益 <span class="op">=</span> 計算損益(進場, 出場, 口數, 每點價值)</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 把結果顯示在網頁上</span></span>
-<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>st.metric(<span class="st">"這筆交易損益"</span>, <span class="ss">f"</span><span class="sc">{損益:+,.0f}</span><span class="ss"> 元"</span>)</span>
-<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    st.success(<span class="st">"這是一筆獲利交易 🎉"</span>)</span>
-<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 損益 <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>    st.error(<span class="st">"這是一筆虧損交易，檢討一下進出場 🧐"</span>)</span>
-<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>    st.info(<span class="st">"不賺不賠（不計手續費）"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<p>下面是一個<strong>最小可運行的網站</strong>程式。<strong>注意：這段不能在這個網頁裡按 Run 跑</strong>（它要架一個一直開著的伺服器，瀏覽器環境做不到），它是要存成檔案、在你自己電腦上執行的（步驟在 7.3）。先讀懂它——你會發現裡面全是你學過的東西：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 檔名：app.py</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 這是一個「期貨損益計算機」網站，全部用 Python 寫成</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st   <span class="co"># 引入 Streamlit 工具</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>st.title(<span class="st">"📈 我的期貨損益計算機"</span>)   <span class="co"># 網頁大標題</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 下面這幾行會自動變成網頁上的「輸入框」和「滑桿」</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>進場 <span class="op">=</span> st.number_input(<span class="st">"進場點數"</span>, value<span class="op">=</span><span class="dv">18000</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>出場 <span class="op">=</span> st.number_input(<span class="st">"出場點數"</span>, value<span class="op">=</span><span class="dv">18120</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> st.number_input(<span class="st">"口數"</span>, value<span class="op">=</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> st.selectbox(<span class="st">"每點價值（元）"</span>, [<span class="dv">50</span>, <span class="dv">200</span>])   <span class="co"># 50=小台, 200=大台</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 這就是你第 4 章學的函式！</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>損益 <span class="op">=</span> 計算損益(進場, 出場, 口數, 每點價值)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 把結果顯示在網頁上</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>st.metric(<span class="st">"這筆交易損益"</span>, <span class="ss">f"</span><span class="sc">{損益:+,.0f}</span><span class="ss"> 元"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    st.success(<span class="st">"這是一筆獲利交易 🎉"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 損益 <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    st.error(<span class="st">"這是一筆虧損交易，檢討一下進出場 🧐"</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    st.info(<span class="st">"不賺不賠（不計手續費）"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>看到了嗎？<strong>整個網站的「大腦」，就是你第 4 章學的那個 <code>計算損益</code> 函式。</strong> Streamlit 只是幫你把「輸入框、按鈕、顯示結果」這些畫面自動生出來而已。</p>
 <hr>
 </section>
-<section id="第一步先在自己電腦上把它跑起來" class="level3">
-<h3 class="anchored" data-anchor-id="第一步先在自己電腦上把它跑起來">7.3 第一步：先在自己電腦上把它跑起來</h3>
-<p>部署上線之前，一定要先確認程式在自己電腦上跑得動。順序如下（每一步卡住，就照第 5 章的方式問 AI，記得講清楚你是 Windows 還是 Mac）：</p>
-<ol type="1">
-<li><strong>安裝 Python</strong>：「我用 Windows，完全不懂程式，請一步步教我安裝 Python。」</li>
-<li><strong>安裝 Streamlit</strong>：打開「終端機 / 命令提示字元」，輸入：<code>pip install streamlit</code></li>
-<li><strong>存檔</strong>：把 7.2 那段程式，存成一個叫 <code>app.py</code> 的檔案。</li>
-<li><strong>跑起來</strong>：在終端機輸入 <code>streamlit run app.py</code>，瀏覽器就會自動打開你的網站。</li>
-</ol>
+<section id="第一步先在自己電腦上把它跑起來順便學會用-venv" class="level3">
+<h3 class="anchored" data-anchor-id="第一步先在自己電腦上把它跑起來順便學會用-venv">7.3 第一步：先在自己電腦上把它跑起來（順便學會用 venv）</h3>
+<p>部署上線之前，一定要先確認程式在自己電腦上跑得動。這一步會用到 <strong>venv（虛擬環境）</strong>——讓 Streamlit 這個套件只裝進「這個專案的獨立工具箱」，<strong>不會弄髒你整台電腦的 Python</strong>。</p>
+<blockquote class="blockquote">
+<p>⚠️ 以下指令是在<strong>終端機 / 命令提示字元</strong>裡輸入的，<strong>不是</strong>貼到網頁的程式格。每一步卡住，就照第 5 章的方式問 AI，記得講清楚你是 Windows 還是 Mac。</p>
+</blockquote>
+<p><strong>第 1 步：安裝 Python</strong> 還沒裝就先問 AI：「我用 Windows / Mac，完全不懂程式，請一步步教我安裝 Python，並確認安裝成功。」</p>
+<p><strong>第 2 步：建一個專案資料夾，並在裡面建立 venv</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> futures-tool        <span class="co"># 建一個專案資料夾</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool           <span class="co"># 進到裡面</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv      <span class="co"># 建立一個叫 .venv 的虛擬環境（這個專案的專屬工具箱）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>第 3 步：啟動（activate）這個 venv</strong>（Windows 和 Mac 指令不一樣）</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows（PowerShell）</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\Activate.ps1</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>啟動成功後，命令列前面會多出 <code>(.venv)</code> 字樣，代表「<strong>接下來裝的套件，都會進這個專屬工具箱</strong>」。</p>
+<p><strong>第 4 步：在 venv 裡安裝 Streamlit</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install streamlit</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>因為你剛剛已經 activate，這個 <code>streamlit</code> 只會裝進 <code>.venv</code>，<strong>不會動到系統的 Python</strong>——這就是 venv 的重點。</p>
+<p><strong>第 5 步：把 7.2 的程式存成 <code>app.py</code></strong> 存在 <code>futures-tool</code> 這個資料夾裡。</p>
+<p><strong>第 6 步：跑起來</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run app.py</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>瀏覽器就會自動打開你的網站。</p>
 <blockquote class="blockquote">
 <p>✅ 這一步成功（瀏覽器看得到你的計算機畫面），代表<strong>程式本身沒問題</strong>。接下來才是把它「搬到雲端」讓全世界都連得到。</p>
+<p>🟡 <strong>為什麼非得先建 venv 不可？</strong> 一句話：避免套件裝得到處都是、專案之間互相打架、弄髒整台電腦。完整理由在<strong>補充章節 A〈為什麼要用 venv〉</strong>——做完這步、想搞懂背後原理時再回去看。</p>
 </blockquote>
 </section>
 <section id="把工具免費部署到-streamlit-community-cloud重點章節" class="level3">
 <h3 class="anchored" data-anchor-id="把工具免費部署到-streamlit-community-cloud重點章節">7.4 把工具免費部署到 Streamlit Community Cloud（重點章節）</h3>
 <p>這就是把「只有你電腦看得到的網站」變成「給網址就能用」的過程。全程免費。</p>
-<p><strong>開始前你需要兩樣東西：</strong> - 一個 <strong>GitHub 帳號</strong>（免費註冊，等一下程式碼要放這） - 7.3 已經在本機跑起來的 <code>app.py</code></p>
+<p><strong>開始前你需要兩樣東西：</strong></p>
+<ul>
+<li>一個 <strong>GitHub 帳號</strong>（免費註冊，等一下程式碼要放這）</li>
+<li>7.3 已經在本機跑起來的 <code>app.py</code></li>
+</ul>
 <hr>
 <section id="步驟-1準備兩個檔案放在同一個資料夾" class="level4">
 <h4 class="anchored" data-anchor-id="步驟-1準備兩個檔案放在同一個資料夾">步驟 1️⃣：準備兩個檔案放在同一個資料夾</h4>
@@ -1317,7 +1208,7 @@ matplotlib</code></pre>
 <section id="步驟-3登入-streamlit-community-cloud" class="level4">
 <h4 class="anchored" data-anchor-id="步驟-3登入-streamlit-community-cloud">步驟 3️⃣：登入 Streamlit Community Cloud</h4>
 <ul>
-<li>打開 <strong>share.streamlit.io</strong></li>
+<li>打開 <a href="https://share.streamlit.io" target="_blank" rel="noopener"><strong>share.streamlit.io</strong></a></li>
 <li>選「<strong>用 GitHub 登入（Continue with GitHub）</strong>」，並授權它讀取你的 repo。</li>
 </ul>
 <hr>
@@ -1355,7 +1246,13 @@ matplotlib</code></pre>
 <section id="部署之後更新限制與部署失敗排查" class="level3">
 <h3 class="anchored" data-anchor-id="部署之後更新限制與部署失敗排查">7.5 部署之後：更新、限制與「部署失敗」排查</h3>
 <p><strong>🔄 更新網站超簡單</strong> 之後你只要修改 <strong>GitHub 上的程式碼</strong>，網站就會<strong>自動重新部署、跟著更新</strong>，完全不用再跑一次部署流程。</p>
-<p><strong>📦 要記得的幾個免費方案限制</strong>（前面討論過的，做給班上同學用綽綽有餘）： - 每個 app 有 <strong>1 GB 記憶體</strong>上限。 - 超過 <strong>12 小時沒人使用</strong>會「睡著」，下次有人開啟時要等幾秒喚醒。 - 同時上線人數受資源限制，適合<strong>教學示範 / 小工具</strong>規模，不適合高流量商用。 - <strong>教育、非營利用途</strong>若撞到資源上限，可向 Streamlit 申請免費提高額度（你這份是上課用的，符合資格）。</p>
+<p><strong>📦 要記得的幾個免費方案限制</strong>（前面討論過的，做給班上同學用綽綽有餘）：</p>
+<ul>
+<li>每個 app 有 <strong>1 GB 記憶體</strong>上限。</li>
+<li>超過 <strong>12 小時沒人使用</strong>會「睡著」，下次有人開啟時要等幾秒喚醒。</li>
+<li>同時上線人數受資源限制，適合<strong>教學示範 / 小工具</strong>規模，不適合高流量商用。</li>
+<li><strong>教育、非營利用途</strong>若撞到資源上限，可向 Streamlit 申請免費提高額度（你這份是上課用的，符合資格）。</li>
+</ul>
 <p><strong>🐞 部署失敗時，照這個順序排查：</strong> 1. 先看雲端的 <strong>Logs（日誌）</strong>——失敗原因幾乎都寫在裡面。 2. 最常見的兇手是 <strong><code>requirements.txt</code> 漏列套件</strong>。把缺的套件名補進去、存檔，它會自動重新部署。 3. 還是不行？把 Logs <strong>整段複製</strong>，用第 5 章的除錯範本貼給 AI：「我部署 Streamlit app 失敗，以下是 logs，我本來想做的是 ___，請問錯在哪、怎麼修。」</p>
 <blockquote class="blockquote">
 <p>🎯 <strong>到這裡，你就完成了「從一支 Python 程式 → 一個全世界都連得到的網站」的完整旅程。</strong> 這正是這份講義的最終目標。</p>
@@ -1465,55 +1362,44 @@ matplotlib</code></pre>
 <p>剩下的，就是<strong>動手</strong>。打開一個 AI 對話視窗，從「幫我把今天學的損益計算機，加一個手續費欄位」開始，跨出第一步吧。💪</p>
 </section>
 </section>
-<section id="補充章節在本地端用-venv-跑-jupyter做網站前的準備" class="level1">
-<h1>補充章節：在本地端用 venv 跑 Jupyter（做網站前的準備）</h1>
+<section id="補充章節-a為什麼要用-venv虛擬環境" class="level1">
+<h1>補充章節 A：為什麼要用 venv（虛擬環境）</h1>
 <blockquote class="blockquote">
-<p>🟡 <strong>什麼時候需要這章？</strong> 第 1～6 章用線上環境（JupyterLite / Colab）就夠了。 但等你要做第 7 章的<strong>網站</strong>、或想長期在自己電腦上開發，就得把 Python 裝到本機，並學會用 <strong>venv（虛擬環境）</strong>。這章用最白話的方式帶你走一遍。 （想要更專業、可重現的進階做法，看下一章〈用 uv 管理專案〉。<strong>venv 是「理解原理的基礎版」，uv 是「全自動的升級版」</strong>。）</p>
+<p>🟡 <strong>什麼時候需要這章？</strong> 第 1～6 章在這個網頁裡直接跑程式，你<strong>完全不用裝任何東西</strong>。 但等你要做第 7 章的<strong>網站</strong>、在自己電腦上跑 Streamlit，就會在終端機輸入 <code>python -m venv .venv</code> 這類指令（第 7.3 步有完整操作）。這章補的是那一步背後的<strong>「為什麼」</strong>——搞懂它，你就不會把它當成「照抄的咒語」。 （想要更專業、可重現的進階做法，看下一章〈用 uv 管理專案〉。<strong>venv 是「理解原理的基礎版」，uv 是「全自動的升級版」</strong>。）</p>
 </blockquote>
-<section id="補a-1為什麼需要虛擬環境-venv" class="level2">
-<h2 class="anchored" data-anchor-id="補a-1為什麼需要虛擬環境-venv">補A-1：為什麼需要「虛擬環境 venv」？</h2>
+<section id="補a-1問題所有專案共用一套工具遲早打架" class="level2">
+<h2 class="anchored" data-anchor-id="補a-1問題所有專案共用一套工具遲早打架">補A-1：問題——所有專案共用一套工具，遲早打架</h2>
 <p>想像每個專案都是一個工作檯。如果所有專案共用同一盒工具，遲早會出現「A 專案要舊版扳手、B 專案要新版扳手」互相打架的慘況。</p>
-<p><strong>venv 就是「幫每個專案準備一個獨立、乾淨的工具箱」</strong>：這個專案裝了什麼套件、什麼版本，都關在自己的小箱子裡，不會污染別的專案，也不會被別的專案污染。</p>
+<p>在 Python 世界，這個「扳手」就是<strong>套件</strong>：A 專案需要 <code>pandas 1.x</code>、B 專案需要 <code>pandas 2.x</code>，硬裝在一起就會互相覆蓋、壞給你看。</p>
+<p>更糟的是，如果你每次都直接把套件 <code>pip install</code> 到「整台電腦共用的那個 Python」，裝久了那盒工具會<strong>又亂又髒</strong>：幾十個專案的套件全混在一起，哪個是哪個專案要的根本分不清，哪天升級其中一個，就可能連環弄壞別的。</p>
+</section>
+<section id="補a-2解法一個專案一個乾淨的工具箱" class="level2">
+<h2 class="anchored" data-anchor-id="補a-2解法一個專案一個乾淨的工具箱">補A-2：解法——一個專案，一個乾淨的工具箱</h2>
+<p><strong>venv 就是「幫每個專案準備一個獨立、乾淨的工具箱」</strong>：這個專案裝了什麼套件、什麼版本，都關在自己的小箱子（一個叫 <code>.venv</code> 的資料夾）裡，<strong>不會污染別的專案，也不會弄髒整台電腦</strong>。</p>
 <blockquote class="blockquote">
 <p>🛒 一句話：<strong>一個專案，一個 venv。</strong> 這是 Python 開發最基本的好習慣。</p>
 </blockquote>
-</section>
-<section id="補a-2四步驟在本機跑起-jupyter" class="level2">
-<h2 class="anchored" data-anchor-id="補a-2四步驟在本機跑起-jupyter">補A-2：四步驟，在本機跑起 Jupyter</h2>
-<blockquote class="blockquote">
-<p>⚠️ 以下指令是在<strong>終端機 / 命令提示字元</strong>裡輸入的，<strong>不是</strong>貼到 Notebook 的程式格。 前提：你電腦已經裝好 Python（還沒裝就先請 AI：「我用 Windows / Mac，請一步步教我安裝 Python」）。</p>
-</blockquote>
-<p><strong>第 1 步：進到你的專案資料夾，建立 venv</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-project           <span class="co"># 切換到你的專案資料夾</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv     <span class="co"># 建立一個叫 .venv 的虛擬環境（工具箱）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>第 2 步：啟動（activate）這個 venv</strong>（Windows 和 Mac 指令不一樣）</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows（PowerShell）</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\Activate.ps1</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<p>啟動成功後，命令列前面會多出 <code>(.venv)</code> 字樣，代表「現在用的是這個專案的工具箱」。</p>
-<p><strong>第 3 步：在 venv 裡裝 JupyterLab</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyterlab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>第 4 步：把 Jupyter 打開</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<p>它會自動打開瀏覽器、出現你熟悉的 Jupyter 介面——但這次是<strong>跑在你自己電腦上、功能完整</strong>的版本。把這份 <code>.ipynb</code> 拖進去就能繼續用。</p>
-</section>
-<section id="補a-3幾個一定會遇到的小提醒" class="level2">
-<h2 class="anchored" data-anchor-id="補a-3幾個一定會遇到的小提醒">補A-3：幾個一定會遇到的小提醒</h2>
+<p>所以第 7.3 步那串指令，其實就是這個概念的實作：</p>
 <ul>
-<li><strong>選對 kernel</strong>：在本機的 Jupyter 裡，右上角要確認 kernel 選的是你這個專案的 <code>.venv</code>。如果程式說「找不到某套件」，十之八九是 kernel 選錯了環境。</li>
-<li><strong>下次要再用</strong>：重開終端機後，記得<strong>先 <code>cd</code> 到專案、再 activate 一次</strong> venv，才會用到正確的工具箱。</li>
-<li><strong>結束</strong>：在終端機輸入 <code>deactivate</code> 就能退出 venv。</li>
-<li><strong>不要把 <code>.venv</code> 上傳 GitHub</strong>：它又大又是本機專屬，要在 <code>.gitignore</code> 裡忽略它（之後要重現環境，靠的是套件清單，不是整個資料夾）。</li>
+<li><code>python -m venv .venv</code> → 開一個全新的空工具箱</li>
+<li><code>activate</code> → 宣告「我接下來要用這個箱子」</li>
+<li><code>pip install streamlit</code> → 把 Streamlit 這支工具，<strong>只</strong>放進這個箱子</li>
+</ul>
+<p>搞懂這三行在幹嘛，你就不是在背咒語，而是真的知道自己在做什麼了。</p>
+</section>
+<section id="補a-3兩個一定要記得的小習慣" class="level2">
+<h2 class="anchored" data-anchor-id="補a-3兩個一定要記得的小習慣">補A-3：兩個一定要記得的小習慣</h2>
+<ul>
+<li><strong>不要把 <code>.venv</code> 上傳 GitHub</strong>：它又大又是本機專屬。要在 <code>.gitignore</code> 裡忽略它。之後要在別台電腦 / 雲端重現環境，靠的是<strong>套件清單</strong>（第 7.4 的 <code>requirements.txt</code>），不是整個 <code>.venv</code> 資料夾。</li>
+<li><strong>下次要再用</strong>：重開終端機後，記得<strong>先 <code>cd</code> 到專案資料夾、再 activate 一次</strong> venv，才會用到正確的工具箱；用完在終端機輸入 <code>deactivate</code> 就能退出。</li>
 </ul>
 <blockquote class="blockquote">
-<p>🔁 <strong>這條路怎麼接到做網站？</strong> 在同一個 venv 裡，你只要再 <code>pip install streamlit</code>，就能用 <code>streamlit run app.py</code> 把第 7 章的網站在本機跑起來。 venv 的概念搞懂後，下一章的 <strong>uv</strong> 會幫你把「建 venv、裝套件、鎖版本」這些步驟<strong>全自動化</strong>——你會發現它其實就是這章的升級版。</p>
+<p>🔁 <strong>再往上一層：把這些步驟全自動化</strong> venv 的概念搞懂後，下一章的 <strong>uv</strong> 會幫你把「建 venv、裝套件、鎖版本」這些步驟<strong>全自動化</strong>，還能讓環境 100% 可重現。你會發現它其實就是這章的升級版。</p>
 </blockquote>
 </section>
 </section>
-<section id="補充章節用-uv-管理-python-專案與依賴進階" class="level1">
-<h1>補充章節：用 uv 管理 Python 專案與依賴（進階）</h1>
+<section id="補充章節-b用-uv-管理-python-專案與依賴進階" class="level1">
+<h1>補充章節 B：用 uv 管理 Python 專案與依賴（進階）</h1>
 <blockquote class="blockquote">
 <p>🟡 <strong>這章是進階內容，初學者可以先跳過。</strong> 建議先照第 7 章用 <code>requirements.txt</code> 把網站做出來、部署上線、有成就感了，再回來看這章。 這章適合：已經走完主線、想用<strong>更專業、可重現</strong>的方式管理環境的人（尤其是想用 uv 工作流部署 Streamlit 的人）。</p>
 </blockquote>
@@ -1523,8 +1409,8 @@ matplotlib</code></pre>
 <p>建議讀法：先讀本章建立概念 → 想深入時，到上面那份課程從頭動手做一遍。</p>
 </blockquote>
 <hr>
-<section id="補-1uv-是什麼為什麼值得學" class="level2">
-<h2 class="anchored" data-anchor-id="補-1uv-是什麼為什麼值得學">補-1：uv 是什麼？為什麼值得學</h2>
+<section id="補b-1uv-是什麼為什麼值得學" class="level2">
+<h2 class="anchored" data-anchor-id="補b-1uv-是什麼為什麼值得學">補B-1：uv 是什麼？為什麼值得學</h2>
 <p><code>uv</code> 是一個用 Rust 寫成、<strong>速度非常快</strong>的 Python「全能管家」。它把過去要好幾個工具分開做的事，<strong>一個工具全包</strong>：</p>
 <table class="caption-top table">
 <thead>
@@ -1554,8 +1440,8 @@ matplotlib</code></pre>
 </table>
 <p><strong>對你最大的價值是「可重現」</strong>：它會把整個環境鎖死，讓「在我電腦能跑、在別人電腦 / 雲端卻壞掉」這類惱人問題大幅減少。這也正是它跟 Streamlit Community Cloud 搭起來的好處——雲端能 100% 重現你本機的環境。</p>
 </section>
-<section id="補-2核心心智模型記住兩個檔案" class="level2">
-<h2 class="anchored" data-anchor-id="補-2核心心智模型記住兩個檔案">補-2：核心心智模型——記住兩個檔案</h2>
+<section id="補b-2核心心智模型記住兩個檔案" class="level2">
+<h2 class="anchored" data-anchor-id="補b-2核心心智模型記住兩個檔案">補B-2：核心心智模型——記住兩個檔案</h2>
 <p>整個 uv 工作流，圍繞著兩個檔案打轉。把它們的分工搞懂，其他都是細節：</p>
 <table class="caption-top table">
 <colgroup>
@@ -1598,38 +1484,43 @@ matplotlib</code></pre>
 <p>uv 還會在 lock 裡記住 toml 的雜湊值，所以你一改 toml，它就知道「清單變了、發票過時了」，會自動重新解析。這就是為什麼你平常根本不用去管 <code>uv.lock</code>。</p>
 </blockquote>
 </section>
-<section id="補-3你會用到的指令在終端機執行不是在-notebook-裡" class="level2">
-<h2 class="anchored" data-anchor-id="補-3你會用到的指令在終端機執行不是在-notebook-裡">補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）</h2>
+<section id="補b-3你會用到的指令在終端機執行不是在網頁裡" class="level2">
+<h2 class="anchored" data-anchor-id="補b-3你會用到的指令在終端機執行不是在網頁裡">補B-3：你會用到的指令（在「終端機」執行，不是在網頁裡）</h2>
 <blockquote class="blockquote">
-<p>⚠️ 以下都是<strong>終端機 / 命令提示字元</strong>的指令，不要貼到 Notebook 的程式格裡跑。</p>
+<p>⚠️ 以下都是<strong>終端機 / 命令提示字元</strong>的指令，不要貼到網頁的程式格裡跑。</p>
 </blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init futures-tool</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool</span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add streamlit</span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas matplotlib    <span class="co"># 一次加多個也行</span></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. 移除套件</span></span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove matplotlib</span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）</span></span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run streamlit run app.py</span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. 手動重算 / 升級鎖定檔</span></span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock              <span class="co"># 重新解析並寫入 uv.lock</span></span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span>    <span class="co"># 在 toml 允許範圍內，把套件升到最新</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
-<p>幾個重點： - uv 會在專案資料夾裡自動建立一個 <code>.venv</code>（虛擬環境），<strong>你不用自己手動建、手動 activate</strong>。 - 養成習慣用 <code>uv run ...</code> 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。 - <code>.venv</code> 資料夾<strong>不要</strong>進版控（<code>uv init</code> 通常已幫你寫好 <code>.gitignore</code> 忽略它）。</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init futures-tool</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add streamlit</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas matplotlib    <span class="co"># 一次加多個也行</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. 移除套件</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove matplotlib</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run streamlit run app.py</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. 手動重算 / 升級鎖定檔</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock              <span class="co"># 重新解析並寫入 uv.lock</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span>    <span class="co"># 在 toml 允許範圍內，把套件升到最新</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>幾個重點：</p>
+<ul>
+<li>uv 會在專案資料夾裡自動建立一個 <code>.venv</code>（虛擬環境），<strong>你不用自己手動建、手動 activate</strong>。</li>
+<li>養成習慣用 <code>uv run ...</code> 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。</li>
+<li><code>.venv</code> 資料夾<strong>不要</strong>進版控（<code>uv init</code> 通常已幫你寫好 <code>.gitignore</code> 忽略它）。</li>
+</ul>
 </section>
-<section id="補-4一條龍用-uv-從零到部署-streamlit" class="level2">
-<h2 class="anchored" data-anchor-id="補-4一條龍用-uv-從零到部署-streamlit">補-4：一條龍——用 uv 從零到部署 Streamlit</h2>
+<section id="補b-4一條龍用-uv-從零到部署-streamlit" class="level2">
+<h2 class="anchored" data-anchor-id="補b-4一條龍用-uv-從零到部署-streamlit">補B-4：一條龍——用 uv 從零到部署 Streamlit</h2>
 <p>把補充章節和第 7 章接起來，完整流程是：</p>
 <ol type="1">
 <li><code>uv init futures-tool</code> 然後 <code>cd futures-tool</code></li>
@@ -1649,12 +1540,16 @@ matplotlib</code></pre>
 <p>回顧第 7.4 查到的優先序：Community Cloud 認得的依賴檔中，<strong><code>uv.lock</code> 排在最高優先</strong>。所以你只要把 lock 檔 commit 進去，它就會走 uv 這條路，不需要再額外準備 requirements.txt。</p>
 </blockquote>
 </section>
-<section id="補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="level2">
-<h2 class="anchored" data-anchor-id="補-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</h2>
-<p><strong>還是用 <code>requirements.txt</code> 的情境</strong>： - 教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 <code>streamlit</code>，心智負擔最低）。 - 你要部署的平台<strong>不支援 uv</strong>、只吃 requirements.txt。</p>
+<section id="補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="level2">
+<h2 class="anchored" data-anchor-id="補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</h2>
+<p><strong>還是用 <code>requirements.txt</code> 的情境</strong>：</p>
+<ul>
+<li>教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 <code>streamlit</code>，心智負擔最低）。</li>
+<li>你要部署的平台<strong>不支援 uv</strong>、只吃 requirements.txt。</li>
+</ul>
 <p><strong>已經用 uv，但某個平台只吃 requirements.txt</strong> —— 用 <code>uv export</code> 從 lock 檔產生一份：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> export <span class="at">--no-hashes</span> <span class="at">-o</span> requirements.txt</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> export <span class="at">--no-hashes</span> <span class="at">-o</span> requirements.txt</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。</p>
 <blockquote class="blockquote">
 <p>🔑 <strong>一句話總結</strong>： 走 uv 工作流，<strong>請靠 <code>uv.lock</code></strong>（優先序最高、最能重現環境）。 純 <code>pyproject.toml</code> 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「<strong>有沒有把 <code>uv.lock</code> commit 進去</strong>」。</p>
@@ -1679,13 +1574,89 @@ matplotlib</code></pre>
 <p><strong>🔍 請 AI 解釋程式</strong> &gt; 請逐行解釋下面這段程式，假設我完全不懂程式，盡量用生活化的比喻： &gt; <code>&gt; （貼上程式） &gt;</code></p>
 <p><strong>🐞 請 AI 除錯</strong> &gt; 我執行下面這段程式時出現錯誤。我本來想做的是 ___。 &gt; 請告訴我錯在哪、怎麼修，並解釋為什麼會錯。 &gt; 程式： &gt; <code>&gt; （貼上程式） &gt;</code> &gt; 錯誤訊息： &gt; <code>&gt; （貼上完整錯誤訊息） &gt;</code></p>
 <p><strong>🪜 請 AI 幫你拆解大目標</strong> &gt; 我最終想做一個 ___（例如：個人交易記錄網站）。我完全是新手。 &gt; 請幫我把這個目標，拆解成由淺到深、可以一步步完成的小步驟， &gt; 每一步都要小到我能單獨完成並驗證。</p>
-<p><strong>💻 請 AI 教你安裝/設定環境</strong> &gt; 我的電腦是 <strong><em>（Windows / Mac），完全不懂程式與終端機。 &gt; 請一步一步教我 </em></strong>（例如：安裝 Python / 安裝 Streamlit / 把網站部署上線）， &gt; 每一步都說明「我該點哪裡、輸入什麼」，並告訴我怎麼確認這步成功了。</p>
+<p><strong>💻 請 AI 教你安裝/設定環境</strong> &gt; 我的電腦是 <strong><em>（Windows / Mac），完全不懂程式與終端機。 &gt; 請一步一步教我 </em></strong>（例如：安裝 Python / 用 venv 裝 Streamlit / 把網站部署上線）， &gt; 每一步都說明「我該點哪裡、輸入什麼」，並告訴我怎麼確認這步成功了。</p>
 <p><strong>🌐 請 AI 帶你做網站</strong> &gt; 我想用 Python 的 Streamlit 做一個網頁，功能是 ___。 &gt; 我是新手。請給我完整的 app.py 程式碼（加中文註解）， &gt; 並告訴我接下來在電腦上要怎麼一步步把它跑起來。</p>
 
 
+<script type="pyodide-data">
+eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yOC4xL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIl19fQ==
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTE5IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTkgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE5LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTktY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xOSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTksIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE4IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTggPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE4LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTgtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xOCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTgsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE3IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTcgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE3LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTctY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNyA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTcsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE2IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTYgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE2LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTYtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNiA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE1IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTUgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE1LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTE0IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTQgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTE0LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTQtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xNCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEzIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTMgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEzLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTMtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMyA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEyIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTIgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEyLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMiA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTExIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTEgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTExLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTEtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMSA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEwIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfcHlvZGlkZV9lZGl0b3JfMTAgPSB7XG4gIGNvbnN0IHsgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLTEwLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMTAtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgUHlvZGlkZUV4ZXJjaXNlRWRpdG9yKFxuICAgIHB5b2RpZGVPanMucHlvZGlkZVByb21pc2UsXG4gICAgYmxvY2suY29kZSxcbiAgICBvcHRpb25zXG4gICk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fcHlvZGlkZV92YWx1ZV8xMCA9IHB5b2RpZGVPanMucHJvY2VzcyhfcHlvZGlkZV9lZGl0b3JfMTAsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTkiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl85ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzkgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzksIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTgiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS04LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzggPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzgsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTciLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl83ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS03LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzcgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzcsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTYiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl82ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzYgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzYsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS01LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzUgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzUsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzMgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8xID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzEgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzEsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJweW9kaWRlT2pzID0ge1xuICBjb25zdCB7XG4gICAgUHlvZGlkZUV2YWx1YXRvcixcbiAgICBQeW9kaWRlRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUHl0aG9uLFxuICAgIHN0YXJ0UHlvZGlkZVdvcmtlcixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoLFxuICB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcblxuICBjb25zdCBzdGF0dXNDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctc3RhdHVzXCIpO1xuICBjb25zdCBpbmRpY2F0b3JDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChcImV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpbmRpY2F0b3JDb250YWluZXIuY2xhc3NMaXN0LnJlbW92ZShcImQtbm9uZVwiKTtcblxuICBsZXQgc3RhdHVzVGV4dCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcbiAgc3RhdHVzVGV4dC5jbGFzc0xpc3QgPSBcImV4ZXJjaXNlLWxvYWRpbmctZGV0YWlsc1wiO1xuICBzdGF0dXNUZXh0ID0gc3RhdHVzQ29udGFpbmVyLmFwcGVuZENoaWxkKHN0YXR1c1RleHQpO1xuICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluaXRpYWxpc2VgO1xuXG4gIC8vIEhvaXN0IGluZGljYXRvciBvdXQgZnJvbSBmaW5hbCBzbGlkZSB3aGVuIHJ1bm5pbmcgdW5kZXIgcmV2ZWFsXG4gIGNvbnN0IHJldmVhbFN0YXR1cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsIC5leGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaWYgKHJldmVhbFN0YXR1cykge1xuICAgIHJldmVhbFN0YXR1cy5yZW1vdmUoKTtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCA+IC5zbGlkZXNcIikuYXBwZW5kQ2hpbGQocmV2ZWFsU3RhdHVzKTtcbiAgfVxuXG4gIC8vIE1ha2UgYW55IHJldmVhbCBzbGlkZXMgd2l0aCBsaXZlIGNlbGxzIHNjcm9sbGFibGVcbiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIi5yZXZlYWwgLmV4ZXJjaXNlLWNlbGxcIikuZm9yRWFjaCgoZWwpID0+IHtcbiAgICBlbC5jbG9zZXN0KCdzZWN0aW9uLnNsaWRlJykuY2xhc3NMaXN0LmFkZChcInNjcm9sbGFibGVcIik7XG4gIH0pXG5cbiAgLy8gUHlvZGlkZSBzdXBwbGVtZW50YWwgZGF0YSBhbmQgb3B0aW9uc1xuICBjb25zdCBkYXRhQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJweW9kaWRlLWRhdGFcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBkYXRhID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZGF0YUNvbnRlbnQpKTtcblxuICAvLyBHcmFiIGxpc3Qgb2YgcmVzb3VyY2VzIHRvIGJlIGRvd25sb2FkZWRcbiAgY29uc3QgZmlsZXNDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInZmcy1maWxlXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZmlsZXMgPSBKU09OLnBhcnNlKGI2NERlY29kZShmaWxlc0NvbnRlbnQpKTtcblxuICBsZXQgcHlvZGlkZVByb21pc2UgPSAoYXN5bmMgKCkgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgUHlvZGlkZWA7XG4gICAgY29uc3QgcHlvZGlkZSA9IGF3YWl0IHN0YXJ0UHlvZGlkZVdvcmtlcihkYXRhLm9wdGlvbnMpO1xuXG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiBtaWNyb3BpcGA7XG4gICAgYXdhaXQgcHlvZGlkZS5sb2FkUGFja2FnZShcIm1pY3JvcGlwXCIpO1xuICAgIGNvbnN0IG1pY3JvcGlwID0gYXdhaXQgcHlvZGlkZS5weWltcG9ydChcIm1pY3JvcGlwXCIpO1xuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIG1pY3JvcGlwLmluc3RhbGwocGtnKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcbiAgICBhd2FpdCBtaWNyb3BpcC5kZXN0cm95KCk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgdHJ5IHtcbiAgICAgICAgICBhd2FpdCBweW9kaWRlLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgICAgaWYgKGUuZXJybm8gIT09IDIwKSB7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICAgICAgY29uc3QgZXJyb3JUZXh0ID0gYXdhaXQgcHlvZGlkZS5fbW9kdWxlLlVURjhUb1N0cmluZyhlcnJvclRleHRQdHIpO1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHRyeSB7XG4gICAgICAgIHJldHVybiBhd2FpdCBweW9kaWRlLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgICB9IGNhdGNoIChlKSB7XG4gICAgICAgIGlmIChlLm5hbWUgIT09IFwiRXJybm9FcnJvclwiKSB0aHJvdyBlO1xuICAgICAgICBjb25zdCBlcnJvclRleHRQdHIgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuX3N0cmVycm9yKGUuZXJybm8pO1xuICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvciAke2UuZXJybm99IFwiJHtlcnJvclRleHR9XCIuYCk7XG4gICAgICB9XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFB5b2RpZGUgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUHl0aG9uKHB5b2RpZGUpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHB5b2RpZGU7XG4gIH0pKCkuY2F0Y2goKGVycikgPT4ge1xuICAgIHN0YXR1c1RleHQuc3R5bGUuY29sb3IgPSBcInZhcigtLWV4ZXJjaXNlLWVkaXRvci1obC1lciwgI0FEMDAwMClcIjtcbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gZXJyLm1lc3NhZ2U7XG4gICAgLy9pbmRpY2F0b3JDb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5zcGlubmVyLWdyb3dcIikuY2xhc3NMaXN0LmFkZChcImQtbm9uZVwiKTtcbiAgICB0aHJvdyBlcnI7XG4gIH0pO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgcHlvZGlkZVByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFB5b2RpZGVFdmFsdWF0b3IocHlvZGlkZSwgY29udGV4dCk7XG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHlvZGlkZVByb21pc2UsXG4gICAgcmVuZGVyZWRPanMsXG4gICAgcHJvY2VzcyxcbiAgfTtcbn1cbiJ9XX0=
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
 </section>
 
 </main> <!-- /main -->
+<script>
+// 讓左側目錄(nav#TOC)的「內部捲動」跟著目前章節走：
+// Quarto 會在捲動時把 .active 換到對應的 TOC 連結，但不會把它捲進可視範圍。
+// 這支腳本只調整 nav#TOC 自己的 scrollTop（不動主頁捲動），把 active 連結保持在可見處。
+(function () {
+  function onReady(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+  onReady(function () {
+    var toc = document.querySelector("nav#TOC");
+    if (!toc) return;
+
+    function reveal() {
+      var active = toc.querySelector("a.active");
+      if (!active) return;
+      var c = toc.getBoundingClientRect();
+      var a = active.getBoundingClientRect();
+      var pad = 24; // 上下留一點邊，active 不要貼著邊緣
+      if (a.top < c.top + pad) {
+        toc.scrollTop -= c.top + pad - a.top;
+      } else if (a.bottom > c.bottom - pad) {
+        toc.scrollTop += a.bottom - (c.bottom - pad);
+      }
+    }
+
+    var ticking = false;
+    function schedule() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        reveal();
+      });
+    }
+
+    // Quarto 捲動時會切換 TOC 連結的 .active class → 監聽 class 變化
+    new MutationObserver(schedule).observe(toc, {
+      attributes: true,
+      attributeFilter: ["class"],
+      subtree: true,
+    });
+    // 保險：主頁捲動時也重算一次
+    window.addEventListener("scroll", schedule, { passive: true });
+    schedule();
+  });
+})();
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

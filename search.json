@@ -11,111 +11,111 @@
     "href": "index.html#變數幫資料取一個名字",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.1 變數：幫資料取一個名字",
-    "text": "4.1 變數：幫資料取一個名字\n「變數」就是幫一個值取名字，方便之後重複使用、修改。 用 = 來「把右邊的值，存進左邊的名字」。\n\n口數 = 2\n每點價值 = 50      # 假設小台指，每點 50 元\n進場點數 = 18000\n出場點數 = 18120\n\nprint(\"口數：\", 口數)\nprint(\"每點價值：\", 每點價值)\n\n口數： 2\n每點價值： 50\n\n\n\nPython 連中文變數名都能用，但業界習慣用英文（例如 contracts、point_value）。 初學階段為了好懂，我們先用中文；之後寫真正的專案再換英文。\n\n改了某個變數的值，後面用到它的地方就會跟著變——這就是「變數」好用的地方。"
+    "text": "4.1 變數：幫資料取一個名字\n「變數」就是幫一個值取名字，方便之後重複使用、修改。 用 = 來「把右邊的值，存進左邊的名字」。\n\n\n\n\n\n\n\nPython 連中文變數名都能用，但業界習慣用英文（例如 contracts、point_value）。 初學階段為了好懂，我們先用中文；之後寫真正的專案再換英文。\n\n改了某個變數的值，後面用到它的地方就會跟著變——這就是「變數」好用的地方。"
   },
   {
     "objectID": "index.html#資料型態資料有不同種類",
     "href": "index.html#資料型態資料有不同種類",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.2 資料型態：資料有不同「種類」",
-    "text": "4.2 資料型態：資料有不同「種類」\n電腦會區分資料的種類，常見的有：\n\n\n\n型態\n英文\n例子\n用途\n\n\n\n\n整數\nint\n2、18000\n算數量、點數\n\n\n小數\nfloat\n3.14、0.05\n算比率、價格\n\n\n文字\nstr\n\"多單\"、\"台指期\"\n任何文字\n\n\n真/假\nbool\nTrue、False\n判斷對錯\n\n\n清單\nlist\n[18000, 18050, 18120]\n一串資料\n\n\n字典\ndict\n{\"商品\": \"小台\", \"口數\": 2}\n有標籤的資料\n\n\n\n下面這格用 type() 看看每個東西是什麼型態：\n\nprint(type(2))\nprint(type(3.14))\nprint(type(\"多單\"))\nprint(type(True))\nprint(type([18000, 18050, 18120]))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;\n&lt;class 'bool'&gt;\n&lt;class 'list'&gt;\n\n\n清單(list) 和 字典(dict) 特別重要，因為真實資料常常一大串。先看清單：\n\n每日收盤 = [18000, 18120, 18090, 18250, 18300]\n\nprint(\"總共幾天：\", len(每日收盤))      # len() 算長度\nprint(\"第一天：\", 每日收盤[0])           # 注意！程式從 0 開始數\nprint(\"最後一天：\", 每日收盤[-1])         # -1 代表倒數第一個\n\n總共幾天： 5\n第一天： 18000\n最後一天： 18300\n\n\n\n🔑 新手最常踩的雷：程式世界裡，數數字從 0 開始。 所以「第一個」是 [0]，「第二個」是 [1]，以此類推。一開始不習慣很正常。"
+    "text": "4.2 資料型態：資料有不同「種類」\n電腦會區分資料的種類，常見的有：\n\n\n\n型態\n英文\n例子\n用途\n\n\n\n\n整數\nint\n2、18000\n算數量、點數\n\n\n小數\nfloat\n3.14、0.05\n算比率、價格\n\n\n文字\nstr\n\"多單\"、\"台指期\"\n任何文字\n\n\n真/假\nbool\nTrue、False\n判斷對錯\n\n\n清單\nlist\n[18000, 18050, 18120]\n一串資料\n\n\n字典\ndict\n{\"商品\": \"小台\", \"口數\": 2}\n有標籤的資料\n\n\n\n下面這格用 type() 看看每個東西是什麼型態：\n\n\n\n\n\n\n清單(list) 和 字典(dict) 特別重要，因為真實資料常常一大串。先看清單：\n\n\n\n\n\n\n\n🔑 新手最常踩的雷：程式世界裡，數數字從 0 開始。 所以「第一個」是 [0]，「第二個」是 [1]，以此類推。一開始不習慣很正常。"
   },
   {
     "objectID": "index.html#運算與比較",
     "href": "index.html#運算與比較",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.3 運算與比較",
-    "text": "4.3 運算與比較\n除了加減乘除，最常用的是比較，結果會是 True(真) 或 False(假)：\n\n現價 = 18250\n停損價 = 18000\n\nprint(\"現價是否高於停損價？\", 現價 &gt; 停損價)\nprint(\"是否已跌破停損？\", 現價 &lt; 停損價)\nprint(\"兩者是否相等？\", 現價 == 停損價)   # 注意是「兩個等號」代表「相等嗎」\n\n現價是否高於停損價？ True\n是否已跌破停損？ False\n兩者是否相等？ False\n\n\n\n🔑 超級重要： - 一個等號 = 是「指定/存入」（把值存進變數） - 兩個等號 == 是「相等嗎？」（問問題，得到 True/False）\n搞混這兩個，是新手第一名常見錯誤。"
+    "text": "4.3 運算與比較\n除了加減乘除，最常用的是比較，結果會是 True(真) 或 False(假)：\n\n\n\n\n\n\n\n🔑 超級重要：\n\n一個等號 = 是「指定/存入」（把值存進變數）\n兩個等號 == 是「相等嗎？」（問問題，得到 True/False）\n\n搞混這兩個，是新手第一名常見錯誤。"
   },
   {
     "objectID": "index.html#條件判斷-if-elif-else讓程式會做選擇",
     "href": "index.html#條件判斷-if-elif-else讓程式會做選擇",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.4 條件判斷 if / elif / else：讓程式「會做選擇」",
-    "text": "4.4 條件判斷 if / elif / else：讓程式「會做選擇」\n這是程式有「智慧」的開始：符合某條件，就做某件事。 這跟你做交易決策的邏輯一模一樣：「如果跌破停損，就出場。」\n\n現價 = 17900\n停損價 = 18000\n停利價 = 18500\n\nif 現價 &lt;= 停損價:\n    print(\"⚠️ 已觸及停損，建議出場！\")\nelif 現價 &gt;= 停利價:\n    print(\"🎯 已達停利目標，可考慮獲利了結！\")\nelse:\n    print(\"✅ 在區間內，續抱觀察。\")\n\n⚠️ 已觸及停損，建議出場！\n\n\n注意兩個關鍵格式（Python 很在意這個）： 1. 條件那行結尾要有 冒號 : 2. 下一行要 往內縮排（通常按一下 Tab 或 4 個空格）。縮排代表「這是 if 底下要做的事」。\n\n換你試試：把上面的 現價 改成 18600、18200、17900，分別跑跑看，觀察印出的訊息怎麼變。這就是「條件判斷」的威力。"
+    "text": "4.4 條件判斷 if / elif / else：讓程式「會做選擇」\n這是程式有「智慧」的開始：符合某條件，就做某件事。 這跟你做交易決策的邏輯一模一樣：「如果跌破停損，就出場。」\n\n\n\n\n\n\n注意兩個關鍵格式（Python 很在意這個）： 1. 條件那行結尾要有 冒號 : 2. 下一行要 往內縮排（通常按一下 Tab 或 4 個空格）。縮排代表「這是 if 底下要做的事」。\n\n換你試試：把上面的 現價 改成 18600、18200、17900，分別跑跑看，觀察印出的訊息怎麼變。這就是「條件判斷」的威力。"
   },
   {
     "objectID": "index.html#迴圈-for讓程式重複做",
     "href": "index.html#迴圈-for讓程式重複做",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.5 迴圈 for：讓程式「重複做」",
-    "text": "4.5 迴圈 for：讓程式「重複做」\n當你要對「一整串資料」逐筆處理時，就用迴圈。 例如：把每天的收盤價，逐筆印出來。\n\n每日收盤 = [18000, 18120, 18090, 18250, 18300]\n\nfor 收盤 in 每日收盤:\n    print(\"今天收盤：\", 收盤)\n\nprint(\"---- 印完了 ----\")\n\n今天收盤： 18000\n今天收盤： 18120\n今天收盤： 18090\n今天收盤： 18250\n今天收盤： 18300\n---- 印完了 ----\n\n\n這段的意思是：「對於 每日收盤 裡的每一個值（暫時叫它 收盤），就執行縮排內的動作。」\n迴圈真正強大的地方，是搭配「累加」。下面算這幾天每天相對前一天的損益總和（簡化示意）：\n\n每日收盤 = [18000, 18120, 18090, 18250, 18300]\n每點價值 = 50\n口數 = 1\n\n總損益 = 0   # 先準備一個「存錢筒」，從 0 開始\n\nfor i in range(1, len(每日收盤)):\n    當日變動點數 = 每日收盤[i] - 每日收盤[i-1]\n    當日損益 = 當日變動點數 * 每點價值 * 口數\n    總損益 = 總損益 + 當日損益       # 累加進存錢筒\n    print(f\"第 {i} 天：變動 {當日變動點數} 點，損益 {當日損益} 元\")\n\nprint(\"==================\")\nprint(\"區間總損益：\", 總損益, \"元\")\n\n第 1 天：變動 120 點，損益 6000 元\n第 2 天：變動 -30 點，損益 -1500 元\n第 3 天：變動 160 點，損益 8000 元\n第 4 天：變動 50 點，損益 2500 元\n==================\n區間總損益： 15000 元\n\n\n這格出現了一個好用的新東西：f\"...\"（叫做 f-string）。 只要在引號前加個 f，就能在文字裡用 { } 直接塞變數，超方便。\n\n看不懂 range(1, len(...))？沒關係。這正是你練習問 AI 的好時機： 複製這格程式，問 AI：「請用完全不懂程式的方式，一行一行解釋這段在做什麼，特別是 range 那行。」"
+    "text": "4.5 迴圈 for：讓程式「重複做」\n當你要對「一整串資料」逐筆處理時，就用迴圈。 例如：把每天的收盤價，逐筆印出來。\n\n\n\n\n\n\n這段的意思是：「對於 每日收盤 裡的每一個值（暫時叫它 收盤），就執行縮排內的動作。」\n迴圈真正強大的地方，是搭配「累加」。下面算這幾天每天相對前一天的損益總和（簡化示意）：\n\n\n\n\n\n\n這格出現了一個好用的新東西：f\"...\"（叫做 f-string）。 只要在引號前加個 f，就能在文字裡用 { } 直接塞變數，超方便。\n\n看不懂 range(1, len(...))？沒關係。這正是你練習問 AI 的好時機： 複製這格程式，問 AI：「請用完全不懂程式的方式，一行一行解釋這段在做什麼，特別是 range 那行。」"
   },
   {
     "objectID": "index.html#函式-function把一段邏輯包起來重複用",
     "href": "index.html#函式-function把一段邏輯包起來重複用",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.6 函式 (function)：把一段邏輯「包起來」重複用",
-    "text": "4.6 函式 (function)：把一段邏輯「包起來」重複用\n如果「算損益」這件事你要做很多次，每次都重抄一遍很煩。 函式就是把一段邏輯打包、取個名字，之後一行就能呼叫。\n\ndef 計算損益(進場, 出場, 口數, 每點價值):\n    變動點數 = 出場 - 進場\n    損益 = 變動點數 * 口數 * 每點價值\n    return 損益    # return = 把算好的結果「交回去」\n\n# 包好之後，要用幾次就用幾次：\nprint(\"交易A：\", 計算損益(18000, 18120, 1, 50), \"元\")\nprint(\"交易B：\", 計算損益(18500, 18300, 2, 50), \"元\")\nprint(\"交易C：\", 計算損益(17000, 17500, 3, 50), \"元\")\n\n交易A： 6000 元\n交易B： -20000 元\n交易C： 75000 元\n\n\n\ndef = 我要「定義(define)」一個函式\n括號裡的 進場, 出場, ... 叫參數：是「呼叫時要餵給它的資料」\nreturn = 把結果交回去，讓外面可以接住、印出來\n\n函式是「程式積木」。等一下做網站，整個網站其實就是一堆函式組起來的。"
+    "text": "4.6 函式 (function)：把一段邏輯「包起來」重複用\n如果「算損益」這件事你要做很多次，每次都重抄一遍很煩。 函式就是把一段邏輯打包、取個名字，之後一行就能呼叫。\n\n\n\n\n\n\n\ndef = 我要「定義(define)」一個函式\n括號裡的 進場, 出場, ... 叫參數：是「呼叫時要餵給它的資料」\nreturn = 把結果交回去，讓外面可以接住、印出來\n\n函式是「程式積木」。等一下做網站，整個網站其實就是一堆函式組起來的。"
   },
   {
     "objectID": "index.html#物件-object把資料和它會的動作綁在一起",
     "href": "index.html#物件-object把資料和它會的動作綁在一起",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.7 物件 (object)：把「資料」和「它會的動作」綁在一起",
-    "text": "4.7 物件 (object)：把「資料」和「它會的動作」綁在一起\n到目前為止，「資料」（變數、清單）和「動作」（函式）是分開的。 但你其實早就在用一種把兩者綁在一起的東西了，只是還沒人幫它取名字——它叫 物件 (object)。\n一句話記住： &gt; 物件 = 一包資料 ＋ 這包資料自己會的動作。\n還記得這些寫法嗎？你一直在用：\n\n# 清單(list)就是一種物件，它自己「會」很多動作：\n每日收盤 = [18000, 18120, 18090]\n每日收盤.append(18250)        # .append() 是清單「自己會的動作」：在後面加一筆\nprint(\"加完之後：\", 每日收盤)\n\n# 文字(str)也是一種物件，它也有自己會的動作：\n商品 = \"台指期\"\nprint(\"變大寫：\", \"tx\".upper())   # .upper() 是文字「自己會的動作」\nprint(\"商品幾個字：\", len(商品))\n\n加完之後： [18000, 18120, 18090, 18250]\n變大寫： TX\n商品幾個字： 3\n\n\n看到中間那個 .（點） 了嗎？它的意思就是：「叫這個物件，做它自己會的某個動作」。\n\n每日收盤.append(...)：叫「這個清單」去執行「在尾巴加一筆」。\n\"tx\".upper()：叫「這串文字」去執行「全部變大寫」。\n\n這些「物件自己會的動作」，有個專有名詞叫 方法 (method)——說穿了就是「綁在某個物件身上的函式」。 物件身上帶的資料，則叫 屬性 (attribute)。\n\n🔑 為什麼要懂這個？因為等你做網站時，幾乎每一行都長這樣：st.title(...)、df.head()、data.sort_values(...)…… 全都是「某個物件 . 它會的動作」。看懂這個句型，你就看得懂一大半的真實程式碼了。\n\n\n\n（選讀）那這些「物件」是怎麼來的？——class\n你不需要會自己建立物件，但看一眼它長怎樣，以後就不會怕。 class（類別）就是「物件的設計圖」：先畫好一張「交易」的設計圖，之後就能照圖做出一個又一個交易物件。\n\n# （選讀）用 class 畫一張「交易」的設計圖\nclass 交易:\n    # 定義這個物件有哪些「屬性」和「方法」：\n    def __init__(self, 進場, 出場, 口數, 每點價值=50):\n        # 下面這些是這個物件的「屬性」（它帶在身上的資料）\n        self.進場 = 進場\n        self.出場 = 出場\n        self.口數 = 口數\n        self.每點價值 = 每點價值\n\n    def 損益(self):                       # 這是它的「方法」（它自己會的動作）\n        return (self.出場 - self.進場) * self.口數 * self.每點價值\n\n# 照設計圖做出一個「交易物件」：\nA = 交易(進場=18000, 出場=18120, 口數=1)\nprint(\"這筆交易的損益：\", A.損益(), \"元\")    # 叫物件 A 做它會的「損益」動作\nprint(\"它的進場價屬性：\", A.進場)\n\n這筆交易的損益： 6000 元\n它的進場價屬性： 18000\n\n\n\n🟡 看不懂 class / self / __init__ 完全沒關係，現階段可以先跳過。 你只要記得「物件 = 資料 + 它會的動作，用 . 去叫它」就夠用了。真要自己寫 class 時，再請 AI 一行一行帶你。"
+    "text": "4.7 物件 (object)：把「資料」和「它會的動作」綁在一起\n到目前為止，「資料」（變數、清單）和「動作」（函式）是分開的。 但你其實早就在用一種把兩者綁在一起的東西了，只是還沒人幫它取名字——它叫 物件 (object)。\n一句話記住： &gt; 物件 = 一包資料 ＋ 這包資料自己會的動作。\n還記得這些寫法嗎？你一直在用：\n\n\n\n\n\n\n看到中間那個 .（點） 了嗎？它的意思就是：「叫這個物件，做它自己會的某個動作」。\n\n每日收盤.append(...)：叫「這個清單」去執行「在尾巴加一筆」。\n\"tx\".upper()：叫「這串文字」去執行「全部變大寫」。\n\n這些「物件自己會的動作」，有個專有名詞叫 方法 (method)——說穿了就是「綁在某個物件身上的函式」。 物件身上帶的資料，則叫 屬性 (attribute)。\n\n🔑 為什麼要懂這個？因為等你做網站時，幾乎每一行都長這樣：st.title(...)、df.head()、data.sort_values(...)…… 全都是「某個物件 . 它會的動作」。看懂這個句型，你就看得懂一大半的真實程式碼了。\n\n\n\n（選讀）那這些「物件」是怎麼來的？——class\n你不需要會自己建立物件，但看一眼它長怎樣，以後就不會怕。 class（類別）就是「物件的設計圖」：先畫好一張「交易」的設計圖，之後就能照圖做出一個又一個交易物件。\n\n\n\n\n\n\n\n🟡 看不懂 class / self / __init__ 完全沒關係，現階段可以先跳過。 你只要記得「物件 = 資料 + 它會的動作，用 . 去叫它」就夠用了。真要自己寫 class 時，再請 AI 一行一行帶你。"
   },
   {
     "objectID": "index.html#進階一次分清楚functionobjectdecorator",
     "href": "index.html#進階一次分清楚functionobjectdecorator",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "4.8（進階）一次分清楚：function、object、decorator",
-    "text": "4.8（進階）一次分清楚：function、object、decorator\n這三個詞很容易混。用「一句話 + 一個詞性比喻」各自記住：\n\n\n\n\n\n\n\n\n\n名稱\n一句話\n詞性比喻\n例子\n\n\n\n\n函式 function\n一個「動作」，你餵資料、它回結果\n動詞（做一件事）\n計算損益(...)、print(...)\n\n\n物件 object\n一個「東西」，自帶資料和自己的函式（方法）\n名詞（一個帶能力的東西）\n一個清單、一筆「交易」\n\n\n裝飾器 decorator\n一個「外掛包裝」，不改原函式，就幫它加上額外行為\n外衣（替動作加料）\n@st.cache_data\n\n\n\n前兩個你已經懂了，重點講第三個——裝飾器，因為你做網站時一定會遇到它。\n它要解決什麼問題？ 假設你有很多函式，想幫每一個都加上「執行前先印一行記錄」的功能。 笨方法是每個函式裡都貼一段重複的程式碼。裝飾器讓你寫一次、到處套，而且完全不用改原本的函式。\n寫法就是在函式上面加一行 @某個裝飾器：\n\n# 1) 先做一個「外掛包裝」：在原本的動作前後，各加一句記錄\ndef 加上記錄(原本的函式):\n    def 包裝後(*args, **kwargs):\n        print(\"👉 開始執行：\", 原本的函式.__name__)\n        結果 = 原本的函式(*args, **kwargs)      # 這行才是真正去做原本的事\n        print(\"✅ 執行完畢，結果是：\", 結果)\n        return 結果\n    return 包裝後\n\n# 2) 用 @ 把這個包裝「戴」到函式頭上\n@加上記錄\ndef 計算損益(進場, 出場, 口數, 每點價值=50):\n    return (出場 - 進場) * 口數 * 每點價值\n\n# 3) 照常呼叫——但它已經自動多了「記錄」的行為\n計算損益(18000, 18120, 1)\n\n👉 開始執行： 計算損益\n✅ 執行完畢，結果是： 6000\n\n\n6000\n\n\n跑跑看：你只是呼叫 計算損益(...)，卻自動多印了「開始執行 / 執行完畢」兩行——這就是裝飾器替函式「加料」的效果，而 計算損益 本身一個字都沒改。\n@加上記錄 這一行的意思就是：「把 計算損益 這個函式，用 加上記錄 包裝一下再用」。\n\n\n🔌 真實場景：@st.cache_data 到底幫你省了什麼？\n到第 7 章做網站時，你會用 Streamlit 這個工具。它有一個很關鍵的特性：使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。\n這會出問題。假設你的網站一開頭要「去抓今天的期貨報價」，而這件事很慢（要連網路，可能要等 3 秒）：\nimport streamlit as st\nimport time\n\ndef 讀今天的報價():\n    time.sleep(3)              # 假裝去網路抓資料，慢慢的…\n    return {\"台指期\": 18120, \"小台\": 18118}\n\n報價 = 讀今天的報價()           # 使用者每點一下，這行就重跑 → 又卡 3 秒 😩\n使用者每按一次就卡 3 秒，體驗很差。\n解法：在這個函式頭上，戴一頂 @st.cache_data 的帽子。\nimport streamlit as st\nimport time\n\n@st.cache_data                 # ← 裝飾器：幫這個函式「把結果記起來」\ndef 讀今天的報價():\n    time.sleep(3)\n    return {\"台指期\": 18120, \"小台\": 18118}\n\n報價 = 讀今天的報價()           # 第一次：真的去抓，等 3 秒\n報價 = 讀今天的報價()           # 第二次以後：直接拿上次記住的結果，0 秒！⚡\n差別在哪裡？\n\n沒加 → 每次重跑都重新抓一次資料，每次都乖乖等 3 秒。\n加了 → 第一次抓完就「記住」，之後只要參數一樣，就直接回傳記住的答案，完全不重算。\n\n打個比方：你問同事「今天台指開盤多少？」第一次他得去查（慢）；但你五分鐘內再問一次，他直接憑記憶回答你（快），不會每次都重查。@st.cache_data 就是幫你的函式裝上這顆「記憶」。\n\n你完全不需要自己寫這個裝飾器，Streamlit 已經幫你做好了。你只要會兩件事： 1. 看到 @ 開頭那一行，知道它是在「替下面的函式加料」； 2. 遇到「網站抓資料好慢」時，想起可以在那個函式上面加一行 @st.cache_data。\n\n\n🟡 這節是進階補充，看不懂可以先跳過。等第 7 章真的動手做網站、遇到「怎麼一直在重抓資料、好慢」時，再回來看這個例子，會特別有感。\n\n\n\n\n第 4 章小結\n你已經認識了程式的核心零件：變數、資料型態、運算與比較、條件判斷、迴圈、函式， 再加上把「資料 ＋ 動作」綁在一起的 物件，以及（進階）替函式加料的 裝飾器。 這就是 90% 程式的骨架。你不需要「背」它們，只要看得懂、改得動，就足以跟 AI 合作了。👍"
+    "text": "4.8（進階）一次分清楚：function、object、decorator\n這三個詞很容易混。用「一句話 + 一個詞性比喻」各自記住：\n\n\n\n\n\n\n\n\n\n名稱\n一句話\n詞性比喻\n例子\n\n\n\n\n函式 function\n一個「動作」，你餵資料、它回結果\n動詞（做一件事）\n計算損益(...)、print(...)\n\n\n物件 object\n一個「東西」，自帶資料和自己的函式（方法）\n名詞（一個帶能力的東西）\n一個清單、一筆「交易」\n\n\n裝飾器 decorator\n一個「外掛包裝」，不改原函式，就幫它加上額外行為\n外衣（替動作加料）\n@st.cache_data\n\n\n\n前兩個你已經懂了，重點講第三個——裝飾器。它在真實世界的程式裡（特別是網站框架）很常見，你遲早會遇到，所以先帶你認識。\n它要解決什麼問題？ 假設你有很多函式，想幫每一個都加上「執行前先印一行記錄」的功能。 笨方法是每個函式裡都貼一段重複的程式碼。裝飾器讓你寫一次、到處套，而且完全不用改原本的函式。\n寫法就是在函式上面加一行 @某個裝飾器：\n\n\n\n\n\n\n跑跑看：你只是呼叫 計算損益(...)，卻自動多印了「開始執行 / 執行完畢」兩行——這就是裝飾器替函式「加料」的效果，而 計算損益 本身一個字都沒改。\n@加上記錄 這一行的意思就是：「把 計算損益 這個函式，用 加上記錄 包裝一下再用」。\n\n\n🔌 真實場景：@st.cache_data 到底幫你省了什麼？\n第 7 章會帶你用 Streamlit 做一個小網站。它有一個很關鍵的特性：使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。\n這會出問題。假設你的網站一開頭要「去抓今天的期貨報價」，而這件事很慢（要連網路，可能要等 3 秒）：\nimport streamlit as st\nimport time\n\ndef 讀今天的報價():\n    time.sleep(3)              # 假裝去網路抓資料，慢慢的…\n    return {\"台指期\": 18120, \"小台\": 18118}\n\n報價 = 讀今天的報價()           # 使用者每點一下，這行就重跑 → 又卡 3 秒 😩\n使用者每按一次就卡 3 秒，體驗很差。\n解法：在這個函式頭上，戴一頂 @st.cache_data 的帽子。\nimport streamlit as st\nimport time\n\n@st.cache_data                 # ← 裝飾器：幫這個函式「把結果記起來」\ndef 讀今天的報價():\n    time.sleep(3)\n    return {\"台指期\": 18120, \"小台\": 18118}\n\n報價 = 讀今天的報價()           # 第一次：真的去抓，等 3 秒\n報價 = 讀今天的報價()           # 第二次以後：直接拿上次記住的結果，0 秒！⚡\n差別在哪裡？\n\n沒加 → 每次重跑都重新抓一次資料，每次都乖乖等 3 秒。\n加了 → 第一次抓完就「記住」，之後只要參數一樣，就直接回傳記住的答案，完全不重算。\n\n打個比方：你問同事「今天台指開盤多少？」第一次他得去查（慢）；但你五分鐘內再問一次，他直接憑記憶回答你（快），不會每次都重查。@st.cache_data 就是幫你的函式裝上這顆「記憶」。\n\n你完全不需要自己寫這個裝飾器，Streamlit 已經幫你做好了。你只要會兩件事： 1. 看到 @ 開頭那一行，知道它是在「替下面的函式加料」； 2. 遇到「網站抓資料好慢」時，想起可以在那個函式上面加一行 @st.cache_data。\n\n\n🟡 這節是進階補充，看不懂可以先跳過。第 7 章那個損益計算機很單純，其實用不到 @st.cache_data——這裡只是先讓你認識它。等你之後做的網站需要「抓資料、又不想每次重抓」時，再回來看這個例子，會特別有感。\n\n\n\n\n第 4 章小結\n你已經認識了程式的核心零件：變數、資料型態、運算與比較、條件判斷、迴圈、函式， 再加上把「資料 ＋ 動作」綁在一起的 物件，以及（進階）替函式加料的 裝飾器。 這就是 90% 程式的骨架。你不需要「背」它們，只要看得懂、改得動，就足以跟 AI 合作了。👍"
   },
   {
-    "objectID": "index.html#補a-1為什麼需要虛擬環境-venv",
-    "href": "index.html#補a-1為什麼需要虛擬環境-venv",
+    "objectID": "index.html#補a-1問題所有專案共用一套工具遲早打架",
+    "href": "index.html#補a-1問題所有專案共用一套工具遲早打架",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補A-1：為什麼需要「虛擬環境 venv」？",
-    "text": "補A-1：為什麼需要「虛擬環境 venv」？\n想像每個專案都是一個工作檯。如果所有專案共用同一盒工具，遲早會出現「A 專案要舊版扳手、B 專案要新版扳手」互相打架的慘況。\nvenv 就是「幫每個專案準備一個獨立、乾淨的工具箱」：這個專案裝了什麼套件、什麼版本，都關在自己的小箱子裡，不會污染別的專案，也不會被別的專案污染。\n\n🛒 一句話：一個專案，一個 venv。 這是 Python 開發最基本的好習慣。"
+    "section": "補A-1：問題——所有專案共用一套工具，遲早打架",
+    "text": "補A-1：問題——所有專案共用一套工具，遲早打架\n想像每個專案都是一個工作檯。如果所有專案共用同一盒工具，遲早會出現「A 專案要舊版扳手、B 專案要新版扳手」互相打架的慘況。\n在 Python 世界，這個「扳手」就是套件：A 專案需要 pandas 1.x、B 專案需要 pandas 2.x，硬裝在一起就會互相覆蓋、壞給你看。\n更糟的是，如果你每次都直接把套件 pip install 到「整台電腦共用的那個 Python」，裝久了那盒工具會又亂又髒：幾十個專案的套件全混在一起，哪個是哪個專案要的根本分不清，哪天升級其中一個，就可能連環弄壞別的。"
   },
   {
-    "objectID": "index.html#補a-2四步驟在本機跑起-jupyter",
-    "href": "index.html#補a-2四步驟在本機跑起-jupyter",
+    "objectID": "index.html#補a-2解法一個專案一個乾淨的工具箱",
+    "href": "index.html#補a-2解法一個專案一個乾淨的工具箱",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補A-2：四步驟，在本機跑起 Jupyter",
-    "text": "補A-2：四步驟，在本機跑起 Jupyter\n\n⚠️ 以下指令是在終端機 / 命令提示字元裡輸入的，不是貼到 Notebook 的程式格。 前提：你電腦已經裝好 Python（還沒裝就先請 AI：「我用 Windows / Mac，請一步步教我安裝 Python」）。\n\n第 1 步：進到你的專案資料夾，建立 venv\ncd my-project           # 切換到你的專案資料夾\npython -m venv .venv     # 建立一個叫 .venv 的虛擬環境（工具箱）\n第 2 步：啟動（activate）這個 venv（Windows 和 Mac 指令不一樣）\n# Windows（PowerShell）\n.venv\\Scripts\\Activate.ps1\n\n# macOS / Linux\nsource .venv/bin/activate\n啟動成功後，命令列前面會多出 (.venv) 字樣，代表「現在用的是這個專案的工具箱」。\n第 3 步：在 venv 裡裝 JupyterLab\npip install jupyterlab\n第 4 步：把 Jupyter 打開\njupyter lab\n它會自動打開瀏覽器、出現你熟悉的 Jupyter 介面——但這次是跑在你自己電腦上、功能完整的版本。把這份 .ipynb 拖進去就能繼續用。"
+    "section": "補A-2：解法——一個專案，一個乾淨的工具箱",
+    "text": "補A-2：解法——一個專案，一個乾淨的工具箱\nvenv 就是「幫每個專案準備一個獨立、乾淨的工具箱」：這個專案裝了什麼套件、什麼版本，都關在自己的小箱子（一個叫 .venv 的資料夾）裡，不會污染別的專案，也不會弄髒整台電腦。\n\n🛒 一句話：一個專案，一個 venv。 這是 Python 開發最基本的好習慣。\n\n所以第 7.3 步那串指令，其實就是這個概念的實作：\n\npython -m venv .venv → 開一個全新的空工具箱\nactivate → 宣告「我接下來要用這個箱子」\npip install streamlit → 把 Streamlit 這支工具，只放進這個箱子\n\n搞懂這三行在幹嘛，你就不是在背咒語，而是真的知道自己在做什麼了。"
   },
   {
-    "objectID": "index.html#補a-3幾個一定會遇到的小提醒",
-    "href": "index.html#補a-3幾個一定會遇到的小提醒",
+    "objectID": "index.html#補a-3兩個一定要記得的小習慣",
+    "href": "index.html#補a-3兩個一定要記得的小習慣",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補A-3：幾個一定會遇到的小提醒",
-    "text": "補A-3：幾個一定會遇到的小提醒\n\n選對 kernel：在本機的 Jupyter 裡，右上角要確認 kernel 選的是你這個專案的 .venv。如果程式說「找不到某套件」，十之八九是 kernel 選錯了環境。\n下次要再用：重開終端機後，記得先 cd 到專案、再 activate 一次 venv，才會用到正確的工具箱。\n結束：在終端機輸入 deactivate 就能退出 venv。\n不要把 .venv 上傳 GitHub：它又大又是本機專屬，要在 .gitignore 裡忽略它（之後要重現環境，靠的是套件清單，不是整個資料夾）。\n\n\n🔁 這條路怎麼接到做網站？ 在同一個 venv 裡，你只要再 pip install streamlit，就能用 streamlit run app.py 把第 7 章的網站在本機跑起來。 venv 的概念搞懂後，下一章的 uv 會幫你把「建 venv、裝套件、鎖版本」這些步驟全自動化——你會發現它其實就是這章的升級版。"
+    "section": "補A-3：兩個一定要記得的小習慣",
+    "text": "補A-3：兩個一定要記得的小習慣\n\n不要把 .venv 上傳 GitHub：它又大又是本機專屬。要在 .gitignore 裡忽略它。之後要在別台電腦 / 雲端重現環境，靠的是套件清單（第 7.4 的 requirements.txt），不是整個 .venv 資料夾。\n下次要再用：重開終端機後，記得先 cd 到專案資料夾、再 activate 一次 venv，才會用到正確的工具箱；用完在終端機輸入 deactivate 就能退出。\n\n\n🔁 再往上一層：把這些步驟全自動化 venv 的概念搞懂後，下一章的 uv 會幫你把「建 venv、裝套件、鎖版本」這些步驟全自動化，還能讓環境 100% 可重現。你會發現它其實就是這章的升級版。"
   },
   {
-    "objectID": "index.html#補-1uv-是什麼為什麼值得學",
-    "href": "index.html#補-1uv-是什麼為什麼值得學",
+    "objectID": "index.html#補b-1uv-是什麼為什麼值得學",
+    "href": "index.html#補b-1uv-是什麼為什麼值得學",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補-1：uv 是什麼？為什麼值得學",
-    "text": "補-1：uv 是什麼？為什麼值得學\nuv 是一個用 Rust 寫成、速度非常快的 Python「全能管家」。它把過去要好幾個工具分開做的事，一個工具全包：\n\n\n\n過去要用的工具\nuv 一手包辦\n\n\n\n\npip（裝套件）\n✅\n\n\nvenv / virtualenv（建虛擬環境）\n✅\n\n\npyenv（管理 Python 版本）\n✅\n\n\npip-tools / poetry（鎖定依賴版本）\n✅\n\n\n\n對你最大的價值是「可重現」：它會把整個環境鎖死，讓「在我電腦能跑、在別人電腦 / 雲端卻壞掉」這類惱人問題大幅減少。這也正是它跟 Streamlit Community Cloud 搭起來的好處——雲端能 100% 重現你本機的環境。"
+    "section": "補B-1：uv 是什麼？為什麼值得學",
+    "text": "補B-1：uv 是什麼？為什麼值得學\nuv 是一個用 Rust 寫成、速度非常快的 Python「全能管家」。它把過去要好幾個工具分開做的事，一個工具全包：\n\n\n\n過去要用的工具\nuv 一手包辦\n\n\n\n\npip（裝套件）\n✅\n\n\nvenv / virtualenv（建虛擬環境）\n✅\n\n\npyenv（管理 Python 版本）\n✅\n\n\npip-tools / poetry（鎖定依賴版本）\n✅\n\n\n\n對你最大的價值是「可重現」：它會把整個環境鎖死，讓「在我電腦能跑、在別人電腦 / 雲端卻壞掉」這類惱人問題大幅減少。這也正是它跟 Streamlit Community Cloud 搭起來的好處——雲端能 100% 重現你本機的環境。"
   },
   {
-    "objectID": "index.html#補-2核心心智模型記住兩個檔案",
-    "href": "index.html#補-2核心心智模型記住兩個檔案",
+    "objectID": "index.html#補b-2核心心智模型記住兩個檔案",
+    "href": "index.html#補b-2核心心智模型記住兩個檔案",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補-2：核心心智模型——記住兩個檔案",
-    "text": "補-2：核心心智模型——記住兩個檔案\n整個 uv 工作流，圍繞著兩個檔案打轉。把它們的分工搞懂，其他都是細節：\n\n\n\n\n\n\n\n\n\n檔案\n誰寫的\n內容\n你能不能手改\n\n\n\n\npyproject.toml\n你（人）\n抽象、寬鬆的「需求宣告」，例如 pandas&gt;=2.0。是真正的「來源真相」\n✅ 可以（直接改，或用 uv add）\n\n\nuv.lock\nuv（工具自動產生與維護）\n完全解析後的「鎖定結果」：每個套件（含所有間接相依）的確切版本、雜湊、適用平台\n❌ 不要手改\n\n\n\n兩者的關係：\n你寫的 pyproject.toml（我要 pandas&gt;=2.0）\n        │\n        ▼  uv 去 PyPI 解析、算出所有相依套件的確切版本\n        │\n   產生 uv.lock（鎖定 pandas==2.2.3 + numpy==... + tzdata==... ...）\n\n🛒 生活化比喻： pyproject.toml 像你寫的購物清單（「我要洗髮精」）。 uv.lock 像實際買回來的發票明細（某品牌、某容量、某批號，連附帶的贈品都列出來）。\nuv 還會在 lock 裡記住 toml 的雜湊值，所以你一改 toml，它就知道「清單變了、發票過時了」，會自動重新解析。這就是為什麼你平常根本不用去管 uv.lock。"
+    "section": "補B-2：核心心智模型——記住兩個檔案",
+    "text": "補B-2：核心心智模型——記住兩個檔案\n整個 uv 工作流，圍繞著兩個檔案打轉。把它們的分工搞懂，其他都是細節：\n\n\n\n\n\n\n\n\n\n檔案\n誰寫的\n內容\n你能不能手改\n\n\n\n\npyproject.toml\n你（人）\n抽象、寬鬆的「需求宣告」，例如 pandas&gt;=2.0。是真正的「來源真相」\n✅ 可以（直接改，或用 uv add）\n\n\nuv.lock\nuv（工具自動產生與維護）\n完全解析後的「鎖定結果」：每個套件（含所有間接相依）的確切版本、雜湊、適用平台\n❌ 不要手改\n\n\n\n兩者的關係：\n你寫的 pyproject.toml（我要 pandas&gt;=2.0）\n        │\n        ▼  uv 去 PyPI 解析、算出所有相依套件的確切版本\n        │\n   產生 uv.lock（鎖定 pandas==2.2.3 + numpy==... + tzdata==... ...）\n\n🛒 生活化比喻： pyproject.toml 像你寫的購物清單（「我要洗髮精」）。 uv.lock 像實際買回來的發票明細（某品牌、某容量、某批號，連附帶的贈品都列出來）。\nuv 還會在 lock 裡記住 toml 的雜湊值，所以你一改 toml，它就知道「清單變了、發票過時了」，會自動重新解析。這就是為什麼你平常根本不用去管 uv.lock。"
   },
   {
-    "objectID": "index.html#補-3你會用到的指令在終端機執行不是在-notebook-裡",
-    "href": "index.html#補-3你會用到的指令在終端機執行不是在-notebook-裡",
+    "objectID": "index.html#補b-3你會用到的指令在終端機執行不是在網頁裡",
+    "href": "index.html#補b-3你會用到的指令在終端機執行不是在網頁裡",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）",
-    "text": "補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）\n\n⚠️ 以下都是終端機 / 命令提示字元的指令，不要貼到 Notebook 的程式格裡跑。\n\n# 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：\n#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）\n\n# 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）\nuv init futures-tool\ncd futures-tool\n\n# 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）\nuv add streamlit\nuv add pandas matplotlib    # 一次加多個也行\n\n# 4. 移除套件\nuv remove matplotlib\n\n# 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）\nuv run streamlit run app.py\n\n# 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）\nuv sync\n\n# 7. 手動重算 / 升級鎖定檔\nuv lock              # 重新解析並寫入 uv.lock\nuv lock --upgrade    # 在 toml 允許範圍內，把套件升到最新\n幾個重點： - uv 會在專案資料夾裡自動建立一個 .venv（虛擬環境），你不用自己手動建、手動 activate。 - 養成習慣用 uv run ... 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。 - .venv 資料夾不要進版控（uv init 通常已幫你寫好 .gitignore 忽略它）。"
+    "section": "補B-3：你會用到的指令（在「終端機」執行，不是在網頁裡）",
+    "text": "補B-3：你會用到的指令（在「終端機」執行，不是在網頁裡）\n\n⚠️ 以下都是終端機 / 命令提示字元的指令，不要貼到網頁的程式格裡跑。\n\n# 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：\n#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）\n\n# 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）\nuv init futures-tool\ncd futures-tool\n\n# 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）\nuv add streamlit\nuv add pandas matplotlib    # 一次加多個也行\n\n# 4. 移除套件\nuv remove matplotlib\n\n# 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）\nuv run streamlit run app.py\n\n# 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）\nuv sync\n\n# 7. 手動重算 / 升級鎖定檔\nuv lock              # 重新解析並寫入 uv.lock\nuv lock --upgrade    # 在 toml 允許範圍內，把套件升到最新\n幾個重點：\n\nuv 會在專案資料夾裡自動建立一個 .venv（虛擬環境），你不用自己手動建、手動 activate。\n養成習慣用 uv run ... 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。\n.venv 資料夾不要進版控（uv init 通常已幫你寫好 .gitignore 忽略它）。"
   },
   {
-    "objectID": "index.html#補-4一條龍用-uv-從零到部署-streamlit",
-    "href": "index.html#補-4一條龍用-uv-從零到部署-streamlit",
+    "objectID": "index.html#補b-4一條龍用-uv-從零到部署-streamlit",
+    "href": "index.html#補b-4一條龍用-uv-從零到部署-streamlit",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補-4：一條龍——用 uv 從零到部署 Streamlit",
-    "text": "補-4：一條龍——用 uv 從零到部署 Streamlit\n把補充章節和第 7 章接起來，完整流程是：\n\nuv init futures-tool 然後 cd futures-tool\nuv add streamlit（依賴就交給 uv 管，不需要自己寫 requirements.txt）\n把第 7.2 的程式放進專案、存成 app.py\n本機測試：uv run streamlit run app.py，確認瀏覽器跑得起來\n把這幾個檔案 commit 進 GitHub：\n\n✅ app.py\n✅ pyproject.toml\n✅ uv.lock ← 關鍵！這個一定要進版控\n❌ .venv/（不要進版控）\n\n部署到 Streamlit Community Cloud（流程同第 7.4）。因為 repo 裡有 uv.lock，Community Cloud 會自動偵測到、用 uv 依照 lock 檔安裝，部署出來的環境就跟你本機一模一樣。\n\n\n回顧第 7.4 查到的優先序：Community Cloud 認得的依賴檔中，uv.lock 排在最高優先。所以你只要把 lock 檔 commit 進去，它就會走 uv 這條路，不需要再額外準備 requirements.txt。"
+    "section": "補B-4：一條龍——用 uv 從零到部署 Streamlit",
+    "text": "補B-4：一條龍——用 uv 從零到部署 Streamlit\n把補充章節和第 7 章接起來，完整流程是：\n\nuv init futures-tool 然後 cd futures-tool\nuv add streamlit（依賴就交給 uv 管，不需要自己寫 requirements.txt）\n把第 7.2 的程式放進專案、存成 app.py\n本機測試：uv run streamlit run app.py，確認瀏覽器跑得起來\n把這幾個檔案 commit 進 GitHub：\n\n✅ app.py\n✅ pyproject.toml\n✅ uv.lock ← 關鍵！這個一定要進版控\n❌ .venv/（不要進版控）\n\n部署到 Streamlit Community Cloud（流程同第 7.4）。因為 repo 裡有 uv.lock，Community Cloud 會自動偵測到、用 uv 依照 lock 檔安裝，部署出來的環境就跟你本機一模一樣。\n\n\n回顧第 7.4 查到的優先序：Community Cloud 認得的依賴檔中，uv.lock 排在最高優先。所以你只要把 lock 檔 commit 進去，它就會走 uv 這條路，不需要再額外準備 requirements.txt。"
   },
   {
-    "objectID": "index.html#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉",
-    "href": "index.html#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉",
+    "objectID": "index.html#補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉",
+    "href": "index.html#補b-5那什麼時候還是用-requirements.txt兩者怎麼互轉",
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
-    "section": "補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉",
-    "text": "補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉\n還是用 requirements.txt 的情境： - 教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 streamlit，心智負擔最低）。 - 你要部署的平台不支援 uv、只吃 requirements.txt。\n已經用 uv，但某個平台只吃 requirements.txt —— 用 uv export 從 lock 檔產生一份：\nuv export --no-hashes -o requirements.txt\n# （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）\n這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。\n\n🔑 一句話總結： 走 uv 工作流，請靠 uv.lock（優先序最高、最能重現環境）。 純 pyproject.toml 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「有沒有把 uv.lock commit 進去」。\n\n\n\n給同學的提問範本（uv 版，可直接複製）\n\n「我用 ___（Windows / Mac），不熟終端機。請一步步教我安裝 uv，並用 uv 建立一個 Streamlit 專案、加入 streamlit 套件、在本機把 app.py 跑起來。每一步都告訴我要輸入什麼、怎麼確認成功。」\n\n\n「我的 uv 專案要部署到 Streamlit Community Cloud。請告訴我：哪些檔案要 commit 進 GitHub、哪些不該進版控，以及為什麼 uv.lock 一定要進去。」"
+    "section": "補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉",
+    "text": "補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉\n還是用 requirements.txt 的情境：\n\n教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 streamlit，心智負擔最低）。\n你要部署的平台不支援 uv、只吃 requirements.txt。\n\n已經用 uv，但某個平台只吃 requirements.txt —— 用 uv export 從 lock 檔產生一份：\nuv export --no-hashes -o requirements.txt\n# （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）\n這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。\n\n🔑 一句話總結： 走 uv 工作流，請靠 uv.lock（優先序最高、最能重現環境）。 純 pyproject.toml 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「有沒有把 uv.lock commit 進去」。\n\n\n\n給同學的提問範本（uv 版，可直接複製）\n\n「我用 ___（Windows / Mac），不熟終端機。請一步步教我安裝 uv，並用 uv 建立一個 Streamlit 專案、加入 streamlit 套件、在本機把 app.py 跑起來。每一步都告訴我要輸入什麼、怎麼確認成功。」\n\n\n「我的 uv 專案要部署到 Streamlit Community Cloud。請告訴我：哪些檔案要 commit 進 GitHub、哪些不該進版控，以及為什麼 uv.lock 一定要進去。」"
   }
 ]
