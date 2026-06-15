@@ -16,3 +16,7 @@ __pycache__/
 /_book/
 
 **/*.quarto_ipynb
+
+# standalone render 輸出
+/*_files/
+/poc-interactive.html
