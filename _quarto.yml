@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: zh-TW
+
+website:
+  title: "用 AI 學寫 Python"
+  description: "從零到架起自己的網站——給程式零基礎者的中文教學講義"
+  site-url: "https://benjamin-teng.github.io/learn-python-with-ai"
+  reader-mode: true
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    background: light
+    pinned: true
+    right:
+      - text: "在 Colab 開啟"
+        href: "https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb"
+        target: _blank
+      - icon: github
+        href: "https://github.com/Benjamin-Teng/learn-python-with-ai"
+        target: _blank
+        aria-label: GitHub
+  page-footer:
+    center: "用 AI 學寫 Python · 以 Quarto 製作 · 內容採 CC BY 精神自由學習"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+    toc-title: "本頁目錄"
+    toc-depth: 3
+    toc-expand: true
+    number-sections: false
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    anchor-sections: true
+    fontsize: 1.05rem
+    linestretch: 1.7
+
+execute:
+  enabled: false
