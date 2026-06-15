@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>用 AI 學寫 Python：從零到架起自己的網站 – 用 AI 學寫 Python</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c96722bc5c7bfd5b4ea64d1920eaebc0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "沒有結果",
+    "search-matching-documents-text": "符合的文件",
+    "search-copy-link-title": "複製搜尋連結",
+    "search-hide-matches-text": "隱藏其他符合的結果",
+    "search-more-match-text": "更多符合結果",
+    "search-more-matches-text": "更多符合結果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "送出",
+    "search-label": "搜尋"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">用 AI 學寫 Python</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="搜尋"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="切換導航列" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank"> 
+<span class="menu-text">在 Colab 開啟</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Benjamin-Teng/learn-python-with-ai" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="切換閱讀器模式">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">本頁目錄</h2>
+   
+  <ul>
+  <li><a href="#這份講義怎麼用" id="toc-這份講義怎麼用" class="nav-link active" data-scroll-target="#這份講義怎麼用">這份講義怎麼用？</a></li>
+  <li><a href="#這份講義的地圖" id="toc-這份講義的地圖" class="nav-link" data-scroll-target="#這份講義的地圖">這份講義的地圖</a></li>
+  <li><a href="#第-1-章先建立正確的心態這章最重要" id="toc-第-1-章先建立正確的心態這章最重要" class="nav-link" data-scroll-target="#第-1-章先建立正確的心態這章最重要">第 1 章：先建立正確的心態（這章最重要）</a>
+  <ul class="collapse">
+  <li><a href="#為什麼是現在一段-ai-極簡史" id="toc-為什麼是現在一段-ai-極簡史" class="nav-link" data-scroll-target="#為什麼是現在一段-ai-極簡史">1.0 為什麼是「現在」？——一段 AI 極簡史</a></li>
+  <li><a href="#ai-時代的分工你是指揮ai-是打字員" id="toc-ai-時代的分工你是指揮ai-是打字員" class="nav-link" data-scroll-target="#ai-時代的分工你是指揮ai-是打字員">1.1 AI 時代的分工：你是「指揮」，AI 是「打字員」</a></li>
+  <li><a href="#核心循環寫程式其實是一個圈圈" id="toc-核心循環寫程式其實是一個圈圈" class="nav-link" data-scroll-target="#核心循環寫程式其實是一個圈圈">1.2 核心循環：寫程式其實是一個圈圈</a></li>
+  <li><a href="#三個讓你走得長遠的心法" id="toc-三個讓你走得長遠的心法" class="nav-link" data-scroll-target="#三個讓你走得長遠的心法">1.3 三個讓你走得長遠的心法</a></li>
+  </ul></li>
+  <li><a href="#第-2-章認識你的工具箱" id="toc-第-2-章認識你的工具箱" class="nav-link" data-scroll-target="#第-2-章認識你的工具箱">第 2 章：認識你的工具箱</a>
+  <ul class="collapse">
+  <li><a href="#python-是什麼" id="toc-python-是什麼" class="nav-link" data-scroll-target="#python-是什麼">2.1 Python 是什麼？</a></li>
+  <li><a href="#jupyter-notebook-是什麼" id="toc-jupyter-notebook-是什麼" class="nav-link" data-scroll-target="#jupyter-notebook-是什麼">2.2 Jupyter Notebook 是什麼？</a></li>
+  <li><a href="#ai-寫程式工具主要分兩類" id="toc-ai-寫程式工具主要分兩類" class="nav-link" data-scroll-target="#ai-寫程式工具主要分兩類">2.3 AI 寫程式工具，主要分兩類</a></li>
+  <li><a href="#我要在哪裡跑-python兩條路" id="toc-我要在哪裡跑-python兩條路" class="nav-link" data-scroll-target="#我要在哪裡跑-python兩條路">2.4 我要在哪裡跑 Python？兩條路</a></li>
+  </ul></li>
+  <li><a href="#第-3-章第一支程式不要怕" id="toc-第-3-章第一支程式不要怕" class="nav-link" data-scroll-target="#第-3-章第一支程式不要怕">第 3 章：第一支程式——不要怕</a>
+  <ul class="collapse">
+  <li><a href="#換你試試" id="toc-換你試試" class="nav-link" data-scroll-target="#換你試試">換你試試</a></li>
+  </ul></li>
+  <li><a href="#第-4-章程式的核心零件核心邏輯" id="toc-第-4-章程式的核心零件核心邏輯" class="nav-link" data-scroll-target="#第-4-章程式的核心零件核心邏輯">第 4 章：程式的核心零件（核心邏輯）</a>
+  <ul class="collapse">
+  <li><a href="#變數幫資料取一個名字" id="toc-變數幫資料取一個名字" class="nav-link" data-scroll-target="#變數幫資料取一個名字">4.1 變數：幫資料取一個名字</a></li>
+  <li><a href="#資料型態資料有不同種類" id="toc-資料型態資料有不同種類" class="nav-link" data-scroll-target="#資料型態資料有不同種類">4.2 資料型態：資料有不同「種類」</a></li>
+  <li><a href="#運算與比較" id="toc-運算與比較" class="nav-link" data-scroll-target="#運算與比較">4.3 運算與比較</a></li>
+  <li><a href="#條件判斷-if-elif-else讓程式會做選擇" id="toc-條件判斷-if-elif-else讓程式會做選擇" class="nav-link" data-scroll-target="#條件判斷-if-elif-else讓程式會做選擇">4.4 條件判斷 if / elif / else：讓程式「會做選擇」</a></li>
+  <li><a href="#迴圈-for讓程式重複做" id="toc-迴圈-for讓程式重複做" class="nav-link" data-scroll-target="#迴圈-for讓程式重複做">4.5 迴圈 for：讓程式「重複做」</a></li>
+  <li><a href="#函式-function把一段邏輯包起來重複用" id="toc-函式-function把一段邏輯包起來重複用" class="nav-link" data-scroll-target="#函式-function把一段邏輯包起來重複用">4.6 函式 (function)：把一段邏輯「包起來」重複用</a></li>
+  <li><a href="#物件-object把資料和它會的動作綁在一起" id="toc-物件-object把資料和它會的動作綁在一起" class="nav-link" data-scroll-target="#物件-object把資料和它會的動作綁在一起">4.7 物件 (object)：把「資料」和「它會的動作」綁在一起</a></li>
+  <li><a href="#進階一次分清楚functionobjectdecorator" id="toc-進階一次分清楚functionobjectdecorator" class="nav-link" data-scroll-target="#進階一次分清楚functionobjectdecorator">4.8（進階）一次分清楚：function、object、decorator</a>
+  <ul class="collapse">
+  <li><a href="#第-4-章小結" id="toc-第-4-章小結" class="nav-link" data-scroll-target="#第-4-章小結">第 4 章小結</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#第-5-章跟-ai-一起寫程式的正確姿勢" id="toc-第-5-章跟-ai-一起寫程式的正確姿勢" class="nav-link" data-scroll-target="#第-5-章跟-ai-一起寫程式的正確姿勢">第 5 章：跟 AI 一起寫程式的「正確姿勢」</a>
+  <ul class="collapse">
+  <li><a href="#好提問的公式" id="toc-好提問的公式" class="nav-link" data-scroll-target="#好提問的公式">5.1 好提問的公式</a></li>
+  <li><a href="#對比爛提問-vs-好提問" id="toc-對比爛提問-vs-好提問" class="nav-link" data-scroll-target="#對比爛提問-vs-好提問">5.2 對比：爛提問 vs 好提問</a></li>
+  <li><a href="#把大問題拆小" id="toc-把大問題拆小" class="nav-link" data-scroll-target="#把大問題拆小">5.3 把大問題「拆小」</a></li>
+  <li><a href="#看不懂-ai-的程式這樣追問" id="toc-看不懂-ai-的程式這樣追問" class="nav-link" data-scroll-target="#看不懂-ai-的程式這樣追問">5.4 看不懂 AI 的程式？這樣追問</a></li>
+  <li><a href="#除錯三步驟跑出紅字時照做" id="toc-除錯三步驟跑出紅字時照做" class="nav-link" data-scroll-target="#除錯三步驟跑出紅字時照做">5.5 除錯三步驟（跑出紅字時照做）</a></li>
+  <li><a href="#練習故意製造一個錯誤再學會讀它" id="toc-練習故意製造一個錯誤再學會讀它" class="nav-link" data-scroll-target="#練習故意製造一個錯誤再學會讀它">5.6 練習：故意製造一個錯誤，再學會讀它</a></li>
+  </ul></li>
+  <li><a href="#第-6-章實戰小專案把零件組起來" id="toc-第-6-章實戰小專案把零件組起來" class="nav-link" data-scroll-target="#第-6-章實戰小專案把零件組起來">第 6 章：實戰小專案——把零件組起來</a></li>
+  <li><a href="#第-7-章邁向自己的網站" id="toc-第-7-章邁向自己的網站" class="nav-link" data-scroll-target="#第-7-章邁向自己的網站">第 7 章：邁向「自己的網站」</a>
+  <ul class="collapse">
+  <li><a href="#先搞懂網站是什麼組成的" id="toc-先搞懂網站是什麼組成的" class="nav-link" data-scroll-target="#先搞懂網站是什麼組成的">7.1 先搞懂「網站」是什麼組成的</a></li>
+  <li><a href="#新手最快的捷徑streamlit" id="toc-新手最快的捷徑streamlit" class="nav-link" data-scroll-target="#新手最快的捷徑streamlit">7.2 新手最快的捷徑：Streamlit</a></li>
+  <li><a href="#第一步先在自己電腦上把它跑起來" id="toc-第一步先在自己電腦上把它跑起來" class="nav-link" data-scroll-target="#第一步先在自己電腦上把它跑起來">7.3 第一步：先在自己電腦上把它跑起來</a></li>
+  <li><a href="#把工具免費部署到-streamlit-community-cloud重點章節" id="toc-把工具免費部署到-streamlit-community-cloud重點章節" class="nav-link" data-scroll-target="#把工具免費部署到-streamlit-community-cloud重點章節">7.4 把工具免費部署到 Streamlit Community Cloud（重點章節）</a></li>
+  <li><a href="#部署之後更新限制與部署失敗排查" id="toc-部署之後更新限制與部署失敗排查" class="nav-link" data-scroll-target="#部署之後更新限制與部署失敗排查">7.5 部署之後：更新、限制與「部署失敗」排查</a></li>
+  <li><a href="#想做真正的網站怎麼辦" id="toc-想做真正的網站怎麼辦" class="nav-link" data-scroll-target="#想做真正的網站怎麼辦">7.6 想做「真正的網站」怎麼辦？</a></li>
+  </ul></li>
+  <li><a href="#第-8-章學習路線圖與心法" id="toc-第-8-章學習路線圖與心法" class="nav-link" data-scroll-target="#第-8-章學習路線圖與心法">第 8 章：學習路線圖與心法</a>
+  <ul class="collapse">
+  <li><a href="#建議的-90-天路線" id="toc-建議的-90-天路線" class="nav-link" data-scroll-target="#建議的-90-天路線">8.1 建議的 90 天路線</a></li>
+  <li><a href="#五句心法貼在螢幕旁邊" id="toc-五句心法貼在螢幕旁邊" class="nav-link" data-scroll-target="#五句心法貼在螢幕旁邊">8.2 五句心法（貼在螢幕旁邊）</a></li>
+  <li><a href="#新手最常見的五個陷阱" id="toc-新手最常見的五個陷阱" class="nav-link" data-scroll-target="#新手最常見的五個陷阱">8.3 新手最常見的五個陷阱</a></li>
+  <li><a href="#結語" id="toc-結語" class="nav-link" data-scroll-target="#結語">結語</a></li>
+  </ul></li>
+  <li><a href="#補充章節在本地端用-venv-跑-jupyter做網站前的準備" id="toc-補充章節在本地端用-venv-跑-jupyter做網站前的準備" class="nav-link" data-scroll-target="#補充章節在本地端用-venv-跑-jupyter做網站前的準備">補充章節：在本地端用 venv 跑 Jupyter（做網站前的準備）</a>
+  <ul class="collapse">
+  <li><a href="#補a-1為什麼需要虛擬環境-venv" id="toc-補a-1為什麼需要虛擬環境-venv" class="nav-link" data-scroll-target="#補a-1為什麼需要虛擬環境-venv">補A-1：為什麼需要「虛擬環境 venv」？</a></li>
+  <li><a href="#補a-2四步驟在本機跑起-jupyter" id="toc-補a-2四步驟在本機跑起-jupyter" class="nav-link" data-scroll-target="#補a-2四步驟在本機跑起-jupyter">補A-2：四步驟，在本機跑起 Jupyter</a></li>
+  <li><a href="#補a-3幾個一定會遇到的小提醒" id="toc-補a-3幾個一定會遇到的小提醒" class="nav-link" data-scroll-target="#補a-3幾個一定會遇到的小提醒">補A-3：幾個一定會遇到的小提醒</a></li>
+  </ul></li>
+  <li><a href="#補充章節用-uv-管理-python-專案與依賴進階" id="toc-補充章節用-uv-管理-python-專案與依賴進階" class="nav-link" data-scroll-target="#補充章節用-uv-管理-python-專案與依賴進階">補充章節：用 uv 管理 Python 專案與依賴（進階）</a>
+  <ul class="collapse">
+  <li><a href="#補-1uv-是什麼為什麼值得學" id="toc-補-1uv-是什麼為什麼值得學" class="nav-link" data-scroll-target="#補-1uv-是什麼為什麼值得學">補-1：uv 是什麼？為什麼值得學</a></li>
+  <li><a href="#補-2核心心智模型記住兩個檔案" id="toc-補-2核心心智模型記住兩個檔案" class="nav-link" data-scroll-target="#補-2核心心智模型記住兩個檔案">補-2：核心心智模型——記住兩個檔案</a></li>
+  <li><a href="#補-3你會用到的指令在終端機執行不是在-notebook-裡" id="toc-補-3你會用到的指令在終端機執行不是在-notebook-裡" class="nav-link" data-scroll-target="#補-3你會用到的指令在終端機執行不是在-notebook-裡">補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）</a></li>
+  <li><a href="#補-4一條龍用-uv-從零到部署-streamlit" id="toc-補-4一條龍用-uv-從零到部署-streamlit" class="nav-link" data-scroll-target="#補-4一條龍用-uv-從零到部署-streamlit">補-4：一條龍——用 uv 從零到部署 Streamlit</a></li>
+  <li><a href="#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" id="toc-補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="nav-link" data-scroll-target="#補-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</a>
+  <ul class="collapse">
+  <li><a href="#給同學的提問範本uv-版可直接複製" id="toc-給同學的提問範本uv-版可直接複製" class="nav-link" data-scroll-target="#給同學的提問範本uv-版可直接複製">給同學的提問範本（uv 版，可直接複製）</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#附錄可直接複製的提示詞範本" id="toc-附錄可直接複製的提示詞範本" class="nav-link" data-scroll-target="#附錄可直接複製的提示詞範本">附錄：可直接複製的提示詞範本</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">用 AI 學寫 Python：從零到架起自己的網站</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><strong>給誰看</strong>：完全沒有寫過程式的人（尤其是金融、期貨背景的朋友） <strong>你需要的</strong>：一台能上網的電腦、好奇心，以及「不怕犯錯」的心態 <strong>最終目標</strong>：能在 AI 協助下，獨立做出一個屬於自己的網站</p>
+</blockquote>
+<hr>
+<section id="這份講義怎麼用" class="level3">
+<h3 class="anchored" data-anchor-id="這份講義怎麼用">這份講義怎麼用？</h3>
+<p>這是一份 <strong>Jupyter Notebook</strong>（互動式講義）。它由一格一格的「儲存格(cell)」組成，分成兩種：</p>
+<ul>
+<li><strong>文字格</strong>：像現在你正在讀的這段，用來說明觀念。</li>
+<li><strong>程式格</strong>：灰底、左邊有 <code>[ ]</code> 的，是可以「執行」的程式。</li>
+</ul>
+<p><strong>操作方式（最重要的一個動作）</strong>： 用滑鼠點一下程式格，然後按鍵盤 <strong><code>Shift</code> + <code>Enter</code></strong>，程式就會執行，結果會印在下方。</p>
+<blockquote class="blockquote">
+<p>💡 整份講義的精神：<strong>看到程式格，就動手按 Shift+Enter 跑跑看，再改改看。</strong> 程式不會因為你按錯而壞掉，大不了重跑一次。</p>
+</blockquote>
+<p>先試一格 👇 (點它，按 Shift+Enter)</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>想一邊讀、一邊動手跑程式？</strong> 這份講義的所有程式碼都能在 Google Colab 直接執行， 不用在自己電腦安裝任何東西。點下面按鈕會另開分頁，把整份講義載入 Colab：</p>
+<p><a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</div>
+</div>
+</div>
+<div id="938af1dc" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"我成功執行了第一格程式！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>有看到下面跳出一行字嗎？恭喜，你已經「執行」了人生第一支程式 🎉</p>
+<p>現在把上面那格的文字改成你的名字，再按一次 <code>Shift+Enter</code>,看看結果會不會跟著變。</p>
+<hr>
+</section>
+<section id="這份講義的地圖" class="level3">
+<h3 class="anchored" data-anchor-id="這份講義的地圖">這份講義的地圖</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>章節</th>
+<th>內容</th>
+<th>你會得到什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>第 1 章</td>
+<td>心態與框架</td>
+<td>搞懂「人」和「AI」在寫程式時各自負責什麼</td>
+</tr>
+<tr class="even">
+<td>第 2 章</td>
+<td>認識工具箱</td>
+<td>知道有哪些 AI 工具、該怎麼選</td>
+</tr>
+<tr class="odd">
+<td>第 3 章</td>
+<td>第一支程式</td>
+<td>動手、破除恐懼</td>
+</tr>
+<tr class="even">
+<td>第 4 章</td>
+<td>程式的核心零件</td>
+<td>看得懂程式在做什麼（核心邏輯）</td>
+</tr>
+<tr class="odd">
+<td>第 5 章</td>
+<td>跟 AI 一起寫程式的正確姿勢</td>
+<td>學會「會問」這個關鍵能力</td>
+</tr>
+<tr class="even">
+<td>第 6 章</td>
+<td>實戰小專案</td>
+<td>把零件組成一個小工具</td>
+</tr>
+<tr class="odd">
+<td>第 7 章</td>
+<td>邁向自己的網站</td>
+<td>從程式到「上線的網站」完整路徑</td>
+</tr>
+<tr class="even">
+<td>第 8 章</td>
+<td>學習路線圖</td>
+<td>接下來 90 天怎麼走</td>
+</tr>
+<tr class="odd">
+<td>補充章節</td>
+<td>本地 venv ＋ 用 uv 管理專案（進階）</td>
+<td>在自己電腦上跑 Jupyter、做網站，與可重現的依賴管理</td>
+</tr>
+<tr class="even">
+<td>附錄</td>
+<td>提示詞範本</td>
+<td>可直接複製貼上使用</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第-1-章先建立正確的心態這章最重要" class="level1">
+<h1>第 1 章：先建立正確的心態（這章最重要）</h1>
+<p>很多人以為「學寫程式 = 把一堆指令背起來」。<strong>錯。</strong></p>
+<p>在 AI 時代，真正的關鍵能力不是「記得語法」，而是：</p>
+<blockquote class="blockquote">
+<p><strong>把一個模糊的想法，拆解成清楚、明確、一步一步的步驟。</strong></p>
+</blockquote>
+<p>電腦（和 AI）非常聽話，但也非常笨——它只會「照你說的做」，不會「照你想的做」。所以你想得越清楚、講得越精確，結果就越好。</p>
+<hr>
+<section id="為什麼是現在一段-ai-極簡史" class="level3">
+<h3 class="anchored" data-anchor-id="為什麼是現在一段-ai-極簡史">1.0 為什麼是「現在」？——一段 AI 極簡史</h3>
+<p>你可能會問：「程式又不是新東西，為什麼<strong>現在</strong>特別適合像我這樣的非工程師來學？」 答案藏在最近幾年 AI 的一連串突破裡。用最白話的方式講一遍：</p>
+<ul>
+<li><p><strong>2017 年｜一切的起點</strong>：Google 八位研究員發表一篇論文《Attention Is All You Need》，提出了一個叫 <strong>Transformer</strong> 的全新架構。它的關鍵是「<strong>注意力機制</strong>」——讓模型在讀一句話時，能自己判斷「哪幾個字最該被注意」。 &gt; 🧠 生活比喻：你讀「<strong>台指期</strong>今天<strong>大漲</strong>」這句話，腦袋會自動把重點放在「台指期」和「大漲」，而不是平均地看每個字。Transformer 就是讓電腦學會這種「抓重點」的能力。</p>
+<p>這個架構還有兩個威力：<strong>能大量平行運算</strong>（訓練得更快），而且<strong>越大越強</strong>（資料和模型越大、表現越好，業界叫 scaling）。後面幾乎所有的 AI，都是從這裡長出來的。</p></li>
+<li><p><strong>2018–2020 年｜越養越大</strong>：OpenAI 接力推出 GPT-1、GPT-2、GPT-3，一代比一代大、一代比一代會「接話」。不過這時還主要是研究圈在玩。</p></li>
+<li><p><strong>2022 年 11 月｜AI 走進每個人家裡</strong>：<strong>ChatGPT</strong> 上線。第一次，一般人<strong>不用會任何程式</strong>，只要「用講的」就能叫 AI 幫忙寫文章、查資料、甚至寫程式。短短兩個月就突破上億用戶。</p></li>
+<li><p><strong>2021 年至今｜AI 變成「寫程式的夥伴」</strong>：寫程式專用的 AI 助手陸續出現（GitHub Copilot、Claude、Cursor 等），它們能讀懂你的需求、直接幫你寫出程式、還能幫你抓錯。到了 2025–2026 年，「<strong>不必是工程師，也能做出能用的軟體</strong>」已經是現實。</p></li>
+</ul>
+<p>把這段歷史接回你身上：<strong>正因為有了這些工具，一個期貨營業員，今天才有辦法自己架出一個交易小工具網站。</strong> 你要學的不是「贏過 AI」，而是「<strong>會指揮 AI、看得懂它、能驗證它</strong>」——這正是接下來這份講義要帶你練的事。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>年份</th>
+<th>事件</th>
+<th>對你的意義</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2017</td>
+<td>Transformer 架構問世（《Attention Is All You Need》）</td>
+<td>現代 AI 的地基</td>
+</tr>
+<tr class="even">
+<td>2018–2020</td>
+<td>GPT-1 → GPT-3 接力</td>
+<td>AI 越來越會「理解與生成文字」</td>
+</tr>
+<tr class="odd">
+<td>2022/11</td>
+<td>ChatGPT 上線</td>
+<td>一般人開始能「用講的」叫 AI 做事</td>
+</tr>
+<tr class="even">
+<td>2021–至今</td>
+<td>AI 寫程式助手普及</td>
+<td><strong>你不必先成為工程師，也能開始動手做東西</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ai-時代的分工你是指揮ai-是打字員" class="level3">
+<h3 class="anchored" data-anchor-id="ai-時代的分工你是指揮ai-是打字員">1.1 AI 時代的分工：你是「指揮」，AI 是「打字員」</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>角色</th>
+<th>負責什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>你（人）</strong></td>
+<td>想清楚「我要什麼」、把需求講明白、<strong>驗證結果對不對</strong></td>
+</tr>
+<tr class="even">
+<td><strong>AI</strong></td>
+<td>把你的需求，翻譯成電腦看得懂的程式碼</td>
+</tr>
+</tbody>
+</table>
+<p>這代表一件很重要的事：<strong>你不需要會「從零默寫程式」，但你必須看得懂程式大概在做什麼，並且能判斷對錯。</strong></p>
+<p>這就是為什麼第 4 章我們還是要學基本邏輯——不是為了考試，而是為了<strong>能驗證 AI 給你的東西</strong>。盲目相信 AI，就像盲目相信營業員的明牌一樣危險。</p>
+<hr>
+</section>
+<section id="核心循環寫程式其實是一個圈圈" class="level3">
+<h3 class="anchored" data-anchor-id="核心循環寫程式其實是一個圈圈">1.2 核心循環：寫程式其實是一個圈圈</h3>
+<p>不管專案大小，跟 AI 寫程式都是在重複這個循環：</p>
+<pre><code>   ┌─────────────────────────────────────────┐
+   │                                          │
+   ▼                                          │
+①「想清楚我要什麼」                            │
+   │                                          │
+   ▼                                          │
+② 用清楚的話請 AI 寫程式                        │
+   │                                          │
+   ▼                                          │
+③ 執行看看                                     │
+   │                                          │
+   ▼                                          │
+④ 看結果 → 對了嗎？───── 對 ──→ 完成！          │
+   │                                          │
+   └─不對 / 有錯誤 → 把狀況回報給 AI ───────────┘</code></pre>
+<p>新手最常見的誤會：<strong>以為一次就要成功。</strong> 不會的。連專業工程師都是靠這個循環，跑個三五次甚至十幾次才完成。<strong>「跑不出來」是過程，不是失敗。</strong></p>
+<hr>
+</section>
+<section id="三個讓你走得長遠的心法" class="level3">
+<h3 class="anchored" data-anchor-id="三個讓你走得長遠的心法">1.3 三個讓你走得長遠的心法</h3>
+<ol type="1">
+<li><strong>錯誤訊息是朋友，不是敵人。</strong> 紅色的錯誤訊息不是在罵你，它是在「告訴你哪裡卡住」。等一下你會學到：把它整段複製貼給 AI，它通常就能幫你解。</li>
+<li><strong>一次只做一小步。</strong> 不要一開口就要 AI「幫我做一個交易系統」。要拆小：先能印出一個數字，再能算損益，再能畫圖，再變網頁……</li>
+<li><strong>看不懂就問「為什麼」。</strong> AI 不只會寫程式，也會當你的家教。隨時可以追問：「這行 <code>for</code> 是什麼意思？用生活例子解釋給完全不懂的人聽。」</li>
+</ol>
+</section>
+</section>
+<section id="第-2-章認識你的工具箱" class="level1">
+<h1>第 2 章：認識你的工具箱</h1>
+<p>開始之前，先搞懂幾個名詞。我用白話解釋，你不用背。</p>
+<hr>
+<section id="python-是什麼" class="level3">
+<h3 class="anchored" data-anchor-id="python-是什麼">2.1 Python 是什麼？</h3>
+<p>Python 是一種<strong>程式語言</strong>——也就是「人和電腦溝通的語言」之一。</p>
+<p>它之所以最適合新手，原因有三： - <strong>長得最像英文</strong>，最好讀； - <strong>用途超廣</strong>：資料分析、畫圖、自動化、做網站、串接 AI……都行； - <strong>資源最多</strong>：你遇到的問題，網路上幾乎都有答案，AI 也最熟它。</p>
+<p>對金融背景的人來說，Python 還有個額外好處：它是量化分析、抓股價、跑回測最主流的語言。</p>
+<hr>
+</section>
+<section id="jupyter-notebook-是什麼" class="level3">
+<h3 class="anchored" data-anchor-id="jupyter-notebook-是什麼">2.2 Jupyter Notebook 是什麼？</h3>
+<p>就是<strong>你現在正在用的這個東西</strong>。它的特點是「邊寫程式、邊看結果、邊寫筆記」三合一，所以特別適合<strong>學習</strong>和<strong>做資料分析</strong>。</p>
+<hr>
+</section>
+<section id="ai-寫程式工具主要分兩類" class="level3">
+<h3 class="anchored" data-anchor-id="ai-寫程式工具主要分兩類">2.3 AI 寫程式工具，主要分兩類</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>類型</th>
+<th>它長怎樣</th>
+<th>代表工具</th>
+<th>適合誰</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>對話型</strong></td>
+<td>像聊天視窗，你問它答</td>
+<td>ChatGPT、Claude、Gemini</td>
+<td><strong>新手起手式</strong>：最直覺，複製貼上就能用</td>
+</tr>
+<tr class="even">
+<td><strong>整合到編輯器型</strong></td>
+<td>直接住在你的程式編輯器裡，能讀你的整個專案、自己改檔案</td>
+<td>Cursor、GitHub Copilot、Claude Code 等</td>
+<td>上手後想加速、做比較大的專案</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>給 0 基礎的建議路線</strong>： <strong>先用「對話型 AI」+ 這份 Jupyter 講義</strong>，把基本邏輯摸熟（第 3～6 章）。 等你大概知道程式長怎樣、跑起來是什麼感覺了，<strong>再升級到「編輯器整合型」工具</strong>去做網站（第 7 章）。</p>
+<p>一開始就用太強的自動化工具，反而會因為「看不懂它在幹嘛」而失去判斷力。先學會走，再學會跑。</p>
+</blockquote>
+<hr>
+</section>
+<section id="我要在哪裡跑-python兩條路" class="level3">
+<h3 class="anchored" data-anchor-id="我要在哪裡跑-python兩條路">2.4 我要在哪裡跑 Python？兩條路</h3>
+<p>你有兩條路可以選，差別在「要不要安裝」：</p>
+<p><strong>路線 A：線上環境（推薦新手，零安裝）</strong> 打開瀏覽器就能用，不用在電腦上裝任何東西。常見的有兩種： - <strong>JupyterLite</strong>：把「你現在用的這種 Jupyter」直接搬進瀏覽器。靠一種叫 WebAssembly 的技術，Python 整個跑在你的瀏覽器分頁裡，<strong>連伺服器都不需要</strong>。 - <strong>Google Colab</strong>：免費，介面跟這份講義幾乎一樣，背後是 Google 借你一台雲端機器。</p>
+<p><strong>強烈建議第一個月都走線上路線</strong>，先把心力放在「學邏輯、跟 AI 練習」，把「安裝」的麻煩留到以後。</p>
+<blockquote class="blockquote">
+<p>⚠️ 線上環境有兩個限制要先知道： - <strong>存檔不會自動留著</strong>：像 JupyterLite 這種純瀏覽器環境，關掉分頁東西可能就不見了，記得<strong>自己下載 <code>.ipynb</code> 檔</strong>保存。 - <strong>不能拿來「架網站」</strong>：線上環境跑不了需要長時間開著的伺服器（例如第 7 章的 Streamlit）。所以——</p>
+</blockquote>
+<p><strong>路線 B：裝在自己電腦上（之後做網站必走）</strong> 等你要做第 7 章的網站、或想長期開發，就得把 Python 裝到自己電腦上。 這條路會多一個關鍵步驟：<strong>建立「虛擬環境 (venv)」</strong>——簡單說就是「幫每個專案準備一個獨立、乾淨的工具箱，彼此不打架」。 怎麼一步步建 venv、再用它跑 Jupyter，我整理在後面的<strong>補充章節〈在本地端用 venv 跑 Jupyter〉</strong>；想用更專業的工具，則可看〈用 uv 管理專案〉那章。</p>
+<blockquote class="blockquote">
+<p>💻 <strong>動手做（第一支程式）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</blockquote>
+</section>
+</section>
+<section id="第-3-章第一支程式不要怕" class="level1">
+<h1>第 3 章：第一支程式——不要怕</h1>
+<p>我們從最簡單的指令開始：<code>print()</code>。它的作用是「把括號裡的東西印出來」。</p>
+<p>下面每一格都按 <code>Shift+Enter</code> 跑跑看。</p>
+<div id="9b54eedb" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, 期貨營業員班的同學們！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>引號 <code>" "</code> 裡面的，是<strong>文字</strong>（程式裡叫「字串」）。你可以放任何字。</p>
+<p>下面這格沒有引號，放的是<strong>數字</strong>，可以直接算數學：</p>
+<div id="a96bb027" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">100</span> <span class="op">*</span> <span class="dv">50</span>)   <span class="co"># 假設小台指漲 100 點，每點 50 元，賺多少？</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>注意到 <code># 假設小台指...</code> 這段了嗎？</p>
+<p><code>#</code> 後面的文字叫<strong>註解</strong>：它<strong>不會被執行</strong>，純粹是寫給「人」看的備註。 養成寫註解的習慣，未來的你會感謝現在的你。</p>
+<hr>
+<section id="換你試試" class="level3">
+<h3 class="anchored" data-anchor-id="換你試試">換你試試</h3>
+<p>把下面這格改成「<strong>大台指漲 80 點，每點 200 元</strong>」的算式，然後執行：</p>
+<div id="86b921cf" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在這裡改：把 ? 換成正確的數字</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(? <span class="op">*</span> ?)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>如果你按了 <code>Shift+Enter</code> 出現一堆紅字——<strong>太好了，這是你第一次看到「錯誤訊息」。</strong> 那是因為 <code>?</code> 不是合法的數字。把它改成數字（例如 <code>80 * 200</code>）再跑一次就好。 記住第 1 章說的：<strong>錯誤是過程，不是失敗。</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>💻 <strong>動手做（核心零件）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</blockquote>
+</section>
+</section>
+<section id="第-4-章程式的核心零件核心邏輯" class="level1">
+<h1>第 4 章：程式的核心零件（核心邏輯）</h1>
+<p>幾乎所有程式，都是用這幾個零件組合出來的。把這章看懂，你就「看得懂」99% 的程式在做什麼了——這正是你驗證 AI 的本錢。</p>
+<p>我會用<strong>期貨損益計算</strong>的情境貫穿，讓你邊學邊有感覺。</p>
+<blockquote class="blockquote">
+<p>⚠️ 提醒：以下數字（每點價值、保證金等）都是<strong>舉例方便理解</strong>，不是真實商品規格，實際請以交易所公告為準。</p>
+</blockquote>
+<section id="變數幫資料取一個名字" class="level2">
+<h2 class="anchored" data-anchor-id="變數幫資料取一個名字">4.1 變數：幫資料取一個名字</h2>
+<p>「變數」就是<strong>幫一個值取名字</strong>，方便之後重複使用、修改。 用 <code>=</code> 來「把右邊的值，存進左邊的名字」。</p>
+<div id="4af9f9bd" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>      <span class="co"># 假設小台指，每點 50 元</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>進場點數 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>出場點數 <span class="op">=</span> <span class="dv">18120</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"口數："</span>, 口數)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"每點價值："</span>, 每點價值)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>Python 連中文變數名都能用，但<strong>業界習慣用英文</strong>（例如 <code>contracts</code>、<code>point_value</code>）。 初學階段為了好懂，我們先用中文；之後寫真正的專案再換英文。</p>
+</blockquote>
+<p>改了某個變數的值，後面用到它的地方就會跟著變——這就是「變數」好用的地方。</p>
+</section>
+<section id="資料型態資料有不同種類" class="level2">
+<h2 class="anchored" data-anchor-id="資料型態資料有不同種類">4.2 資料型態：資料有不同「種類」</h2>
+<p>電腦會區分資料的種類，常見的有：</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>型態</th>
+<th>英文</th>
+<th>例子</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>整數</td>
+<td>int</td>
+<td><code>2</code>、<code>18000</code></td>
+<td>算數量、點數</td>
+</tr>
+<tr class="even">
+<td>小數</td>
+<td>float</td>
+<td><code>3.14</code>、<code>0.05</code></td>
+<td>算比率、價格</td>
+</tr>
+<tr class="odd">
+<td>文字</td>
+<td>str</td>
+<td><code>"多單"</code>、<code>"台指期"</code></td>
+<td>任何文字</td>
+</tr>
+<tr class="even">
+<td>真/假</td>
+<td>bool</td>
+<td><code>True</code>、<code>False</code></td>
+<td>判斷對錯</td>
+</tr>
+<tr class="odd">
+<td>清單</td>
+<td>list</td>
+<td><code>[18000, 18050, 18120]</code></td>
+<td>一串資料</td>
+</tr>
+<tr class="even">
+<td>字典</td>
+<td>dict</td>
+<td><code>{"商品": "小台", "口數": 2}</code></td>
+<td>有標籤的資料</td>
+</tr>
+</tbody>
+</table>
+<p>下面這格用 <code>type()</code> 看看每個東西是什麼型態：</p>
+<div id="b164c926" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"多單"</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([<span class="dv">18000</span>, <span class="dv">18050</span>, <span class="dv">18120</span>]))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>清單(list)</strong> 和 <strong>字典(dict)</strong> 特別重要，因為真實資料常常一大串。先看清單：</p>
+<div id="609dc2ba" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"總共幾天："</span>, <span class="bu">len</span>(每日收盤))      <span class="co"># len() 算長度</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第一天："</span>, 每日收盤[<span class="dv">0</span>])           <span class="co"># 注意！程式從 0 開始數</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"最後一天："</span>, 每日收盤[<span class="op">-</span><span class="dv">1</span>])         <span class="co"># -1 代表倒數第一個</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>🔑 <strong>新手最常踩的雷</strong>：程式世界裡，<strong>數數字從 0 開始</strong>。 所以「第一個」是 <code>[0]</code>，「第二個」是 <code>[1]</code>，以此類推。一開始不習慣很正常。</p>
+</blockquote>
+</section>
+<section id="運算與比較" class="level2">
+<h2 class="anchored" data-anchor-id="運算與比較">4.3 運算與比較</h2>
+<p>除了加減乘除，最常用的是<strong>比較</strong>，結果會是 <code>True</code>(真) 或 <code>False</code>(假)：</p>
+<div id="77c1e864" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">18250</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"現價是否高於停損價？"</span>, 現價 <span class="op">&gt;</span> 停損價)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"是否已跌破停損？"</span>, 現價 <span class="op">&lt;</span> 停損價)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"兩者是否相等？"</span>, 現價 <span class="op">==</span> 停損價)   <span class="co"># 注意是「兩個等號」代表「相等嗎」</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>🔑 <strong>超級重要</strong>： - 一個等號 <code>=</code> 是「<strong>指定/存入</strong>」（把值存進變數） - 兩個等號 <code>==</code> 是「<strong>相等嗎？</strong>」（問問題，得到 True/False）</p>
+<p>搞混這兩個，是新手第一名常見錯誤。</p>
+</blockquote>
+</section>
+<section id="條件判斷-if-elif-else讓程式會做選擇" class="level2">
+<h2 class="anchored" data-anchor-id="條件判斷-if-elif-else讓程式會做選擇">4.4 條件判斷 if / elif / else：讓程式「會做選擇」</h2>
+<p>這是程式有「智慧」的開始：<strong>符合某條件，就做某件事。</strong> 這跟你做交易決策的邏輯一模一樣：「<strong>如果</strong>跌破停損，<strong>就</strong>出場。」</p>
+<div id="9b3a6b5d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">17900</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>停利價 <span class="op">=</span> <span class="dv">18500</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 現價 <span class="op">&lt;=</span> 停損價:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"⚠️ 已觸及停損，建議出場！"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 現價 <span class="op">&gt;=</span> 停利價:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"🎯 已達停利目標，可考慮獲利了結！"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"✅ 在區間內，續抱觀察。"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>注意兩個關鍵格式</strong>（Python 很在意這個）： 1. 條件那行結尾要有 <strong>冒號 <code>:</code></strong> 2. 下一行要 <strong>往內縮排</strong>（通常按一下 Tab 或 4 個空格）。縮排代表「這是 if 底下要做的事」。</p>
+<blockquote class="blockquote">
+<p>換你試試：把上面的 <code>現價</code> 改成 <code>18600</code>、<code>18200</code>、<code>17900</code>，分別跑跑看，觀察印出的訊息怎麼變。這就是「條件判斷」的威力。</p>
+</blockquote>
+</section>
+<section id="迴圈-for讓程式重複做" class="level2">
+<h2 class="anchored" data-anchor-id="迴圈-for讓程式重複做">4.5 迴圈 for：讓程式「重複做」</h2>
+<p>當你要對「一整串資料」逐筆處理時，就用迴圈。 例如：把每天的收盤價，逐筆印出來。</p>
+<div id="675137be" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 收盤 <span class="kw">in</span> 每日收盤:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"今天收盤："</span>, 收盤)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"---- 印完了 ----"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>這段的意思是：「<strong>對於</strong> <code>每日收盤</code> 裡的<strong>每一個</strong>值（暫時叫它 <code>收盤</code>），<strong>就</strong>執行縮排內的動作。」</p>
+<p>迴圈真正強大的地方，是搭配「累加」。下面算<strong>這幾天每天相對前一天的損益總和</strong>（簡化示意）：</p>
+<div id="cf4f5194" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span>   <span class="co"># 先準備一個「存錢筒」，從 0 開始</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(每日收盤)):</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    當日變動點數 <span class="op">=</span> 每日收盤[i] <span class="op">-</span> 每日收盤[i<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    當日損益 <span class="op">=</span> 當日變動點數 <span class="op">*</span> 每點價值 <span class="op">*</span> 口數</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 當日損益       <span class="co"># 累加進存錢筒</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第 </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> 天：變動 </span><span class="sc">{當日變動點數}</span><span class="ss"> 點，損益 </span><span class="sc">{當日損益}</span><span class="ss"> 元"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=================="</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"區間總損益："</span>, 總損益, <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>這格出現了一個好用的新東西：<code>f"..."</code>（叫做 <strong>f-string</strong>）。 只要在引號前加個 <code>f</code>，就能在文字裡用 <code>{ }</code> 直接塞變數，超方便。</p>
+<blockquote class="blockquote">
+<p>看不懂 <code>range(1, len(...))</code>？沒關係。<strong>這正是你練習問 AI 的好時機</strong>： 複製這格程式，問 AI：「請用完全不懂程式的方式，一行一行解釋這段在做什麼，特別是 range 那行。」</p>
+</blockquote>
+</section>
+<section id="函式-function把一段邏輯包起來重複用" class="level2">
+<h2 class="anchored" data-anchor-id="函式-function把一段邏輯包起來重複用">4.6 函式 (function)：把一段邏輯「包起來」重複用</h2>
+<p>如果「算損益」這件事你要做很多次，每次都重抄一遍很煩。 <strong>函式</strong>就是把一段邏輯打包、取個名字，之後一行就能呼叫。</p>
+<div id="5f1c9ca6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    變動點數 <span class="op">=</span> 出場 <span class="op">-</span> 進場</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 變動點數 <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 損益    <span class="co"># return = 把算好的結果「交回去」</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 包好之後，要用幾次就用幾次：</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易A："</span>, 計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易B："</span>, 計算損益(<span class="dv">18500</span>, <span class="dv">18300</span>, <span class="dv">2</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易C："</span>, 計算損益(<span class="dv">17000</span>, <span class="dv">17500</span>, <span class="dv">3</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><code>def</code> = 我要「定義(define)」一個函式</li>
+<li>括號裡的 <code>進場, 出場, ...</code> 叫<strong>參數</strong>：是「呼叫時要餵給它的資料」</li>
+<li><code>return</code> = 把結果交回去，讓外面可以接住、印出來</li>
+</ul>
+<p><strong>函式是「程式積木」</strong>。等一下做網站，整個網站其實就是一堆函式組起來的。</p>
+</section>
+<section id="物件-object把資料和它會的動作綁在一起" class="level2">
+<h2 class="anchored" data-anchor-id="物件-object把資料和它會的動作綁在一起">4.7 物件 (object)：把「資料」和「它會的動作」綁在一起</h2>
+<p>到目前為止，「資料」（變數、清單）和「動作」（函式）是分開的。 但你其實<strong>早就</strong>在用一種把兩者綁在一起的東西了，只是還沒人幫它取名字——它叫 <strong>物件 (object)</strong>。</p>
+<p>一句話記住： &gt; <strong>物件 = 一包資料 ＋ 這包資料自己會的動作。</strong></p>
+<p>還記得這些寫法嗎？你一直在用：</p>
+<div id="ab5559e0" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 清單(list)就是一種物件，它自己「會」很多動作：</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>每日收盤.append(<span class="dv">18250</span>)        <span class="co"># .append() 是清單「自己會的動作」：在後面加一筆</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"加完之後："</span>, 每日收盤)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 文字(str)也是一種物件，它也有自己會的動作：</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>商品 <span class="op">=</span> <span class="st">"台指期"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"變大寫："</span>, <span class="st">"tx"</span>.upper())   <span class="co"># .upper() 是文字「自己會的動作」</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"商品幾個字："</span>, <span class="bu">len</span>(商品))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>看到中間那個 <strong><code>.</code>（點）</strong> 了嗎？它的意思就是：「<strong>叫這個物件，做它自己會的某個動作</strong>」。</p>
+<ul>
+<li><code>每日收盤.append(...)</code>：叫「這個清單」去執行「在尾巴加一筆」。</li>
+<li><code>"tx".upper()</code>：叫「這串文字」去執行「全部變大寫」。</li>
+</ul>
+<p>這些「物件自己會的動作」，有個專有名詞叫 <strong>方法 (method)</strong>——說穿了就是「<strong>綁在某個物件身上的函式</strong>」。 物件身上帶的資料，則叫 <strong>屬性 (attribute)</strong>。</p>
+<blockquote class="blockquote">
+<p>🔑 為什麼要懂這個？因為等你做網站時，幾乎<strong>每一行</strong>都長這樣：<code>st.title(...)</code>、<code>df.head()</code>、<code>data.sort_values(...)</code>…… 全都是「某個物件 <code>.</code> 它會的動作」。看懂這個句型，你就看得懂一大半的真實程式碼了。</p>
+</blockquote>
+<hr>
+<section id="選讀那這些物件是怎麼來的class" class="level4">
+<h4 class="anchored" data-anchor-id="選讀那這些物件是怎麼來的class">（選讀）那這些「物件」是怎麼來的？——<code>class</code></h4>
+<p>你不需要會自己建立物件，但看一眼它長怎樣，以後就不會怕。 <strong><code>class</code>（類別）就是「物件的設計圖」</strong>：先畫好一張「交易」的設計圖，之後就能照圖做出一個又一個交易物件。</p>
+<div id="ea829571" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># （選讀）用 class 畫一張「交易」的設計圖</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 交易:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 定義這個物件有哪些「屬性」和「方法」：</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, 進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 下面這些是這個物件的「屬性」（它帶在身上的資料）</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.進場 <span class="op">=</span> 進場</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.出場 <span class="op">=</span> 出場</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.口數 <span class="op">=</span> 口數</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.每點價值 <span class="op">=</span> 每點價值</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 損益(<span class="va">self</span>):                       <span class="co"># 這是它的「方法」（它自己會的動作）</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.出場 <span class="op">-</span> <span class="va">self</span>.進場) <span class="op">*</span> <span class="va">self</span>.口數 <span class="op">*</span> <span class="va">self</span>.每點價值</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 照設計圖做出一個「交易物件」：</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> 交易(進場<span class="op">=</span><span class="dv">18000</span>, 出場<span class="op">=</span><span class="dv">18120</span>, 口數<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這筆交易的損益："</span>, A.損益(), <span class="st">"元"</span>)    <span class="co"># 叫物件 A 做它會的「損益」動作</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"它的進場價屬性："</span>, A.進場)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>🟡 看不懂 <code>class</code> / <code>self</code> / <code>__init__</code> 完全沒關係，<strong>現階段可以先跳過</strong>。 你只要記得「<strong>物件 = 資料 + 它會的動作，用 <code>.</code> 去叫它</strong>」就夠用了。真要自己寫 class 時，再請 AI 一行一行帶你。</p>
+</blockquote>
+</section>
+</section>
+<section id="進階一次分清楚functionobjectdecorator" class="level2">
+<h2 class="anchored" data-anchor-id="進階一次分清楚functionobjectdecorator">4.8（進階）一次分清楚：function、object、decorator</h2>
+<p>這三個詞很容易混。用「一句話 + 一個詞性比喻」各自記住：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>名稱</th>
+<th>一句話</th>
+<th>詞性比喻</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>函式 function</strong></td>
+<td>一個「動作」，你餵資料、它回結果</td>
+<td><strong>動詞</strong>（做一件事）</td>
+<td><code>計算損益(...)</code>、<code>print(...)</code></td>
+</tr>
+<tr class="even">
+<td><strong>物件 object</strong></td>
+<td>一個「東西」，自帶資料和自己的函式（方法）</td>
+<td><strong>名詞</strong>（一個帶能力的東西）</td>
+<td>一個清單、一筆「交易」</td>
+</tr>
+<tr class="odd">
+<td><strong>裝飾器 decorator</strong></td>
+<td>一個「外掛包裝」，不改原函式，就幫它<strong>加上額外行為</strong></td>
+<td><strong>外衣</strong>（替動作加料）</td>
+<td><code>@st.cache_data</code></td>
+</tr>
+</tbody>
+</table>
+<p>前兩個你已經懂了，重點講第三個——<strong>裝飾器</strong>，因為你做網站時一定會遇到它。</p>
+<p><strong>它要解決什麼問題？</strong> 假設你有很多函式，想幫<strong>每一個</strong>都加上「執行前先印一行記錄」的功能。 笨方法是每個函式裡都貼一段重複的程式碼。裝飾器讓你<strong>寫一次、到處套</strong>，而且<strong>完全不用改原本的函式</strong>。</p>
+<p>寫法就是在函式上面加一行 <code>@某個裝飾器</code>：</p>
+<div id="ebd52289" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 先做一個「外掛包裝」：在原本的動作前後，各加一句記錄</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 加上記錄(原本的函式):</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 包裝後(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"👉 開始執行："</span>, 原本的函式.<span class="va">__name__</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> 原本的函式(<span class="op">*</span>args, <span class="op">**</span>kwargs)      <span class="co"># 這行才是真正去做原本的事</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"✅ 執行完畢，結果是："</span>, 結果)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> 結果</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 包裝後</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 用 @ 把這個包裝「戴」到函式頭上</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="at">@加上記錄</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 照常呼叫——但它已經自動多了「記錄」的行為</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>跑跑看：你只是呼叫 <code>計算損益(...)</code>，卻自動多印了「開始執行 / 執行完畢」兩行——這就是裝飾器替函式「加料」的效果，而 <code>計算損益</code> 本身<strong>一個字都沒改</strong>。</p>
+<p><code>@加上記錄</code> 這一行的意思就是：「<strong>把 <code>計算損益</code> 這個函式，用 <code>加上記錄</code> 包裝一下再用</strong>」。</p>
+<hr>
+<section id="真實場景st.cache_data-到底幫你省了什麼" class="level4">
+<h4 class="anchored" data-anchor-id="真實場景st.cache_data-到底幫你省了什麼">🔌 真實場景：<code>@st.cache_data</code> 到底幫你省了什麼？</h4>
+<p>到第 7 章做網站時，你會用 <strong>Streamlit</strong> 這個工具。它有一個很關鍵的特性：<strong>使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。</strong></p>
+<p>這會出問題。假設你的網站一開頭要「去抓今天的期貨報價」，而這件事很慢（要連網路，可能要等 3 秒）：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)              <span class="co"># 假裝去網路抓資料，慢慢的…</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 使用者每點一下，這行就重跑 → 又卡 3 秒 😩</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>使用者每按一次就卡 3 秒，體驗很差。</p>
+<p><strong>解法：在這個函式頭上，戴一頂 <code>@st.cache_data</code> 的帽子。</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">@st.cache_data</span>                 <span class="co"># ← 裝飾器：幫這個函式「把結果記起來」</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第一次：真的去抓，等 3 秒</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第二次以後：直接拿上次記住的結果，0 秒！⚡</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>差別在哪裡？</p>
+<ul>
+<li><strong>沒加</strong> → 每次重跑都重新抓一次資料，每次都乖乖等 3 秒。</li>
+<li><strong>加了</strong> → 第一次抓完就「記住」，之後只要<strong>參數一樣</strong>，就直接回傳記住的答案，完全不重算。</li>
+</ul>
+<p>打個比方：你問同事「今天台指開盤多少？」第一次他得去查（慢）；但你五分鐘內再問一次，他直接憑記憶回答你（快），不會每次都重查。<code>@st.cache_data</code> 就是幫你的函式裝上這顆「記憶」。</p>
+<blockquote class="blockquote">
+<p>你<strong>完全不需要自己寫</strong>這個裝飾器，Streamlit 已經幫你做好了。你只要會兩件事： 1. 看到 <code>@</code> 開頭那一行，知道它是在「替下面的函式加料」； 2. 遇到「網站抓資料好慢」時，想起可以在那個函式上面加一行 <code>@st.cache_data</code>。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>🟡 這節是進階補充，看不懂可以先跳過。等第 7 章真的動手做網站、遇到「怎麼一直在重抓資料、好慢」時，再回來看這個例子，會特別有感。</p>
+</blockquote>
+<hr>
+</section>
+<section id="第-4-章小結" class="level3">
+<h3 class="anchored" data-anchor-id="第-4-章小結">第 4 章小結</h3>
+<p>你已經認識了程式的核心零件：<strong>變數、資料型態、運算與比較、條件判斷、迴圈、函式</strong>， 再加上把「資料 ＋ 動作」綁在一起的 <strong>物件</strong>，以及（進階）替函式加料的 <strong>裝飾器</strong>。 這就是 90% 程式的骨架。你不需要「背」它們，只要<strong>看得懂、改得動</strong>，就足以跟 AI 合作了。👍</p>
+</section>
+</section>
+</section>
+<section id="第-5-章跟-ai-一起寫程式的正確姿勢" class="level1">
+<h1>第 5 章：跟 AI 一起寫程式的「正確姿勢」</h1>
+<p>這章是整份講義的<strong>精華</strong>。會不會寫程式不是重點，<strong>會不會「請 AI 寫」才是你真正的競爭力。</strong></p>
+<hr>
+<section id="好提問的公式" class="level3">
+<h3 class="anchored" data-anchor-id="好提問的公式">5.1 好提問的公式</h3>
+<p>一個好的請求，包含五個元素（不用每次都全寫，但越完整結果越好）：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>元素</th>
+<th>說明</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>① 角色/情境</strong></td>
+<td>告訴 AI 你是誰、懂多少</td>
+<td>「我完全不懂程式，請當我是新手」</td>
+</tr>
+<tr class="even">
+<td><strong>② 背景</strong></td>
+<td>為什麼要做這個</td>
+<td>「我想做一個計算期貨損益的小工具」</td>
+</tr>
+<tr class="odd">
+<td><strong>③ 明確需求</strong></td>
+<td>具體要它做什麼</td>
+<td>「寫一個 Python 函式，輸入進出場點數算損益」</td>
+</tr>
+<tr class="even">
+<td><strong>④ 輸入/輸出範例</strong></td>
+<td>給例子最有效</td>
+<td>「例如輸入 18000 進、18120 出、1 口、每點 50，要回傳 6000」</td>
+</tr>
+<tr class="odd">
+<td><strong>⑤ 限制/格式</strong></td>
+<td>額外要求</td>
+<td>「請加上中文註解，並用最簡單的寫法」</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="對比爛提問-vs-好提問" class="level3">
+<h3 class="anchored" data-anchor-id="對比爛提問-vs-好提問">5.2 對比：爛提問 vs 好提問</h3>
+<p>❌ <strong>爛提問</strong>： &gt; 「幫我寫個算錢的程式」</p>
+<p>（AI 只能亂猜：算什麼錢？什麼商品？輸入什麼？結果是垃圾進、垃圾出。）</p>
+<p>✅ <strong>好提問</strong>： &gt; 「我完全不懂程式，請當我是新手。我想要一個 Python 函式，功能是計算期貨單筆交易損益。 &gt; 輸入：進場點數、出場點數、口數、每點價值。輸出：損益金額。 &gt; 例如進場 18000、出場 18120、1 口、每點 50 元，應該回傳 6000。 &gt; 請用最簡單的寫法，每行都加上中文註解。」</p>
+<p><strong>差別就是：你把『想清楚』這件事做完了，AI 只剩『打字』。</strong> 這呼應第 1 章的分工。</p>
+<hr>
+</section>
+<section id="把大問題拆小" class="level3">
+<h3 class="anchored" data-anchor-id="把大問題拆小">5.3 把大問題「拆小」</h3>
+<p>新手最大的陷阱，是一開口就要：「幫我做一個自動交易系統。」</p>
+<p>這註定失敗，因為連你自己都還沒想清楚。正確做法是<strong>像剝洋蔥一樣一層一層</strong>：</p>
+<pre><code>做一個「我的交易記錄網站」
+   ├─ 1. 先能用 Python 算出單筆損益          ← 第 4、6 章
+   ├─ 2. 再能算「一整串交易」的總損益與勝率
+   ├─ 3. 再把結果畫成一張圖
+   ├─ 4. 再把它變成一個網頁畫面               ← 第 7 章
+   └─ 5. 最後讓它能上線、別人也看得到</code></pre>
+<p>每一步都跑得起來、確認對了，再進下一步。<strong>這就是專業工程師的工作方式。</strong></p>
+<hr>
+</section>
+<section id="看不懂-ai-的程式這樣追問" class="level3">
+<h3 class="anchored" data-anchor-id="看不懂-ai-的程式這樣追問">5.4 看不懂 AI 的程式？這樣追問</h3>
+<p>AI 給你一段程式，你看不懂是<strong>正常</strong>的。你的工作不是「默寫得出來」，而是「看得懂大概在幹嘛、能驗證對錯」。追問範本：</p>
+<ul>
+<li>「請逐行解釋這段程式，假設我完全不懂程式。」</li>
+<li>「這段程式如果輸入 X，會輸出什麼？為什麼？」</li>
+<li>「這段有沒有什麼情況會出錯或算錯？」</li>
+</ul>
+<hr>
+</section>
+<section id="除錯三步驟跑出紅字時照做" class="level3">
+<h3 class="anchored" data-anchor-id="除錯三步驟跑出紅字時照做">5.5 除錯三步驟（跑出紅字時照做）</h3>
+<p>程式跑出一堆紅色錯誤訊息時，<strong>不要慌、不要關掉</strong>。照這三步：</p>
+<ol type="1">
+<li><strong>整段複製</strong>那串錯誤訊息（連同你的程式）。</li>
+<li><strong>貼給 AI</strong>，並說明你「<strong>本來想做什麼</strong>」。</li>
+<li>範本：「我執行這段程式時出現以下錯誤，我本來想做的是 ___。請告訴我錯在哪、怎麼修，並解釋為什麼會錯。」</li>
+</ol>
+<p>90% 的新手錯誤，AI 三十秒內就能幫你解決。錯誤訊息不是敵人，是線索。</p>
+</section>
+<section id="練習故意製造一個錯誤再學會讀它" class="level3">
+<h3 class="anchored" data-anchor-id="練習故意製造一個錯誤再學會讀它">5.6 練習：故意製造一個錯誤，再學會讀它</h3>
+<p>跑下面這格——它<strong>故意寫錯了</strong>（少了一個引號）。看看錯誤訊息長怎樣：</p>
+<div id="ff047254" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這行故意忘了打結尾的引號)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>看到類似 <code>SyntaxError</code> 的字了嗎？這就是「語法錯誤」。</p>
+<p><strong>現在做一次真實的除錯流程</strong>：把上面那格的程式 + 錯誤訊息複製起來，貼給你慣用的 AI，問：「這段為什麼錯？怎麼修？」 然後把它教你的正確版本貼回下面這格、跑跑看：</p>
+<div id="5421c974" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把修好的正確版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>💻 <strong>動手做（實戰小專案）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</blockquote>
+</section>
+</section>
+<section id="第-6-章實戰小專案把零件組起來" class="level1">
+<h1>第 6 章：實戰小專案——把零件組起來</h1>
+<p>現在把第 4 章的核心零件，組成一個<strong>期貨交易記錄分析器</strong>。 這就是「拆小、逐步累加」的實際示範。先跑跑看完整版，再看下面的拆解。</p>
+<div id="a4e2144a" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ===== 一個小工具：分析多筆交易的總損益與勝率 =====</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>   <span class="co"># 假設小台指</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 每筆交易記成一個「字典」：有進場、出場、口數三個標籤</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>交易紀錄 <span class="op">=</span> [</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18000</span>, <span class="st">"出場"</span>: <span class="dv">18120</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18200</span>, <span class="st">"出場"</span>: <span class="dv">18050</span>, <span class="st">"口數"</span>: <span class="dv">2</span>},</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">17800</span>, <span class="st">"出場"</span>: <span class="dv">18100</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18400</span>, <span class="st">"出場"</span>: <span class="dv">18350</span>, <span class="st">"口數"</span>: <span class="dv">3</span>},</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 算單筆損益(交易):</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    變動 <span class="op">=</span> 交易[<span class="st">"出場"</span>] <span class="op">-</span> 交易[<span class="st">"進場"</span>]</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 變動 <span class="op">*</span> 交易[<span class="st">"口數"</span>] <span class="op">*</span> 每點價值</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 逐筆統計</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>獲利次數 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 交易 <span class="kw">in</span> 交易紀錄:</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 算單筆損益(交易)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 損益</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        獲利次數 <span class="op">=</span> 獲利次數 <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"獲利"</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"虧損"</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"進 </span><span class="sc">{交易</span>[<span class="st">'進場'</span>]<span class="sc">}</span><span class="ss"> → 出 </span><span class="sc">{交易</span>[<span class="st">'出場'</span>]<span class="sc">}</span><span class="ss">，</span><span class="sc">{交易</span>[<span class="st">'口數'</span>]<span class="sc">}</span><span class="ss"> 口：</span><span class="sc">{損益:+,}</span><span class="ss"> 元（</span><span class="sc">{結果}</span><span class="ss">）"</span>)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>勝率 <span class="op">=</span> 獲利次數 <span class="op">/</span> <span class="bu">len</span>(交易紀錄) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"總損益：</span><span class="sc">{總損益:+,}</span><span class="ss"> 元"</span>)</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"交易筆數：</span><span class="sc">{</span><span class="bu">len</span>(交易紀錄)<span class="sc">}</span><span class="ss"> 筆"</span>)</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"勝率：</span><span class="sc">{勝率:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>看懂了嗎？這個小工具其實只用到你已經學過的東西： <strong>變數、字典/清單、函式、迴圈、條件判斷、f-string。</strong> 沒有任何新魔法。</p>
+<blockquote class="blockquote">
+<p><strong>換你練習（用 AI）</strong>：請你慣用的 AI 幫你擴充這個工具，加上「<strong>最大單筆獲利</strong>」和「<strong>最大單筆虧損</strong>」的統計。 記得用第 5 章的好提問公式：貼上這段程式，說清楚你要加什麼、希望保留中文註解。 拿到結果後，貼到下面跑跑看，並請 AI 逐行解釋它新增的部分。</p>
+</blockquote>
+<div id="a5df0b26" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把 AI 擴充後的版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<p>💻 <strong>動手做（邁向自己的網站）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+</blockquote>
+</section>
+<section id="第-7-章邁向自己的網站" class="level1">
+<h1>第 7 章：邁向「自己的網站」</h1>
+<p>這是你的最終目標。好消息是：<strong>你前面學的東西，已經足以做出一個網站了。</strong></p>
+<hr>
+<section id="先搞懂網站是什麼組成的" class="level3">
+<h3 class="anchored" data-anchor-id="先搞懂網站是什麼組成的">7.1 先搞懂「網站」是什麼組成的</h3>
+<p>別被嚇到，網站其實就三部分：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>部分</th>
+<th>白話比喻</th>
+<th>是什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>前端</strong></td>
+<td>餐廳的「外場、菜單、裝潢」</td>
+<td>使用者看到、點按的畫面</td>
+</tr>
+<tr class="even">
+<td><strong>後端</strong></td>
+<td>廚房</td>
+<td>處理資料、做運算的程式（你的 Python 就在這）</td>
+</tr>
+<tr class="odd">
+<td><strong>伺服器</strong></td>
+<td>餐廳這棟「建築物」</td>
+<td>一台 24 小時開著、讓大家連得到的電腦</td>
+</tr>
+</tbody>
+</table>
+<p>傳統做網站要學前端三件套（HTML / CSS / JavaScript）+ 後端，門檻不低。 <strong>但對 0 基礎、又想快點看到成果的人，有一條捷徑👇</strong></p>
+<hr>
+</section>
+<section id="新手最快的捷徑streamlit" class="level3">
+<h3 class="anchored" data-anchor-id="新手最快的捷徑streamlit">7.2 新手最快的捷徑：Streamlit</h3>
+<p><strong>Streamlit</strong> 是一個工具，讓你<strong>只用 Python</strong>（你已經在學的）就能做出一個<strong>互動式網頁</strong>，不用碰 HTML/CSS/JavaScript。</p>
+<p>它對金融人尤其友善：天生擅長「<strong>顯示數據、畫圖表、加滑桿讓人互動</strong>」——拿來做一個「損益計算機網頁」「個人交易儀表板」再適合不過。</p>
+<p>下面是一個<strong>最小可運行的網站</strong>程式。<strong>注意：這段不要在 Jupyter 裡跑</strong>，它是要存成檔案、在電腦上執行的（步驟在後面）。先讀懂它——你會發現裡面全是你學過的東西：</p>
+<div id="a641092e" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 檔名：app.py</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 這是一個「期貨損益計算機」網站，全部用 Python 寫成</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st   <span class="co"># 引入 Streamlit 工具</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>st.title(<span class="st">"📈 我的期貨損益計算機"</span>)   <span class="co"># 網頁大標題</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 下面這幾行會自動變成網頁上的「輸入框」和「滑桿」</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>進場 <span class="op">=</span> st.number_input(<span class="st">"進場點數"</span>, value<span class="op">=</span><span class="dv">18000</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>出場 <span class="op">=</span> st.number_input(<span class="st">"出場點數"</span>, value<span class="op">=</span><span class="dv">18120</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> st.number_input(<span class="st">"口數"</span>, value<span class="op">=</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> st.selectbox(<span class="st">"每點價值（元）"</span>, [<span class="dv">50</span>, <span class="dv">200</span>])   <span class="co"># 50=小台, 200=大台</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 這就是你第 4 章學的函式！</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>損益 <span class="op">=</span> 計算損益(進場, 出場, 口數, 每點價值)</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 把結果顯示在網頁上</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>st.metric(<span class="st">"這筆交易損益"</span>, <span class="ss">f"</span><span class="sc">{損益:+,.0f}</span><span class="ss"> 元"</span>)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    st.success(<span class="st">"這是一筆獲利交易 🎉"</span>)</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 損益 <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    st.error(<span class="st">"這是一筆虧損交易，檢討一下進出場 🧐"</span>)</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    st.info(<span class="st">"不賺不賠（不計手續費）"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>看到了嗎？<strong>整個網站的「大腦」，就是你第 4 章學的那個 <code>計算損益</code> 函式。</strong> Streamlit 只是幫你把「輸入框、按鈕、顯示結果」這些畫面自動生出來而已。</p>
+<hr>
+</section>
+<section id="第一步先在自己電腦上把它跑起來" class="level3">
+<h3 class="anchored" data-anchor-id="第一步先在自己電腦上把它跑起來">7.3 第一步：先在自己電腦上把它跑起來</h3>
+<p>部署上線之前，一定要先確認程式在自己電腦上跑得動。順序如下（每一步卡住，就照第 5 章的方式問 AI，記得講清楚你是 Windows 還是 Mac）：</p>
+<ol type="1">
+<li><strong>安裝 Python</strong>：「我用 Windows，完全不懂程式，請一步步教我安裝 Python。」</li>
+<li><strong>安裝 Streamlit</strong>：打開「終端機 / 命令提示字元」，輸入：<code>pip install streamlit</code></li>
+<li><strong>存檔</strong>：把 7.2 那段程式，存成一個叫 <code>app.py</code> 的檔案。</li>
+<li><strong>跑起來</strong>：在終端機輸入 <code>streamlit run app.py</code>，瀏覽器就會自動打開你的網站。</li>
+</ol>
+<blockquote class="blockquote">
+<p>✅ 這一步成功（瀏覽器看得到你的計算機畫面），代表<strong>程式本身沒問題</strong>。接下來才是把它「搬到雲端」讓全世界都連得到。</p>
+</blockquote>
+</section>
+<section id="把工具免費部署到-streamlit-community-cloud重點章節" class="level3">
+<h3 class="anchored" data-anchor-id="把工具免費部署到-streamlit-community-cloud重點章節">7.4 把工具免費部署到 Streamlit Community Cloud（重點章節）</h3>
+<p>這就是把「只有你電腦看得到的網站」變成「給網址就能用」的過程。全程免費。</p>
+<p><strong>開始前你需要兩樣東西：</strong> - 一個 <strong>GitHub 帳號</strong>（免費註冊，等一下程式碼要放這） - 7.3 已經在本機跑起來的 <code>app.py</code></p>
+<hr>
+<section id="步驟-1準備兩個檔案放在同一個資料夾" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-1準備兩個檔案放在同一個資料夾">步驟 1️⃣：準備兩個檔案放在同一個資料夾</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>檔名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>app.py</code></td>
+<td>你的程式（已經有了）</td>
+</tr>
+<tr class="even">
+<td><code>requirements.txt</code></td>
+<td>告訴雲端「我的程式需要先安裝哪些套件」</td>
+</tr>
+</tbody>
+</table>
+<p><code>requirements.txt</code> 是<strong>新手最常漏掉、也最常害部署失敗的一步</strong>。它的內容就是一行一個套件名稱。以 7.2 的計算機為例，只用到 Streamlit，所以裡面只要寫：</p>
+<pre><code>streamlit</code></pre>
+<p>如果你之後的程式還用到別的套件（例如畫圖的 <code>matplotlib</code>、處理資料的 <code>pandas</code>），就一行一個補上去：</p>
+<pre><code>streamlit
+pandas
+matplotlib</code></pre>
+<blockquote class="blockquote">
+<p>💡 不確定自己的程式用到哪些套件？把 <code>app.py</code> 貼給 AI 問：「這支程式部署到雲端時，requirements.txt 應該列哪些套件？」</p>
+</blockquote>
+<hr>
+</section>
+<section id="步驟-2把這個資料夾上傳到-github" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-2把這個資料夾上傳到-github">步驟 2️⃣：把這個資料夾上傳到 GitHub</h4>
+<ul>
+<li>登入 GitHub → 建立一個新的 <strong>repository</strong>（建議設成 <strong>Public 公開</strong>，新手流程最單純）。</li>
+<li>把 <code>app.py</code> 和 <code>requirements.txt</code> 上傳進去。</li>
+</ul>
+<blockquote class="blockquote">
+<p>不會用 GitHub？<strong>GitHub 網頁可以直接把檔案拖拉上傳</strong>，不一定要學指令。卡住就問 AI：「我要把含 app.py 和 requirements.txt 的資料夾，上傳到一個新的 GitHub repo，我完全不會 Git，請給我最簡單的網頁操作做法。」</p>
+</blockquote>
+<hr>
+</section>
+<section id="步驟-3登入-streamlit-community-cloud" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-3登入-streamlit-community-cloud">步驟 3️⃣：登入 Streamlit Community Cloud</h4>
+<ul>
+<li>打開 <strong>share.streamlit.io</strong></li>
+<li>選「<strong>用 GitHub 登入（Continue with GitHub）</strong>」，並授權它讀取你的 repo。</li>
+</ul>
+<hr>
+</section>
+<section id="步驟-4建立-app" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-4建立-app">步驟 4️⃣：建立 app</h4>
+<ul>
+<li>按「<strong>Create app / Deploy</strong>」。</li>
+<li>填三個欄位：
+<ul>
+<li><strong>Repository</strong>：選你剛剛建立的那個 repo</li>
+<li><strong>Branch</strong>：通常是 <code>main</code></li>
+<li><strong>Main file path</strong>：填 <code>app.py</code></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="步驟-5按下-deploy等幾分鐘" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-5按下-deploy等幾分鐘">步驟 5️⃣：按下 Deploy，等幾分鐘 ⏳</h4>
+<p>雲端會自動依照 <code>requirements.txt</code> 安裝套件、把網站架起來。大多數 app 幾分鐘內就會上線。</p>
+<hr>
+</section>
+<section id="步驟-6拿到網址分享出去" class="level4">
+<h4 class="anchored" data-anchor-id="步驟-6拿到網址分享出去">步驟 6️⃣：拿到網址、分享出去 🎉</h4>
+<ul>
+<li>部署成功後，你會得到一個像 <code>你的名稱.streamlit.app</code> 的網址。</li>
+<li>從 app 右上角的「<strong>Share</strong>」可以複製連結。從<strong>公開 repo</strong> 部署的 app <strong>預設就是公開的</strong>，任何人點網址都能用。</li>
+<li>想<strong>只給特定人看</strong>？在 Share 設定裡，把對方的 email 加進 viewer 名單即可。</li>
+</ul>
+<blockquote class="blockquote">
+<p>⚠️ Streamlit 的介面偶爾會改版，按鈕文字或位置可能跟上面不完全一樣。<strong>對不上時，把你看到的畫面描述給 AI，問當下的做法</strong>，不要硬卡——這正是第 5 章教的能力。</p>
+</blockquote>
+</section>
+</section>
+<section id="部署之後更新限制與部署失敗排查" class="level3">
+<h3 class="anchored" data-anchor-id="部署之後更新限制與部署失敗排查">7.5 部署之後：更新、限制與「部署失敗」排查</h3>
+<p><strong>🔄 更新網站超簡單</strong> 之後你只要修改 <strong>GitHub 上的程式碼</strong>，網站就會<strong>自動重新部署、跟著更新</strong>，完全不用再跑一次部署流程。</p>
+<p><strong>📦 要記得的幾個免費方案限制</strong>（前面討論過的，做給班上同學用綽綽有餘）： - 每個 app 有 <strong>1 GB 記憶體</strong>上限。 - 超過 <strong>12 小時沒人使用</strong>會「睡著」，下次有人開啟時要等幾秒喚醒。 - 同時上線人數受資源限制，適合<strong>教學示範 / 小工具</strong>規模，不適合高流量商用。 - <strong>教育、非營利用途</strong>若撞到資源上限，可向 Streamlit 申請免費提高額度（你這份是上課用的，符合資格）。</p>
+<p><strong>🐞 部署失敗時，照這個順序排查：</strong> 1. 先看雲端的 <strong>Logs（日誌）</strong>——失敗原因幾乎都寫在裡面。 2. 最常見的兇手是 <strong><code>requirements.txt</code> 漏列套件</strong>。把缺的套件名補進去、存檔，它會自動重新部署。 3. 還是不行？把 Logs <strong>整段複製</strong>，用第 5 章的除錯範本貼給 AI：「我部署 Streamlit app 失敗，以下是 logs，我本來想做的是 ___，請問錯在哪、怎麼修。」</p>
+<blockquote class="blockquote">
+<p>🎯 <strong>到這裡，你就完成了「從一支 Python 程式 → 一個全世界都連得到的網站」的完整旅程。</strong> 這正是這份講義的最終目標。</p>
+</blockquote>
+<hr>
+</section>
+<section id="想做真正的網站怎麼辦" class="level3">
+<h3 class="anchored" data-anchor-id="想做真正的網站怎麼辦">7.6 想做「真正的網站」怎麼辦？</h3>
+<p>如果你之後想做的不只是工具型網頁，而是有很多頁面的正式網站，可以再往這兩個方向延伸（一樣請 AI 帶你學）：</p>
+<ul>
+<li><strong>Flask / FastAPI</strong>：Python 的網站框架，更有彈性，但要懂多一點前端概念。</li>
+<li><strong>靜態網站</strong>：純展示用（像個人介紹頁），用 HTML/CSS 就好，可免費放在 GitHub Pages。</li>
+</ul>
+<p>但對你現在的目標——<strong>「獨立架一個自己的網站」</strong>——Streamlit 這條路就完全夠用，而且最快有成就感。先把它做出來、部署上線，再談進階。</p>
+</section>
+</section>
+<section id="第-8-章學習路線圖與心法" class="level1">
+<h1>第 8 章：學習路線圖與心法</h1>
+<section id="建議的-90-天路線" class="level3">
+<h3 class="anchored" data-anchor-id="建議的-90-天路線">8.1 建議的 90 天路線</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>期間</th>
+<th>目標</th>
+<th>怎麼做</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>第 1～2 週</strong></td>
+<td>破除恐懼、摸熟基本邏輯</td>
+<td>反覆操作這份講義第 3～6 章，每格都動手改、動手跑</td>
+</tr>
+<tr class="even">
+<td><strong>第 3～4 週</strong></td>
+<td>學會跟 AI 協作</td>
+<td>用第 5 章的方法，請 AI 幫你寫小工具（計算機、整理資料），刻意練習「拆小問題」</td>
+</tr>
+<tr class="odd">
+<td><strong>第 5～8 週</strong></td>
+<td>做出第一個網頁</td>
+<td>照第 7 章把 Streamlit 損益計算機跑起來，再加功能（畫圖、多筆統計）</td>
+</tr>
+<tr class="even">
+<td><strong>第 9～12 週</strong></td>
+<td>上線 + 做自己的題目</td>
+<td>把網站部署上線；想一個「自己真的想用的小工具」，從零做一遍</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="五句心法貼在螢幕旁邊" class="level3">
+<h3 class="anchored" data-anchor-id="五句心法貼在螢幕旁邊">8.2 五句心法（貼在螢幕旁邊）</h3>
+<ol type="1">
+<li><strong>你是指揮，AI 是打字員</strong>——想清楚比寫得出來更重要。</li>
+<li><strong>一次只做一小步</strong>——能跑起來再加下一個功能。</li>
+<li><strong>錯誤訊息是線索，不是責罵</strong>——整段複製貼給 AI。</li>
+<li><strong>看不懂就追問「為什麼」</strong>——AI 也是你的免費家教。</li>
+<li><strong>不要盲信 AI</strong>——你學基本邏輯，就是為了「驗證」它。</li>
+</ol>
+<hr>
+</section>
+<section id="新手最常見的五個陷阱" class="level3">
+<h3 class="anchored" data-anchor-id="新手最常見的五個陷阱">8.3 新手最常見的五個陷阱</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>陷阱</th>
+<th>解法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>想一步登天（一開口就要做大系統）</td>
+<td>拆小、拆小、再拆小</td>
+</tr>
+<tr class="even">
+<td>一出錯就放棄</td>
+<td>出錯是常態，把錯誤丟給 AI</td>
+</tr>
+<tr class="odd">
+<td>盲目複製貼上、不求理解</td>
+<td>至少要看懂「大概在幹嘛」</td>
+</tr>
+<tr class="even">
+<td>提問太模糊</td>
+<td>套用 5.1 的好提問公式</td>
+</tr>
+<tr class="odd">
+<td>只看不動手</td>
+<td>程式是「跑出來的」，不是「讀出來的」</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="結語" class="level3">
+<h3 class="anchored" data-anchor-id="結語">結語</h3>
+<p>寫到這裡，你已經掌握了：<strong>程式的基本邏輯、跟 AI 協作的方法、以及一條通往「自己網站」的明確路徑。</strong></p>
+<p>剩下的，就是<strong>動手</strong>。打開一個 AI 對話視窗，從「幫我把今天學的損益計算機，加一個手續費欄位」開始，跨出第一步吧。💪</p>
+</section>
+</section>
+<section id="補充章節在本地端用-venv-跑-jupyter做網站前的準備" class="level1">
+<h1>補充章節：在本地端用 venv 跑 Jupyter（做網站前的準備）</h1>
+<blockquote class="blockquote">
+<p>🟡 <strong>什麼時候需要這章？</strong> 第 1～6 章用線上環境（JupyterLite / Colab）就夠了。 但等你要做第 7 章的<strong>網站</strong>、或想長期在自己電腦上開發，就得把 Python 裝到本機，並學會用 <strong>venv（虛擬環境）</strong>。這章用最白話的方式帶你走一遍。 （想要更專業、可重現的進階做法，看下一章〈用 uv 管理專案〉。<strong>venv 是「理解原理的基礎版」，uv 是「全自動的升級版」</strong>。）</p>
+</blockquote>
+<section id="補a-1為什麼需要虛擬環境-venv" class="level2">
+<h2 class="anchored" data-anchor-id="補a-1為什麼需要虛擬環境-venv">補A-1：為什麼需要「虛擬環境 venv」？</h2>
+<p>想像每個專案都是一個工作檯。如果所有專案共用同一盒工具，遲早會出現「A 專案要舊版扳手、B 專案要新版扳手」互相打架的慘況。</p>
+<p><strong>venv 就是「幫每個專案準備一個獨立、乾淨的工具箱」</strong>：這個專案裝了什麼套件、什麼版本，都關在自己的小箱子裡，不會污染別的專案，也不會被別的專案污染。</p>
+<blockquote class="blockquote">
+<p>🛒 一句話：<strong>一個專案，一個 venv。</strong> 這是 Python 開發最基本的好習慣。</p>
+</blockquote>
+</section>
+<section id="補a-2四步驟在本機跑起-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="補a-2四步驟在本機跑起-jupyter">補A-2：四步驟，在本機跑起 Jupyter</h2>
+<blockquote class="blockquote">
+<p>⚠️ 以下指令是在<strong>終端機 / 命令提示字元</strong>裡輸入的，<strong>不是</strong>貼到 Notebook 的程式格。 前提：你電腦已經裝好 Python（還沒裝就先請 AI：「我用 Windows / Mac，請一步步教我安裝 Python」）。</p>
+</blockquote>
+<p><strong>第 1 步：進到你的專案資料夾，建立 venv</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-project           <span class="co"># 切換到你的專案資料夾</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv     <span class="co"># 建立一個叫 .venv 的虛擬環境（工具箱）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>第 2 步：啟動（activate）這個 venv</strong>（Windows 和 Mac 指令不一樣）</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows（PowerShell）</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\Activate.ps1</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>啟動成功後，命令列前面會多出 <code>(.venv)</code> 字樣，代表「現在用的是這個專案的工具箱」。</p>
+<p><strong>第 3 步：在 venv 裡裝 JupyterLab</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyterlab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>第 4 步：把 Jupyter 打開</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>它會自動打開瀏覽器、出現你熟悉的 Jupyter 介面——但這次是<strong>跑在你自己電腦上、功能完整</strong>的版本。把這份 <code>.ipynb</code> 拖進去就能繼續用。</p>
+</section>
+<section id="補a-3幾個一定會遇到的小提醒" class="level2">
+<h2 class="anchored" data-anchor-id="補a-3幾個一定會遇到的小提醒">補A-3：幾個一定會遇到的小提醒</h2>
+<ul>
+<li><strong>選對 kernel</strong>：在本機的 Jupyter 裡，右上角要確認 kernel 選的是你這個專案的 <code>.venv</code>。如果程式說「找不到某套件」，十之八九是 kernel 選錯了環境。</li>
+<li><strong>下次要再用</strong>：重開終端機後，記得<strong>先 <code>cd</code> 到專案、再 activate 一次</strong> venv，才會用到正確的工具箱。</li>
+<li><strong>結束</strong>：在終端機輸入 <code>deactivate</code> 就能退出 venv。</li>
+<li><strong>不要把 <code>.venv</code> 上傳 GitHub</strong>：它又大又是本機專屬，要在 <code>.gitignore</code> 裡忽略它（之後要重現環境，靠的是套件清單，不是整個資料夾）。</li>
+</ul>
+<blockquote class="blockquote">
+<p>🔁 <strong>這條路怎麼接到做網站？</strong> 在同一個 venv 裡，你只要再 <code>pip install streamlit</code>，就能用 <code>streamlit run app.py</code> 把第 7 章的網站在本機跑起來。 venv 的概念搞懂後，下一章的 <strong>uv</strong> 會幫你把「建 venv、裝套件、鎖版本」這些步驟<strong>全自動化</strong>——你會發現它其實就是這章的升級版。</p>
+</blockquote>
+</section>
+</section>
+<section id="補充章節用-uv-管理-python-專案與依賴進階" class="level1">
+<h1>補充章節：用 uv 管理 Python 專案與依賴（進階）</h1>
+<blockquote class="blockquote">
+<p>🟡 <strong>這章是進階內容，初學者可以先跳過。</strong> 建議先照第 7 章用 <code>requirements.txt</code> 把網站做出來、部署上線、有成就感了，再回來看這章。 這章適合：已經走完主線、想用<strong>更專業、可重現</strong>的方式管理環境的人（尤其是想用 uv 工作流部署 Streamlit 的人）。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>📚 <strong>想要更完整、能實際動手練的版本？</strong> 本章是 uv 的<strong>精華濃縮版</strong>，目的是讓你快速建立概念、並接上第 7 章的 Streamlit 部署。 如果你想徹底搞懂、而且動手練到熟，可以搭配這份<strong>完整的 uv 課程</strong>——理論 60 分鐘 ＋ 練習 60 分鐘，含 7 個附「預期輸出」可自我驗證的練習，還涵蓋團隊協作情境模擬、<code>uvx</code> 一次性工具、pip 相容模式等：</p>
+<p>👉 <strong>https://benjamin-teng.github.io/uv-course/</strong></p>
+<p>建議讀法：先讀本章建立概念 → 想深入時，到上面那份課程從頭動手做一遍。</p>
+</blockquote>
+<hr>
+<section id="補-1uv-是什麼為什麼值得學" class="level2">
+<h2 class="anchored" data-anchor-id="補-1uv-是什麼為什麼值得學">補-1：uv 是什麼？為什麼值得學</h2>
+<p><code>uv</code> 是一個用 Rust 寫成、<strong>速度非常快</strong>的 Python「全能管家」。它把過去要好幾個工具分開做的事，<strong>一個工具全包</strong>：</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>過去要用的工具</th>
+<th>uv 一手包辦</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pip</code>（裝套件）</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><code>venv</code> / <code>virtualenv</code>（建虛擬環境）</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><code>pyenv</code>（管理 Python 版本）</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><code>pip-tools</code> / <code>poetry</code>（鎖定依賴版本）</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>對你最大的價值是「可重現」</strong>：它會把整個環境鎖死，讓「在我電腦能跑、在別人電腦 / 雲端卻壞掉」這類惱人問題大幅減少。這也正是它跟 Streamlit Community Cloud 搭起來的好處——雲端能 100% 重現你本機的環境。</p>
+</section>
+<section id="補-2核心心智模型記住兩個檔案" class="level2">
+<h2 class="anchored" data-anchor-id="補-2核心心智模型記住兩個檔案">補-2：核心心智模型——記住兩個檔案</h2>
+<p>整個 uv 工作流，圍繞著兩個檔案打轉。把它們的分工搞懂，其他都是細節：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>檔案</th>
+<th>誰寫的</th>
+<th>內容</th>
+<th>你能不能手改</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>pyproject.toml</code></strong></td>
+<td><strong>你</strong>（人）</td>
+<td>抽象、寬鬆的「需求宣告」，例如 <code>pandas&gt;=2.0</code>。是真正的「來源真相」</td>
+<td>✅ 可以（直接改，或用 <code>uv add</code>）</td>
+</tr>
+<tr class="even">
+<td><strong><code>uv.lock</code></strong></td>
+<td><strong>uv</strong>（工具自動產生與維護）</td>
+<td>完全解析後的「鎖定結果」：每個套件（含所有間接相依）的<strong>確切版本、雜湊、適用平台</strong></td>
+<td>❌ 不要手改</td>
+</tr>
+</tbody>
+</table>
+<p><strong>兩者的關係</strong>：</p>
+<pre><code>你寫的 pyproject.toml（我要 pandas&gt;=2.0）
+        │
+        ▼  uv 去 PyPI 解析、算出所有相依套件的確切版本
+        │
+   產生 uv.lock（鎖定 pandas==2.2.3 + numpy==... + tzdata==... ...）</code></pre>
+<blockquote class="blockquote">
+<p>🛒 <strong>生活化比喻</strong>： <code>pyproject.toml</code> 像你寫的<strong>購物清單</strong>（「我要洗髮精」）。 <code>uv.lock</code> 像<strong>實際買回來的發票明細</strong>（某品牌、某容量、某批號，連附帶的贈品都列出來）。</p>
+<p>uv 還會在 lock 裡記住 toml 的雜湊值，所以你一改 toml，它就知道「清單變了、發票過時了」，會自動重新解析。這就是為什麼你平常根本不用去管 <code>uv.lock</code>。</p>
+</blockquote>
+</section>
+<section id="補-3你會用到的指令在終端機執行不是在-notebook-裡" class="level2">
+<h2 class="anchored" data-anchor-id="補-3你會用到的指令在終端機執行不是在-notebook-裡">補-3：你會用到的指令（在「終端機」執行，不是在 Notebook 裡）</h2>
+<blockquote class="blockquote">
+<p>⚠️ 以下都是<strong>終端機 / 命令提示字元</strong>的指令，不要貼到 Notebook 的程式格裡跑。</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init futures-tool</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add streamlit</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas matplotlib    <span class="co"># 一次加多個也行</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. 移除套件</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove matplotlib</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run streamlit run app.py</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. 手動重算 / 升級鎖定檔</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock              <span class="co"># 重新解析並寫入 uv.lock</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span>    <span class="co"># 在 toml 允許範圍內，把套件升到最新</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>幾個重點： - uv 會在專案資料夾裡自動建立一個 <code>.venv</code>（虛擬環境），<strong>你不用自己手動建、手動 activate</strong>。 - 養成習慣用 <code>uv run ...</code> 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。 - <code>.venv</code> 資料夾<strong>不要</strong>進版控（<code>uv init</code> 通常已幫你寫好 <code>.gitignore</code> 忽略它）。</p>
+</section>
+<section id="補-4一條龍用-uv-從零到部署-streamlit" class="level2">
+<h2 class="anchored" data-anchor-id="補-4一條龍用-uv-從零到部署-streamlit">補-4：一條龍——用 uv 從零到部署 Streamlit</h2>
+<p>把補充章節和第 7 章接起來，完整流程是：</p>
+<ol type="1">
+<li><code>uv init futures-tool</code> 然後 <code>cd futures-tool</code></li>
+<li><code>uv add streamlit</code>（依賴就交給 uv 管，<strong>不需要</strong>自己寫 requirements.txt）</li>
+<li>把第 7.2 的程式放進專案、存成 <code>app.py</code></li>
+<li>本機測試：<code>uv run streamlit run app.py</code>，確認瀏覽器跑得起來</li>
+<li>把這幾個檔案 commit 進 GitHub：
+<ul>
+<li>✅ <code>app.py</code></li>
+<li>✅ <code>pyproject.toml</code></li>
+<li>✅ <code>uv.lock</code> ← <strong>關鍵！這個一定要進版控</strong></li>
+<li>❌ <code>.venv/</code>（不要進版控）</li>
+</ul></li>
+<li>部署到 Streamlit Community Cloud（流程同第 7.4）。因為 repo 裡有 <code>uv.lock</code>，<strong>Community Cloud 會自動偵測到、用 uv 依照 lock 檔安裝</strong>，部署出來的環境就跟你本機一模一樣。</li>
+</ol>
+<blockquote class="blockquote">
+<p>回顧第 7.4 查到的優先序：Community Cloud 認得的依賴檔中，<strong><code>uv.lock</code> 排在最高優先</strong>。所以你只要把 lock 檔 commit 進去，它就會走 uv 這條路，不需要再額外準備 requirements.txt。</p>
+</blockquote>
+</section>
+<section id="補-5那什麼時候還是用-requirements.txt兩者怎麼互轉" class="level2">
+<h2 class="anchored" data-anchor-id="補-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</h2>
+<p><strong>還是用 <code>requirements.txt</code> 的情境</strong>： - 教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 <code>streamlit</code>，心智負擔最低）。 - 你要部署的平台<strong>不支援 uv</strong>、只吃 requirements.txt。</p>
+<p><strong>已經用 uv，但某個平台只吃 requirements.txt</strong> —— 用 <code>uv export</code> 從 lock 檔產生一份：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> export <span class="at">--no-hashes</span> <span class="at">-o</span> requirements.txt</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<p>這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。</p>
+<blockquote class="blockquote">
+<p>🔑 <strong>一句話總結</strong>： 走 uv 工作流，<strong>請靠 <code>uv.lock</code></strong>（優先序最高、最能重現環境）。 純 <code>pyproject.toml</code> 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「<strong>有沒有把 <code>uv.lock</code> commit 進去</strong>」。</p>
+</blockquote>
+<hr>
+<section id="給同學的提問範本uv-版可直接複製" class="level3">
+<h3 class="anchored" data-anchor-id="給同學的提問範本uv-版可直接複製">給同學的提問範本（uv 版，可直接複製）</h3>
+<blockquote class="blockquote">
+<p>「我用 ___（Windows / Mac），不熟終端機。請一步步教我安裝 uv，並用 uv 建立一個 Streamlit 專案、加入 streamlit 套件、在本機把 app.py 跑起來。每一步都告訴我要輸入什麼、怎麼確認成功。」</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>「我的 uv 專案要部署到 Streamlit Community Cloud。請告訴我：哪些檔案要 commit 進 GitHub、哪些不該進版控，以及為什麼 uv.lock 一定要進去。」</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="附錄可直接複製的提示詞範本" class="level1">
+<h1>附錄：可直接複製的提示詞範本</h1>
+<p>把這些貼給你慣用的 AI（ChatGPT / Claude / Gemini），把 <code>___</code> 換成你的內容。</p>
+<hr>
+<p><strong>🧱 請 AI 寫一個函式</strong> &gt; 我完全不懂程式，請當我是新手。我想要一個 Python 函式，功能是 <strong><em>。 &gt; 輸入是 </em></strong>，輸出是 <strong><em>。例如輸入 </em></strong> 應該得到 ___。 &gt; 請用最簡單的寫法，每行加上中文註解。</p>
+<p><strong>🔍 請 AI 解釋程式</strong> &gt; 請逐行解釋下面這段程式，假設我完全不懂程式，盡量用生活化的比喻： &gt; <code>&gt; （貼上程式） &gt;</code></p>
+<p><strong>🐞 請 AI 除錯</strong> &gt; 我執行下面這段程式時出現錯誤。我本來想做的是 ___。 &gt; 請告訴我錯在哪、怎麼修，並解釋為什麼會錯。 &gt; 程式： &gt; <code>&gt; （貼上程式） &gt;</code> &gt; 錯誤訊息： &gt; <code>&gt; （貼上完整錯誤訊息） &gt;</code></p>
+<p><strong>🪜 請 AI 幫你拆解大目標</strong> &gt; 我最終想做一個 ___（例如：個人交易記錄網站）。我完全是新手。 &gt; 請幫我把這個目標，拆解成由淺到深、可以一步步完成的小步驟， &gt; 每一步都要小到我能單獨完成並驗證。</p>
+<p><strong>💻 請 AI 教你安裝/設定環境</strong> &gt; 我的電腦是 <strong><em>（Windows / Mac），完全不懂程式與終端機。 &gt; 請一步一步教我 </em></strong>（例如：安裝 Python / 安裝 Streamlit / 把網站部署上線）， &gt; 每一步都說明「我該點哪裡、輸入什麼」，並告訴我怎麼確認這步成功了。</p>
+<p><strong>🌐 請 AI 帶你做網站</strong> &gt; 我想用 Python 的 Streamlit 做一個網頁，功能是 ___。 &gt; 我是新手。請給我完整的 app.py 程式碼（加中文註解）， &gt; 並告訴我接下來在電腦上要怎麼一步步把它跑起來。</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已複製");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已複製");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/benjamin-teng\.github\.io\/learn-python-with-ai");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>用 AI 學寫 Python · 以 Quarto 製作 · 內容採 CC BY 精神自由學習</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
