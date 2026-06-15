@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-47c8cf7ff55844f8c264c5168c4d0312.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-abf61cd0ff150584cf176ab4687b4eae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-de051ad00509e84ba6e2befa5e3054ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,6 +104,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -288,8 +291,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="938af1dc" class="cell">
+<div id="938af1dc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"我成功執行了第一格程式！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>我成功執行了第一格程式！</code></pre>
+</div>
 </div>
 <p>有看到下面跳出一行字嗎？恭喜，你已經「執行」了人生第一支程式 🎉</p>
 <p>現在把上面那格的文字改成你的名字，再按一次 <code>Shift+Enter</code>,看看結果會不會跟著變。</p>
@@ -449,21 +455,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="核心循環寫程式其實是一個圈圈" class="level3">
 <h3 class="anchored" data-anchor-id="核心循環寫程式其實是一個圈圈">1.2 核心循環：寫程式其實是一個圈圈</h3>
 <p>不管專案大小，跟 AI 寫程式都是在重複這個循環：</p>
-<pre><code>   ┌─────────────────────────────────────────┐
-   │                                          │
-   ▼                                          │
-①「想清楚我要什麼」                            │
-   │                                          │
-   ▼                                          │
-② 用清楚的話請 AI 寫程式                        │
-   │                                          │
-   ▼                                          │
-③ 執行看看                                     │
-   │                                          │
-   ▼                                          │
-④ 看結果 → 對了嗎？───── 對 ──→ 完成！          │
-   │                                          │
-   └─不對 / 有錯誤 → 把狀況回報給 AI ───────────┘</code></pre>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A["① 想清楚我要什麼"] --&gt; B["② 用清楚的話請 AI 寫程式"]
+    B --&gt; C["③ 執行看看"]
+    C --&gt; D{"④ 看結果&lt;br/&gt;對了嗎？"}
+    D -- 對 --&gt; E["✅ 完成！"]
+    D -- "不對／有錯誤&lt;br/&gt;把狀況回報給 AI" --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p>新手最常見的誤會：<strong>以為一次就要成功。</strong> 不會的。連專業工程師都是靠這個循環，跑個三五次甚至十幾次才完成。<strong>「跑不出來」是過程，不是失敗。</strong></p>
 <hr>
 </section>
@@ -548,14 +556,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>第 3 章：第一支程式——不要怕</h1>
 <p>我們從最簡單的指令開始：<code>print()</code>。它的作用是「把括號裡的東西印出來」。</p>
 <p>下面每一格都按 <code>Shift+Enter</code> 跑跑看。</p>
-<div id="9b54eedb" class="cell">
+<div id="9b54eedb" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, 期貨營業員班的同學們！"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, 期貨營業員班的同學們！</code></pre>
+</div>
 </div>
 <p>引號 <code>" "</code> 裡面的，是<strong>文字</strong>（程式裡叫「字串」）。你可以放任何字。</p>
 <p>下面這格沒有引號，放的是<strong>數字</strong>，可以直接算數學：</p>
-<div id="a96bb027" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">100</span> <span class="op">*</span> <span class="dv">50</span>)   <span class="co"># 假設小台指漲 100 點，每點 50 元，賺多少？</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a96bb027" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">100</span> <span class="op">*</span> <span class="dv">50</span>)   <span class="co"># 假設小台指漲 100 點，每點 50 元，賺多少？</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>8
+5000</code></pre>
+</div>
 </div>
 <p>注意到 <code># 假設小台指...</code> 這段了嗎？</p>
 <p><code>#</code> 後面的文字叫<strong>註解</strong>：它<strong>不會被執行</strong>，純粹是寫給「人」看的備註。 養成寫註解的習慣，未來的你會感謝現在的你。</p>
@@ -563,9 +578,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="換你試試" class="level3">
 <h3 class="anchored" data-anchor-id="換你試試">換你試試</h3>
 <p>把下面這格改成「<strong>大台指漲 80 點，每點 200 元</strong>」的算式，然後執行：</p>
-<div id="86b921cf" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在這裡改：把 ? 換成正確的數字</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(? <span class="op">*</span> ?)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="86b921cf" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在這裡改：把 ? 換成正確的數字</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(? <span class="op">*</span> ?)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <blockquote class="blockquote">
 <p>如果你按了 <code>Shift+Enter</code> 出現一堆紅字——<strong>太好了，這是你第一次看到「錯誤訊息」。</strong> 那是因為 <code>?</code> 不是合法的數字。把它改成數字（例如 <code>80 * 200</code>）再跑一次就好。 記住第 1 章說的：<strong>錯誤是過程，不是失敗。</strong></p>
@@ -585,14 +600,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="變數幫資料取一個名字" class="level2">
 <h2 class="anchored" data-anchor-id="變數幫資料取一個名字">4.1 變數：幫資料取一個名字</h2>
 <p>「變數」就是<strong>幫一個值取名字</strong>，方便之後重複使用、修改。 用 <code>=</code> 來「把右邊的值，存進左邊的名字」。</p>
-<div id="4af9f9bd" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>      <span class="co"># 假設小台指，每點 50 元</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>進場點數 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>出場點數 <span class="op">=</span> <span class="dv">18120</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"口數："</span>, 口數)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"每點價值："</span>, 每點價值)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4af9f9bd" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>      <span class="co"># 假設小台指，每點 50 元</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>進場點數 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>出場點數 <span class="op">=</span> <span class="dv">18120</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"口數："</span>, 口數)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"每點價值："</span>, 每點價值)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>口數： 2
+每點價值： 50</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>Python 連中文變數名都能用，但<strong>業界習慣用英文</strong>（例如 <code>contracts</code>、<code>point_value</code>）。 初學階段為了好懂，我們先用中文；之後寫真正的專案再換英文。</p>
@@ -651,20 +670,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>下面這格用 <code>type()</code> 看看每個東西是什麼型態：</p>
-<div id="b164c926" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"多單"</span>))</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([<span class="dv">18000</span>, <span class="dv">18050</span>, <span class="dv">18120</span>]))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b164c926" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">"多單"</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>([<span class="dv">18000</span>, <span class="dv">18050</span>, <span class="dv">18120</span>]))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'list'&gt;</code></pre>
+</div>
 </div>
 <p><strong>清單(list)</strong> 和 <strong>字典(dict)</strong> 特別重要，因為真實資料常常一大串。先看清單：</p>
-<div id="609dc2ba" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"總共幾天："</span>, <span class="bu">len</span>(每日收盤))      <span class="co"># len() 算長度</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第一天："</span>, 每日收盤[<span class="dv">0</span>])           <span class="co"># 注意！程式從 0 開始數</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"最後一天："</span>, 每日收盤[<span class="op">-</span><span class="dv">1</span>])         <span class="co"># -1 代表倒數第一個</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="609dc2ba" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"總共幾天："</span>, <span class="bu">len</span>(每日收盤))      <span class="co"># len() 算長度</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第一天："</span>, 每日收盤[<span class="dv">0</span>])           <span class="co"># 注意！程式從 0 開始數</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"最後一天："</span>, 每日收盤[<span class="op">-</span><span class="dv">1</span>])         <span class="co"># -1 代表倒數第一個</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>總共幾天： 5
+第一天： 18000
+最後一天： 18300</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>🔑 <strong>新手最常踩的雷</strong>：程式世界裡，<strong>數數字從 0 開始</strong>。 所以「第一個」是 <code>[0]</code>，「第二個」是 <code>[1]</code>，以此類推。一開始不習慣很正常。</p>
@@ -673,13 +704,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="運算與比較" class="level2">
 <h2 class="anchored" data-anchor-id="運算與比較">4.3 運算與比較</h2>
 <p>除了加減乘除，最常用的是<strong>比較</strong>，結果會是 <code>True</code>(真) 或 <code>False</code>(假)：</p>
-<div id="77c1e864" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">18250</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"現價是否高於停損價？"</span>, 現價 <span class="op">&gt;</span> 停損價)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"是否已跌破停損？"</span>, 現價 <span class="op">&lt;</span> 停損價)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"兩者是否相等？"</span>, 現價 <span class="op">==</span> 停損價)   <span class="co"># 注意是「兩個等號」代表「相等嗎」</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="77c1e864" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">18250</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"現價是否高於停損價？"</span>, 現價 <span class="op">&gt;</span> 停損價)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"是否已跌破停損？"</span>, 現價 <span class="op">&lt;</span> 停損價)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"兩者是否相等？"</span>, 現價 <span class="op">==</span> 停損價)   <span class="co"># 注意是「兩個等號」代表「相等嗎」</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>現價是否高於停損價？ True
+是否已跌破停損？ False
+兩者是否相等？ False</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>🔑 <strong>超級重要</strong>： - 一個等號 <code>=</code> 是「<strong>指定/存入</strong>」（把值存進變數） - 兩個等號 <code>==</code> 是「<strong>相等嗎？</strong>」（問問題，得到 True/False）</p>
@@ -689,17 +725,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="條件判斷-if-elif-else讓程式會做選擇" class="level2">
 <h2 class="anchored" data-anchor-id="條件判斷-if-elif-else讓程式會做選擇">4.4 條件判斷 if / elif / else：讓程式「會做選擇」</h2>
 <p>這是程式有「智慧」的開始：<strong>符合某條件，就做某件事。</strong> 這跟你做交易決策的邏輯一模一樣：「<strong>如果</strong>跌破停損，<strong>就</strong>出場。」</p>
-<div id="9b3a6b5d" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">17900</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>停利價 <span class="op">=</span> <span class="dv">18500</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 現價 <span class="op">&lt;=</span> 停損價:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"⚠️ 已觸及停損，建議出場！"</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 現價 <span class="op">&gt;=</span> 停利價:</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"🎯 已達停利目標，可考慮獲利了結！"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"✅ 在區間內，續抱觀察。"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9b3a6b5d" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>現價 <span class="op">=</span> <span class="dv">17900</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>停損價 <span class="op">=</span> <span class="dv">18000</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>停利價 <span class="op">=</span> <span class="dv">18500</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 現價 <span class="op">&lt;=</span> 停損價:</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"⚠️ 已觸及停損，建議出場！"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 現價 <span class="op">&gt;=</span> 停利價:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"🎯 已達停利目標，可考慮獲利了結！"</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"✅ 在區間內，續抱觀察。"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>⚠️ 已觸及停損，建議出場！</code></pre>
+</div>
 </div>
 <p><strong>注意兩個關鍵格式</strong>（Python 很在意這個）： 1. 條件那行結尾要有 <strong>冒號 <code>:</code></strong> 2. 下一行要 <strong>往內縮排</strong>（通常按一下 Tab 或 4 個空格）。縮排代表「這是 if 底下要做的事」。</p>
 <blockquote class="blockquote">
@@ -709,31 +748,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="迴圈-for讓程式重複做" class="level2">
 <h2 class="anchored" data-anchor-id="迴圈-for讓程式重複做">4.5 迴圈 for：讓程式「重複做」</h2>
 <p>當你要對「一整串資料」逐筆處理時，就用迴圈。 例如：把每天的收盤價，逐筆印出來。</p>
-<div id="675137be" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 收盤 <span class="kw">in</span> 每日收盤:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"今天收盤："</span>, 收盤)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"---- 印完了 ----"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="675137be" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 收盤 <span class="kw">in</span> 每日收盤:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"今天收盤："</span>, 收盤)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"---- 印完了 ----"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>今天收盤： 18000
+今天收盤： 18120
+今天收盤： 18090
+今天收盤： 18250
+今天收盤： 18300
+---- 印完了 ----</code></pre>
+</div>
 </div>
 <p>這段的意思是：「<strong>對於</strong> <code>每日收盤</code> 裡的<strong>每一個</strong>值（暫時叫它 <code>收盤</code>），<strong>就</strong>執行縮排內的動作。」</p>
 <p>迴圈真正強大的地方，是搭配「累加」。下面算<strong>這幾天每天相對前一天的損益總和</strong>（簡化示意）：</p>
-<div id="cf4f5194" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span>   <span class="co"># 先準備一個「存錢筒」，從 0 開始</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(每日收盤)):</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    當日變動點數 <span class="op">=</span> 每日收盤[i] <span class="op">-</span> 每日收盤[i<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    當日損益 <span class="op">=</span> 當日變動點數 <span class="op">*</span> 每點價值 <span class="op">*</span> 口數</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 當日損益       <span class="co"># 累加進存錢筒</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第 </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> 天：變動 </span><span class="sc">{當日變動點數}</span><span class="ss"> 點，損益 </span><span class="sc">{當日損益}</span><span class="ss"> 元"</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=================="</span>)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"區間總損益："</span>, 總損益, <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cf4f5194" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>, <span class="dv">18250</span>, <span class="dv">18300</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span>   <span class="co"># 先準備一個「存錢筒」，從 0 開始</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(每日收盤)):</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    當日變動點數 <span class="op">=</span> 每日收盤[i] <span class="op">-</span> 每日收盤[i<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    當日損益 <span class="op">=</span> 當日變動點數 <span class="op">*</span> 每點價值 <span class="op">*</span> 口數</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 當日損益       <span class="co"># 累加進存錢筒</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第 </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> 天：變動 </span><span class="sc">{當日變動點數}</span><span class="ss"> 點，損益 </span><span class="sc">{當日損益}</span><span class="ss"> 元"</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=================="</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"區間總損益："</span>, 總損益, <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>第 1 天：變動 120 點，損益 6000 元
+第 2 天：變動 -30 點，損益 -1500 元
+第 3 天：變動 160 點，損益 8000 元
+第 4 天：變動 50 點，損益 2500 元
+==================
+區間總損益： 15000 元</code></pre>
+</div>
 </div>
 <p>這格出現了一個好用的新東西：<code>f"..."</code>（叫做 <strong>f-string</strong>）。 只要在引號前加個 <code>f</code>，就能在文字裡用 <code>{ }</code> 直接塞變數，超方便。</p>
 <blockquote class="blockquote">
@@ -743,16 +798,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="函式-function把一段邏輯包起來重複用" class="level2">
 <h2 class="anchored" data-anchor-id="函式-function把一段邏輯包起來重複用">4.6 函式 (function)：把一段邏輯「包起來」重複用</h2>
 <p>如果「算損益」這件事你要做很多次，每次都重抄一遍很煩。 <strong>函式</strong>就是把一段邏輯打包、取個名字，之後一行就能呼叫。</p>
-<div id="5f1c9ca6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    變動點數 <span class="op">=</span> 出場 <span class="op">-</span> 進場</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 變動點數 <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 損益    <span class="co"># return = 把算好的結果「交回去」</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 包好之後，要用幾次就用幾次：</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易A："</span>, 計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易B："</span>, 計算損益(<span class="dv">18500</span>, <span class="dv">18300</span>, <span class="dv">2</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易C："</span>, 計算損益(<span class="dv">17000</span>, <span class="dv">17500</span>, <span class="dv">3</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5f1c9ca6" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    變動點數 <span class="op">=</span> 出場 <span class="op">-</span> 進場</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 變動點數 <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 損益    <span class="co"># return = 把算好的結果「交回去」</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 包好之後，要用幾次就用幾次：</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易A："</span>, 計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易B："</span>, 計算損益(<span class="dv">18500</span>, <span class="dv">18300</span>, <span class="dv">2</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"交易C："</span>, 計算損益(<span class="dv">17000</span>, <span class="dv">17500</span>, <span class="dv">3</span>, <span class="dv">50</span>), <span class="st">"元"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>交易A： 6000 元
+交易B： -20000 元
+交易C： 75000 元</code></pre>
+</div>
 </div>
 <ul>
 <li><code>def</code> = 我要「定義(define)」一個函式</li>
@@ -766,16 +826,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>到目前為止，「資料」（變數、清單）和「動作」（函式）是分開的。 但你其實<strong>早就</strong>在用一種把兩者綁在一起的東西了，只是還沒人幫它取名字——它叫 <strong>物件 (object)</strong>。</p>
 <p>一句話記住： &gt; <strong>物件 = 一包資料 ＋ 這包資料自己會的動作。</strong></p>
 <p>還記得這些寫法嗎？你一直在用：</p>
-<div id="ab5559e0" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 清單(list)就是一種物件，它自己「會」很多動作：</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>每日收盤.append(<span class="dv">18250</span>)        <span class="co"># .append() 是清單「自己會的動作」：在後面加一筆</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"加完之後："</span>, 每日收盤)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 文字(str)也是一種物件，它也有自己會的動作：</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>商品 <span class="op">=</span> <span class="st">"台指期"</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"變大寫："</span>, <span class="st">"tx"</span>.upper())   <span class="co"># .upper() 是文字「自己會的動作」</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"商品幾個字："</span>, <span class="bu">len</span>(商品))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ab5559e0" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 清單(list)就是一種物件，它自己「會」很多動作：</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>每日收盤 <span class="op">=</span> [<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">18090</span>]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>每日收盤.append(<span class="dv">18250</span>)        <span class="co"># .append() 是清單「自己會的動作」：在後面加一筆</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"加完之後："</span>, 每日收盤)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 文字(str)也是一種物件，它也有自己會的動作：</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>商品 <span class="op">=</span> <span class="st">"台指期"</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"變大寫："</span>, <span class="st">"tx"</span>.upper())   <span class="co"># .upper() 是文字「自己會的動作」</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"商品幾個字："</span>, <span class="bu">len</span>(商品))</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>加完之後： [18000, 18120, 18090, 18250]
+變大寫： TX
+商品幾個字： 3</code></pre>
+</div>
 </div>
 <p>看到中間那個 <strong><code>.</code>（點）</strong> 了嗎？它的意思就是：「<strong>叫這個物件，做它自己會的某個動作</strong>」。</p>
 <ul>
@@ -790,24 +855,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="選讀那這些物件是怎麼來的class" class="level4">
 <h4 class="anchored" data-anchor-id="選讀那這些物件是怎麼來的class">（選讀）那這些「物件」是怎麼來的？——<code>class</code></h4>
 <p>你不需要會自己建立物件，但看一眼它長怎樣，以後就不會怕。 <strong><code>class</code>（類別）就是「物件的設計圖」</strong>：先畫好一張「交易」的設計圖，之後就能照圖做出一個又一個交易物件。</p>
-<div id="ea829571" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># （選讀）用 class 畫一張「交易」的設計圖</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 交易:</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 定義這個物件有哪些「屬性」和「方法」：</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, 進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 下面這些是這個物件的「屬性」（它帶在身上的資料）</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.進場 <span class="op">=</span> 進場</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.出場 <span class="op">=</span> 出場</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.口數 <span class="op">=</span> 口數</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.每點價值 <span class="op">=</span> 每點價值</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 損益(<span class="va">self</span>):                       <span class="co"># 這是它的「方法」（它自己會的動作）</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.出場 <span class="op">-</span> <span class="va">self</span>.進場) <span class="op">*</span> <span class="va">self</span>.口數 <span class="op">*</span> <span class="va">self</span>.每點價值</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 照設計圖做出一個「交易物件」：</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> 交易(進場<span class="op">=</span><span class="dv">18000</span>, 出場<span class="op">=</span><span class="dv">18120</span>, 口數<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這筆交易的損益："</span>, A.損益(), <span class="st">"元"</span>)    <span class="co"># 叫物件 A 做它會的「損益」動作</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"它的進場價屬性："</span>, A.進場)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ea829571" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># （選讀）用 class 畫一張「交易」的設計圖</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 交易:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 定義這個物件有哪些「屬性」和「方法」：</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, 進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 下面這些是這個物件的「屬性」（它帶在身上的資料）</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.進場 <span class="op">=</span> 進場</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.出場 <span class="op">=</span> 出場</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.口數 <span class="op">=</span> 口數</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.每點價值 <span class="op">=</span> 每點價值</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 損益(<span class="va">self</span>):                       <span class="co"># 這是它的「方法」（它自己會的動作）</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="va">self</span>.出場 <span class="op">-</span> <span class="va">self</span>.進場) <span class="op">*</span> <span class="va">self</span>.口數 <span class="op">*</span> <span class="va">self</span>.每點價值</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 照設計圖做出一個「交易物件」：</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> 交易(進場<span class="op">=</span><span class="dv">18000</span>, 出場<span class="op">=</span><span class="dv">18120</span>, 口數<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這筆交易的損益："</span>, A.損益(), <span class="st">"元"</span>)    <span class="co"># 叫物件 A 做它會的「損益」動作</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"它的進場價屬性："</span>, A.進場)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>這筆交易的損益： 6000 元
+它的進場價屬性： 18000</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>🟡 看不懂 <code>class</code> / <code>self</code> / <code>__init__</code> 完全沒關係，<strong>現階段可以先跳過</strong>。 你只要記得「<strong>物件 = 資料 + 它會的動作，用 <code>.</code> 去叫它</strong>」就夠用了。真要自己寫 class 時，再請 AI 一行一行帶你。</p>
@@ -856,23 +925,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>前兩個你已經懂了，重點講第三個——<strong>裝飾器</strong>，因為你做網站時一定會遇到它。</p>
 <p><strong>它要解決什麼問題？</strong> 假設你有很多函式，想幫<strong>每一個</strong>都加上「執行前先印一行記錄」的功能。 笨方法是每個函式裡都貼一段重複的程式碼。裝飾器讓你<strong>寫一次、到處套</strong>，而且<strong>完全不用改原本的函式</strong>。</p>
 <p>寫法就是在函式上面加一行 <code>@某個裝飾器</code>：</p>
-<div id="ebd52289" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 先做一個「外掛包裝」：在原本的動作前後，各加一句記錄</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 加上記錄(原本的函式):</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 包裝後(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"👉 開始執行："</span>, 原本的函式.<span class="va">__name__</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> 原本的函式(<span class="op">*</span>args, <span class="op">**</span>kwargs)      <span class="co"># 這行才是真正去做原本的事</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"✅ 執行完畢，結果是："</span>, 結果)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> 結果</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 包裝後</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 用 @ 把這個包裝「戴」到函式頭上</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="at">@加上記錄</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 照常呼叫——但它已經自動多了「記錄」的行為</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ebd52289" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) 先做一個「外掛包裝」：在原本的動作前後，各加一句記錄</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 加上記錄(原本的函式):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 包裝後(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"👉 開始執行："</span>, 原本的函式.<span class="va">__name__</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> 原本的函式(<span class="op">*</span>args, <span class="op">**</span>kwargs)      <span class="co"># 這行才是真正去做原本的事</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"✅ 執行完畢，結果是："</span>, 結果)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> 結果</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 包裝後</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) 用 @ 把這個包裝「戴」到函式頭上</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="at">@加上記錄</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) 照常呼叫——但它已經自動多了「記錄」的行為</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>計算損益(<span class="dv">18000</span>, <span class="dv">18120</span>, <span class="dv">1</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>👉 開始執行： 計算損益
+✅ 執行完畢，結果是： 6000</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>6000</code></pre>
+</div>
 </div>
 <p>跑跑看：你只是呼叫 <code>計算損益(...)</code>，卻自動多印了「開始執行 / 執行完畢」兩行——這就是裝飾器替函式「加料」的效果，而 <code>計算損益</code> 本身<strong>一個字都沒改</strong>。</p>
 <p><code>@加上記錄</code> 這一行的意思就是：「<strong>把 <code>計算損益</code> 這個函式，用 <code>加上記錄</code> 包裝一下再用</strong>」。</p>
@@ -881,26 +957,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="真實場景st.cache_data-到底幫你省了什麼">🔌 真實場景：<code>@st.cache_data</code> 到底幫你省了什麼？</h4>
 <p>到第 7 章做網站時，你會用 <strong>Streamlit</strong> 這個工具。它有一個很關鍵的特性：<strong>使用者只要在網頁上動一下（改個下拉選單、拉一下滑桿），Streamlit 就會把你整段程式從頭到尾「重跑一遍」。</strong></p>
 <p>這會出問題。假設你的網站一開頭要「去抓今天的期貨報價」，而這件事很慢（要連網路，可能要等 3 秒）：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)              <span class="co"># 假裝去網路抓資料，慢慢的…</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 使用者每點一下，這行就重跑 → 又卡 3 秒 😩</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)              <span class="co"># 假裝去網路抓資料，慢慢的…</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 使用者每點一下，這行就重跑 → 又卡 3 秒 😩</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>使用者每按一次就卡 3 秒，體驗很差。</p>
 <p><strong>解法：在這個函式頭上，戴一頂 <code>@st.cache_data</code> 的帽子。</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">@st.cache_data</span>                 <span class="co"># ← 裝飾器：幫這個函式「把結果記起來」</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第一次：真的去抓，等 3 秒</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第二次以後：直接拿上次記住的結果，0 秒！⚡</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="at">@st.cache_data</span>                 <span class="co"># ← 裝飾器：幫這個函式「把結果記起來」</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 讀今天的報價():</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"台指期"</span>: <span class="dv">18120</span>, <span class="st">"小台"</span>: <span class="dv">18118</span>}</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第一次：真的去抓，等 3 秒</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>報價 <span class="op">=</span> 讀今天的報價()           <span class="co"># 第二次以後：直接拿上次記住的結果，0 秒！⚡</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>差別在哪裡？</p>
 <ul>
 <li><strong>沒加</strong> → 每次重跑都重新抓一次資料，每次都乖乖等 3 秒。</li>
@@ -1015,13 +1091,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="練習故意製造一個錯誤再學會讀它" class="level3">
 <h3 class="anchored" data-anchor-id="練習故意製造一個錯誤再學會讀它">5.6 練習：故意製造一個錯誤，再學會讀它</h3>
 <p>跑下面這格——它<strong>故意寫錯了</strong>（少了一個引號）。看看錯誤訊息長怎樣：</p>
-<div id="ff047254" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這行故意忘了打結尾的引號)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="ff047254" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"這行故意忘了打結尾的引號)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[15]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-red-fg">    </span><span class="ansi-red-fg">print("這行故意忘了打結尾的引號)</span>
+          ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated string literal (detected at line 1)
+</pre>
+</div>
+</div>
 </div>
 <p>看到類似 <code>SyntaxError</code> 的字了嗎？這就是「語法錯誤」。</p>
 <p><strong>現在做一次真實的除錯流程</strong>：把上面那格的程式 + 錯誤訊息複製起來，貼給你慣用的 AI，問：「這段為什麼錯？怎麼修？」 然後把它教你的正確版本貼回下面這格、跑跑看：</p>
-<div id="5421c974" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把修好的正確版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5421c974" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把修好的正確版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <blockquote class="blockquote">
 <p>💻 <strong>動手做（實戰小專案）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -1031,50 +1116,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="第-6-章實戰小專案把零件組起來" class="level1">
 <h1>第 6 章：實戰小專案——把零件組起來</h1>
 <p>現在把第 4 章的核心零件，組成一個<strong>期貨交易記錄分析器</strong>。 這就是「拆小、逐步累加」的實際示範。先跑跑看完整版，再看下面的拆解。</p>
-<div id="a4e2144a" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ===== 一個小工具：分析多筆交易的總損益與勝率 =====</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>   <span class="co"># 假設小台指</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 每筆交易記成一個「字典」：有進場、出場、口數三個標籤</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>交易紀錄 <span class="op">=</span> [</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18000</span>, <span class="st">"出場"</span>: <span class="dv">18120</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18200</span>, <span class="st">"出場"</span>: <span class="dv">18050</span>, <span class="st">"口數"</span>: <span class="dv">2</span>},</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">17800</span>, <span class="st">"出場"</span>: <span class="dv">18100</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18400</span>, <span class="st">"出場"</span>: <span class="dv">18350</span>, <span class="st">"口數"</span>: <span class="dv">3</span>},</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 算單筆損益(交易):</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    變動 <span class="op">=</span> 交易[<span class="st">"出場"</span>] <span class="op">-</span> 交易[<span class="st">"進場"</span>]</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 變動 <span class="op">*</span> 交易[<span class="st">"口數"</span>] <span class="op">*</span> 每點價值</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 逐筆統計</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>獲利次數 <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 交易 <span class="kw">in</span> 交易紀錄:</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 算單筆損益(交易)</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 損益</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        獲利次數 <span class="op">=</span> 獲利次數 <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"獲利"</span></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"虧損"</span></span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"進 </span><span class="sc">{交易</span>[<span class="st">'進場'</span>]<span class="sc">}</span><span class="ss"> → 出 </span><span class="sc">{交易</span>[<span class="st">'出場'</span>]<span class="sc">}</span><span class="ss">，</span><span class="sc">{交易</span>[<span class="st">'口數'</span>]<span class="sc">}</span><span class="ss"> 口：</span><span class="sc">{損益:+,}</span><span class="ss"> 元（</span><span class="sc">{結果}</span><span class="ss">）"</span>)</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>勝率 <span class="op">=</span> 獲利次數 <span class="op">/</span> <span class="bu">len</span>(交易紀錄) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"總損益：</span><span class="sc">{總損益:+,}</span><span class="ss"> 元"</span>)</span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"交易筆數：</span><span class="sc">{</span><span class="bu">len</span>(交易紀錄)<span class="sc">}</span><span class="ss"> 筆"</span>)</span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"勝率：</span><span class="sc">{勝率:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a4e2144a" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ===== 一個小工具：分析多筆交易的總損益與勝率 =====</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> <span class="dv">50</span>   <span class="co"># 假設小台指</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 每筆交易記成一個「字典」：有進場、出場、口數三個標籤</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>交易紀錄 <span class="op">=</span> [</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18000</span>, <span class="st">"出場"</span>: <span class="dv">18120</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18200</span>, <span class="st">"出場"</span>: <span class="dv">18050</span>, <span class="st">"口數"</span>: <span class="dv">2</span>},</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">17800</span>, <span class="st">"出場"</span>: <span class="dv">18100</span>, <span class="st">"口數"</span>: <span class="dv">1</span>},</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"進場"</span>: <span class="dv">18400</span>, <span class="st">"出場"</span>: <span class="dv">18350</span>, <span class="st">"口數"</span>: <span class="dv">3</span>},</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 算單筆損益(交易):</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    變動 <span class="op">=</span> 交易[<span class="st">"出場"</span>] <span class="op">-</span> 交易[<span class="st">"進場"</span>]</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> 變動 <span class="op">*</span> 交易[<span class="st">"口數"</span>] <span class="op">*</span> 每點價值</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 逐筆統計</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>總損益 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>獲利次數 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> 交易 <span class="kw">in</span> 交易紀錄:</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    損益 <span class="op">=</span> 算單筆損益(交易)</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    總損益 <span class="op">=</span> 總損益 <span class="op">+</span> 損益</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>        獲利次數 <span class="op">=</span> 獲利次數 <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"獲利"</span></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>        結果 <span class="op">=</span> <span class="st">"虧損"</span></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"進 </span><span class="sc">{交易</span>[<span class="st">'進場'</span>]<span class="sc">}</span><span class="ss"> → 出 </span><span class="sc">{交易</span>[<span class="st">'出場'</span>]<span class="sc">}</span><span class="ss">，</span><span class="sc">{交易</span>[<span class="st">'口數'</span>]<span class="sc">}</span><span class="ss"> 口：</span><span class="sc">{損益:+,}</span><span class="ss"> 元（</span><span class="sc">{結果}</span><span class="ss">）"</span>)</span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>勝率 <span class="op">=</span> 獲利次數 <span class="op">/</span> <span class="bu">len</span>(交易紀錄) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">35</span>)</span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"總損益：</span><span class="sc">{總損益:+,}</span><span class="ss"> 元"</span>)</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"交易筆數：</span><span class="sc">{</span><span class="bu">len</span>(交易紀錄)<span class="sc">}</span><span class="ss"> 筆"</span>)</span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"勝率：</span><span class="sc">{勝率:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>進 18000 → 出 18120，1 口：+6,000 元（獲利）
+進 18200 → 出 18050，2 口：-15,000 元（虧損）
+進 17800 → 出 18100，1 口：+15,000 元（獲利）
+進 18400 → 出 18350，3 口：-7,500 元（虧損）
+===================================
+總損益：-1,500 元
+交易筆數：4 筆
+勝率：50.0%</code></pre>
+</div>
 </div>
 <p>看懂了嗎？這個小工具其實只用到你已經學過的東西： <strong>變數、字典/清單、函式、迴圈、條件判斷、f-string。</strong> 沒有任何新魔法。</p>
 <blockquote class="blockquote">
 <p><strong>換你練習（用 AI）</strong>：請你慣用的 AI 幫你擴充這個工具，加上「<strong>最大單筆獲利</strong>」和「<strong>最大單筆虧損</strong>」的統計。 記得用第 5 章的好提問公式：貼上這段程式，說清楚你要加什麼、希望保留中文註解。 拿到結果後，貼到下面跑跑看，並請 AI 逐行解釋它新增的部分。</p>
 </blockquote>
-<div id="a5df0b26" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把 AI 擴充後的版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a5df0b26" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 把 AI 擴充後的版本貼在這裡執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <blockquote class="blockquote">
 <p>💻 <strong>動手做（邁向自己的網站）</strong>：點右邊按鈕在 Colab 開啟，跟著本章一起跑跑看 → <a href="https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb" target="_blank" rel="noopener"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -1126,35 +1221,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Streamlit</strong> 是一個工具，讓你<strong>只用 Python</strong>（你已經在學的）就能做出一個<strong>互動式網頁</strong>，不用碰 HTML/CSS/JavaScript。</p>
 <p>它對金融人尤其友善：天生擅長「<strong>顯示數據、畫圖表、加滑桿讓人互動</strong>」——拿來做一個「損益計算機網頁」「個人交易儀表板」再適合不過。</p>
 <p>下面是一個<strong>最小可運行的網站</strong>程式。<strong>注意：這段不要在 Jupyter 裡跑</strong>，它是要存成檔案、在電腦上執行的（步驟在後面）。先讀懂它——你會發現裡面全是你學過的東西：</p>
-<div id="a641092e" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 檔名：app.py</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 這是一個「期貨損益計算機」網站，全部用 Python 寫成</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st   <span class="co"># 引入 Streamlit 工具</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>st.title(<span class="st">"📈 我的期貨損益計算機"</span>)   <span class="co"># 網頁大標題</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 下面這幾行會自動變成網頁上的「輸入框」和「滑桿」</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>進場 <span class="op">=</span> st.number_input(<span class="st">"進場點數"</span>, value<span class="op">=</span><span class="dv">18000</span>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>出場 <span class="op">=</span> st.number_input(<span class="st">"出場點數"</span>, value<span class="op">=</span><span class="dv">18120</span>)</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> st.number_input(<span class="st">"口數"</span>, value<span class="op">=</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> st.selectbox(<span class="st">"每點價值（元）"</span>, [<span class="dv">50</span>, <span class="dv">200</span>])   <span class="co"># 50=小台, 200=大台</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 這就是你第 4 章學的函式！</span></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>損益 <span class="op">=</span> 計算損益(進場, 出場, 口數, 每點價值)</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 把結果顯示在網頁上</span></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>st.metric(<span class="st">"這筆交易損益"</span>, <span class="ss">f"</span><span class="sc">{損益:+,.0f}</span><span class="ss"> 元"</span>)</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>    st.success(<span class="st">"這是一筆獲利交易 🎉"</span>)</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 損益 <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    st.error(<span class="st">"這是一筆虧損交易，檢討一下進出場 🧐"</span>)</span>
-<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    st.info(<span class="st">"不賺不賠（不計手續費）"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a641092e" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 檔名：app.py</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 這是一個「期貨損益計算機」網站，全部用 Python 寫成</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> streamlit <span class="im">as</span> st   <span class="co"># 引入 Streamlit 工具</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>st.title(<span class="st">"📈 我的期貨損益計算機"</span>)   <span class="co"># 網頁大標題</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 下面這幾行會自動變成網頁上的「輸入框」和「滑桿」</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>進場 <span class="op">=</span> st.number_input(<span class="st">"進場點數"</span>, value<span class="op">=</span><span class="dv">18000</span>)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>出場 <span class="op">=</span> st.number_input(<span class="st">"出場點數"</span>, value<span class="op">=</span><span class="dv">18120</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>口數 <span class="op">=</span> st.number_input(<span class="st">"口數"</span>, value<span class="op">=</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>每點價值 <span class="op">=</span> st.selectbox(<span class="st">"每點價值（元）"</span>, [<span class="dv">50</span>, <span class="dv">200</span>])   <span class="co"># 50=小台, 200=大台</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 這就是你第 4 章學的函式！</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 計算損益(進場, 出場, 口數, 每點價值):</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (出場 <span class="op">-</span> 進場) <span class="op">*</span> 口數 <span class="op">*</span> 每點價值</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>損益 <span class="op">=</span> 計算損益(進場, 出場, 口數, 每點價值)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 把結果顯示在網頁上</span></span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>st.metric(<span class="st">"這筆交易損益"</span>, <span class="ss">f"</span><span class="sc">{損益:+,.0f}</span><span class="ss"> 元"</span>)</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> 損益 <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>    st.success(<span class="st">"這是一筆獲利交易 🎉"</span>)</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> 損益 <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>    st.error(<span class="st">"這是一筆虧損交易，檢討一下進出場 🧐"</span>)</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>    st.info(<span class="st">"不賺不賠（不計手續費）"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>看到了嗎？<strong>整個網站的「大腦」，就是你第 4 章學的那個 <code>計算損益</code> 函式。</strong> Streamlit 只是幫你把「輸入框、按鈕、顯示結果」這些畫面自動生出來而已。</p>
 <hr>
@@ -1389,19 +1484,19 @@ matplotlib</code></pre>
 <p>⚠️ 以下指令是在<strong>終端機 / 命令提示字元</strong>裡輸入的，<strong>不是</strong>貼到 Notebook 的程式格。 前提：你電腦已經裝好 Python（還沒裝就先請 AI：「我用 Windows / Mac，請一步步教我安裝 Python」）。</p>
 </blockquote>
 <p><strong>第 1 步：進到你的專案資料夾，建立 venv</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-project           <span class="co"># 切換到你的專案資料夾</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv     <span class="co"># 建立一個叫 .venv 的虛擬環境（工具箱）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-project           <span class="co"># 切換到你的專案資料夾</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv     <span class="co"># 建立一個叫 .venv 的虛擬環境（工具箱）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>第 2 步：啟動（activate）這個 venv</strong>（Windows 和 Mac 指令不一樣）</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows（PowerShell）</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\Activate.ps1</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows（PowerShell）</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\Activate.ps1</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>啟動成功後，命令列前面會多出 <code>(.venv)</code> 字樣，代表「現在用的是這個專案的工具箱」。</p>
 <p><strong>第 3 步：在 venv 裡裝 JupyterLab</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyterlab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyterlab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>第 4 步：把 Jupyter 打開</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>它會自動打開瀏覽器、出現你熟悉的 Jupyter 介面——但這次是<strong>跑在你自己電腦上、功能完整</strong>的版本。把這份 <code>.ipynb</code> 拖進去就能繼續用。</p>
 </section>
 <section id="補a-3幾個一定會遇到的小提醒" class="level2">
@@ -1508,29 +1603,29 @@ matplotlib</code></pre>
 <blockquote class="blockquote">
 <p>⚠️ 以下都是<strong>終端機 / 命令提示字元</strong>的指令，不要貼到 Notebook 的程式格裡跑。</p>
 </blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init futures-tool</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add streamlit</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas matplotlib    <span class="co"># 一次加多個也行</span></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. 移除套件</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove matplotlib</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run streamlit run app.py</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. 手動重算 / 升級鎖定檔</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock              <span class="co"># 重新解析並寫入 uv.lock</span></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span>    <span class="co"># 在 toml 允許範圍內，把套件升到最新</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. 安裝 uv 本身（依作業系統不同，最穩做法是問 AI：</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    「我用 Windows / Mac，請給我安裝 uv 的最新官方做法」）</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. 建立一個新專案（會幫你建立 pyproject.toml、.python-version、範例程式等）</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init futures-tool</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> futures-tool</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. 加入套件（會自動：更新 pyproject.toml + 重算 uv.lock + 裝進虛擬環境）</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add streamlit</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas matplotlib    <span class="co"># 一次加多個也行</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. 移除套件</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove matplotlib</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. 在專案環境裡執行程式（uv 會先自動把環境同步好，再執行）</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run streamlit run app.py</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. 讓環境與鎖定檔同步（例如剛 git clone 別人的專案下來時）</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. 手動重算 / 升級鎖定檔</span></span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock              <span class="co"># 重新解析並寫入 uv.lock</span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span>    <span class="co"># 在 toml 允許範圍內，把套件升到最新</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>幾個重點： - uv 會在專案資料夾裡自動建立一個 <code>.venv</code>（虛擬環境），<strong>你不用自己手動建、手動 activate</strong>。 - 養成習慣用 <code>uv run ...</code> 來跑東西，它會確保你跑的是「這個專案鎖定的環境」，而不是電腦上隨便一個 Python。 - <code>.venv</code> 資料夾<strong>不要</strong>進版控（<code>uv init</code> 通常已幫你寫好 <code>.gitignore</code> 忽略它）。</p>
 </section>
 <section id="補-4一條龍用-uv-從零到部署-streamlit" class="level2">
@@ -1558,8 +1653,8 @@ matplotlib</code></pre>
 <h2 class="anchored" data-anchor-id="補-5那什麼時候還是用-requirements.txt兩者怎麼互轉">補-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉</h2>
 <p><strong>還是用 <code>requirements.txt</code> 的情境</strong>： - 教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 <code>streamlit</code>，心智負擔最低）。 - 你要部署的平台<strong>不支援 uv</strong>、只吃 requirements.txt。</p>
 <p><strong>已經用 uv，但某個平台只吃 requirements.txt</strong> —— 用 <code>uv export</code> 從 lock 檔產生一份：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> export <span class="at">--no-hashes</span> <span class="at">-o</span> requirements.txt</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> export <span class="at">--no-hashes</span> <span class="at">-o</span> requirements.txt</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <p>這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。</p>
 <blockquote class="blockquote">
 <p>🔑 <strong>一句話總結</strong>： 走 uv 工作流，<strong>請靠 <code>uv.lock</code></strong>（優先序最高、最能重現環境）。 純 <code>pyproject.toml</code> 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「<strong>有沒有把 <code>uv.lock</code> commit 進去</strong>」。</p>
