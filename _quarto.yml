@@ -47,4 +47,5 @@ format:
     linestretch: 1.7
 
 execute:
-  enabled: false
+  enabled: true
+  error: false

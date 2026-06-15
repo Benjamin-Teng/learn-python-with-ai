@@ -57,9 +57,58 @@ td code {
   border-radius: 8px;
 }
 
-// 左側目錄：目前所在段落高亮更明顯
-nav[role="doc-toc"] a.active {
+// 左側目錄：做成與白色主頁明顯區隔的淺藍灰面板
+nav#TOC {
+  background: #eef3f9;
+  border: 1px solid #dde6f0;
+  border-radius: 10px;
+  padding: 0.9rem 0.8rem 1rem 0.9rem;
+}
+
+// 目錄標題（本頁目錄）
+nav#TOC > .toc-title,
+nav#TOC > h2 {
+  margin-top: 0;
+  font-size: 0.95rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  color: $primary;
+}
+
+// 目錄連結：平時沉穩灰，hover/目前段落用主色 + 左側強調條
+nav#TOC a {
+  color: #4a5663;
+  border-left: 2px solid transparent;
+  padding-left: 0.5rem;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+nav#TOC a:hover {
+  color: $primary;
+}
+nav#TOC a.active {
+  color: $primary;
+  font-weight: 700;
+  border-left-color: $primary;
+  background: rgba(44, 111, 179, 0.08);
+  border-radius: 0 4px 4px 0;
+}
+
+// 階層縮排：大標（章）為基準、加重；小標（節）縮排 + 左側導引線、字級略小
+nav#TOC ul {
+  list-style: none;
+  padding-left: 0;
+}
+nav#TOC > ul > li > a {
+  font-weight: 600;
+}
+nav#TOC ul ul {
+  padding-left: 0.8rem;
+  margin-left: 0.5rem;
+  border-left: 1px solid #cfdcea;
+}
+nav#TOC ul ul a {
+  font-size: 0.9em;
+  color: #5b6775;
 }
 
 // Colab 徽章與文字垂直置中對齊
