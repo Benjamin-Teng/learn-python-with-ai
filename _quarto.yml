@@ -2,9 +2,11 @@ project:
   type: website
   output-dir: _site
   render:
-    - index.ipynb
+    - index.qmd
 
 lang: zh-TW
+
+engine: markdown
 
 website:
   title: "用 AI 學寫 Python"
@@ -18,9 +20,6 @@ website:
     background: light
     pinned: true
     right:
-      - text: "在 Colab 開啟"
-        href: "https://colab.research.google.com/github/Benjamin-Teng/learn-python-with-ai/blob/main/index.ipynb"
-        target: _blank
       - icon: github
         href: "https://github.com/Benjamin-Teng/learn-python-with-ai"
         target: _blank
@@ -29,7 +28,8 @@ website:
     center: "用 AI 學寫 Python · 以 Quarto 製作 · 內容採 CC BY 精神自由學習"
 
 format:
-  html:
+  live-html:
+    include-after-body: toc-scroll.html
     theme:
       - cosmo
       - custom.scss
@@ -45,7 +45,3 @@ format:
     anchor-sections: true
     fontsize: 1.05rem
     linestretch: 1.7
-
-execute:
-  enabled: true
-  error: false

@@ -58,11 +58,17 @@ td code {
 }
 
 // 左側目錄：做成與白色主頁明顯區隔的淺藍灰面板
+// sticky + 自身可內捲：章節多時，目前段落高亮才不會被捲到看不見的地方
+// （讓 Quarto 既有的 scroll-active-into-view 在這個可捲容器內生效）
 nav#TOC {
   background: #eef3f9;
   border: 1px solid #dde6f0;
   border-radius: 10px;
   padding: 0.9rem 0.8rem 1rem 0.9rem;
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
 }
 
 // 目錄標題（本頁目錄）
@@ -109,10 +115,4 @@ nav#TOC ul ul {
 nav#TOC ul ul a {
   font-size: 0.9em;
   color: #5b6775;
-}
-
-// Colab 徽章與文字垂直置中對齊
-img[alt="Open In Colab"] {
-  vertical-align: middle;
-  margin-left: 0.25rem;
 }

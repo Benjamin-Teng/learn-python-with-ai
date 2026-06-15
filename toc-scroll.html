@@ -1,0 +1,48 @@
+<script>
+// 讓左側目錄(nav#TOC)的「內部捲動」跟著目前章節走：
+// Quarto 會在捲動時把 .active 換到對應的 TOC 連結，但不會把它捲進可視範圍。
+// 這支腳本只調整 nav#TOC 自己的 scrollTop（不動主頁捲動），把 active 連結保持在可見處。
+(function () {
+  function onReady(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+  onReady(function () {
+    var toc = document.querySelector("nav#TOC");
+    if (!toc) return;
+
+    function reveal() {
+      var active = toc.querySelector("a.active");
+      if (!active) return;
+      var c = toc.getBoundingClientRect();
+      var a = active.getBoundingClientRect();
+      var pad = 24; // 上下留一點邊，active 不要貼著邊緣
+      if (a.top < c.top + pad) {
+        toc.scrollTop -= c.top + pad - a.top;
+      } else if (a.bottom > c.bottom - pad) {
+        toc.scrollTop += a.bottom - (c.bottom - pad);
+      }
+    }
+
+    var ticking = false;
+    function schedule() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        reveal();
+      });
+    }
+
+    // Quarto 捲動時會切換 TOC 連結的 .active class → 監聽 class 變化
+    new MutationObserver(schedule).observe(toc, {
+      attributes: true,
+      attributeFilter: ["class"],
+      subtree: true,
+    });
+    // 保險：主頁捲動時也重算一次
+    window.addEventListener("scroll", schedule, { passive: true });
+    schedule();
+  });
+})();
+</script>
