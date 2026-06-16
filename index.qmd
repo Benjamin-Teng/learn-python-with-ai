@@ -886,9 +886,10 @@ matplotlib
 #### 步驟 4️⃣：建立 app
 
 - 按「**Create app / Deploy**」。
-- 填三個欄位：
+- 接著會問你要部署哪一種，選「**Deploy a public app from GitHub**」（從 GitHub 部署一個公開的 app）。
+- 然後填三個欄位：
   - **Repository**：選你剛剛建立的那個 repo
-  - **Branch**：通常是 `main`
+  - **Branch**：通常是 `main`（如果是用本機 `git init` 建的 repo，可能是 `master`）
   - **Main file path**：填 `app.py`
 
 ---
@@ -904,6 +905,9 @@ matplotlib
 - 部署成功後，你會得到一個像 `你的名稱.streamlit.app` 的網址。
 - 從 app 右上角的「**Share**」可以複製連結。從**公開 repo** 部署的 app **預設就是公開的**，任何人點網址都能用。
 - 想**只給特定人看**？在 Share 設定裡，把對方的 email 加進 viewer 名單即可。
+
+> 🔗 **參考成品（照步驟做完應該長這樣）** 👉 <https://futures-tool-hkdu3qzmyr5ljwt58c8vza.streamlit.app/>
+> 這就是把 7.2 那支損益計算機部署到 Streamlit Community Cloud 之後的樣子。第一次打開若顯示「app 正在睡覺」，按一下喚醒、等幾秒就會出現（這呼應 7.5 提到的免費方案限制）。
 
 > ⚠️ Streamlit 的介面偶爾會改版，按鈕文字或位置可能跟上面不完全一樣。**對不上時，把你看到的畫面描述給 AI，問當下的做法**，不要硬卡——這正是第 5 章教的能力。
 
