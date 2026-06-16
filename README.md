@@ -74,4 +74,3 @@ winget install --id Posit.Quarto -e
 - **互動程式格第一次按 Run 很慢、或沒反應？** 第一次按 Run 會先下載 Pyodide 環境（約幾秒～十幾秒），屬正常；之後就很快。
 - **為什麼專案資料夾要用英文名？** 中文（非 ASCII）絕對路徑會讓 quarto-live 的 Lua 解析與 Jupyter kernel 在 Windows 上失敗（mojibake），改用 ASCII 名稱 `learn-python-with-ai` 根治。
 - **想換主題 / 調整版面？** 改 `_quarto.yml` 的 `theme` 或 `custom.scss`，可選主題見 <https://quarto.org/docs/output-formats/html-themes.html>。
-```

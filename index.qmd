@@ -837,7 +837,7 @@ streamlit run app.py
 
 **開始前你需要兩樣東西：**
 
-- 一個 **GitHub 帳號**（免費註冊，等一下程式碼要放這）
+- 一個 <a href="https://github.com/" target="_blank" rel="noopener"><strong>GitHub 帳號</strong></a>（免費註冊，等一下程式碼要放這）
 - 7.3 已經在本機跑起來的 `app.py`
 
 ---
