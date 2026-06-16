@@ -117,5 +117,47 @@
     "title": "用 AI 學寫 Python：從零到架起自己的網站",
     "section": "補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉",
     "text": "補B-5：那什麼時候還是用 requirements.txt？兩者怎麼互轉\n還是用 requirements.txt 的情境：\n\n教學、示範、或最單純的小工具（就像主線教的，一個檔、一行 streamlit，心智負擔最低）。\n你要部署的平台不支援 uv、只吃 requirements.txt。\n\n已經用 uv，但某個平台只吃 requirements.txt —— 用 uv export 從 lock 檔產生一份：\nuv export --no-hashes -o requirements.txt\n# （舊式寫法 uv pip compile pyproject.toml -o requirements.txt 也可以）\n這樣你本機照樣享受 uv 的好處，又能丟一份相容 pip 的 requirements.txt 給那些平台。\n\n🔑 一句話總結： 走 uv 工作流，請靠 uv.lock（優先序最高、最能重現環境）。 純 pyproject.toml 在 Community Cloud 的優先序最低，且歷史上會被當成 Poetry 格式解讀，光放它不保證走 uv path——所以重點永遠是「有沒有把 uv.lock commit 進去」。\n\n\n\n給同學的提問範本（uv 版，可直接複製）\n\n「我用 ___（Windows / Mac），不熟終端機。請一步步教我安裝 uv，並用 uv 建立一個 Streamlit 專案、加入 streamlit 套件、在本機把 app.py 跑起來。每一步都告訴我要輸入什麼、怎麼確認成功。」\n\n\n「我的 uv 專案要部署到 Streamlit Community Cloud。請告訴我：哪些檔案要 commit 進 GitHub、哪些不該進版控，以及為什麼 uv.lock 一定要進去。」"
+  },
+  {
+    "objectID": "index.html#補c-1為什麼是-vs-code",
+    "href": "index.html#補c-1為什麼是-vs-code",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-1：為什麼是 VS Code？",
+    "text": "補C-1：為什麼是 VS Code？\n\n免費、跨平台（Windows / Mac 都有），微軟出的。\n最主流：教學、範例、AI 幾乎都以它為預設，遇到問題最好查。\nextension 生態最大：缺什麼裝什麼；而且幾乎所有「編輯器整合型」AI 工具（GitHub Copilot、Claude、Cursor…）都直接住在 VS Code 裡，或以它為基礎。\n\n一句話：先把 VS Code 裝好，後面要接 AI 工具、做網站都順。"
+  },
+  {
+    "objectID": "index.html#補c-2裝好-vs-code打開你的專案資料夾",
+    "href": "index.html#補c-2裝好-vs-code打開你的專案資料夾",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-2：裝好 VS Code、打開你的專案資料夾",
+    "text": "補C-2：裝好 VS Code、打開你的專案資料夾\n\n到官網 https://code.visualstudio.com 下載安裝（不確定步驟就問 AI：「我用 Windows / Mac，請一步步教我安裝 VS Code」）。\n開啟 VS Code →「File → Open Folder」→ 選你第 7 章的專案資料夾（例如 futures-tool）。\n\n\n🔗 還沒建專案資料夾 / venv？那是第 7.3 步的事（建 venv、裝 Streamlit），原理在補充章節 A〈為什麼要用 venv〉。這章只負責「把 VS Code 接到那個專案」。"
+  },
+  {
+    "objectID": "index.html#補c-3四個你會用到的-extension",
+    "href": "index.html#補c-3四個你會用到的-extension",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-3：四個你會用到的 extension",
+    "text": "補C-3：四個你會用到的 extension\n安裝方式都一樣：點左側活動列的 Extensions 圖示（或按 Ctrl+Shift+X）→ 在搜尋框打名字 → 按 Install。\n\n\n\n\n\n\n\n\nExtension\n做什麼\n要不要裝\n\n\n\n\nPython（發行者 Microsoft）\nPython 開發的核心。裝它會自動一起裝 Pylance（智慧補全、錯誤提示）和除錯器\n✅ 必裝\n\n\nChinese (Traditional) Language Pack（Microsoft）\n把 VS Code 介面變成繁體中文（見補C-5 啟用）\n✅ 想要中文介面就裝\n\n\nJupyter（Microsoft）\n想在 VS Code 裡開 .ipynb、跑 notebook 才需要\n🟡 選配\n\n\nAI 助手\n讓 AI 直接住進編輯器幫你寫\n見補C-6\n\n\n\n\n⚠️ 搜尋 extension 時，認明發行者是 Microsoft（或你要的官方）。市集裡常有同名的山寨 / 第三方版本，別裝錯。"
+  },
+  {
+    "objectID": "index.html#補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步",
+    "href": "index.html#補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-4：選對 Python 直譯器 → 指到你的 .venv（最關鍵的一步）",
+    "text": "補C-4：選對 Python 直譯器 → 指到你的 .venv（最關鍵的一步）\n這一步最多人卡：VS Code 要知道「這個專案要用哪一個 Python」。指錯了，就會出現「明明裝了套件，卻說找不到」的鬼打牆。\n做法：\n\n按 Ctrl+Shift+P 打開命令面板。\n輸入並選 Python: Select Interpreter。\n在清單裡選路徑含 .venv 的那一個（也就是你在第 7.3 / 補 A 為這個專案建的虛擬環境）。\n\n選好之後，VS Code 開的終端機會自動 activate 這個 .venv，你在裡面 pip install / streamlit run 都會用到對的環境。\n\n🔗 .venv 是什麼、怎麼建：見補充章節 A〈為什麼要用 venv〉與第 7.3。"
+  },
+  {
+    "objectID": "index.html#補c-5把介面變成繁體中文",
+    "href": "index.html#補c-5把介面變成繁體中文",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-5：把介面變成繁體中文",
+    "text": "補C-5：把介面變成繁體中文\n裝好上面的 Chinese (Traditional) Language Pack 後：\n\n按 Ctrl+Shift+P → 輸入並選 Configure Display Language。\n選 中文(繁體)（語言代碼 zh-TW）。\n依提示重新啟動 VS Code，介面就變中文了。\n\n\n💡 通常一裝好語言包，VS Code 右下角就會跳出「要不要切換語言並重啟？」的提示，直接按它最快。"
+  },
+  {
+    "objectID": "index.html#補c-6ai-助手-extension點名-定位自己挑一個",
+    "href": "index.html#補c-6ai-助手-extension點名-定位自己挑一個",
+    "title": "用 AI 學寫 Python：從零到架起自己的網站",
+    "section": "補C-6：AI 助手 extension（點名 + 定位，自己挑一個）",
+    "text": "補C-6：AI 助手 extension（點名 + 定位，自己挑一個）\n這就是 §2.3 說的「編輯器整合型」工具——直接住在 VS Code 裡，能讀你整個專案、邊寫邊給建議、甚至幫你改檔。常見的幾個：\n\n\n\n\n\n\n\n\n工具\n定位 / 特點\n費用\n\n\n\n\nGitHub Copilot\n最主流、和 VS Code 整合最深；補全 + 對話都有\n有免費方案（額度有限）＋付費\n\n\nClaude Code（Anthropic 官方 extension）\nAgentic：能讀整個 codebase、改檔、跑指令；VS Code / 終端機 / 桌面版都有\nextension 免費，需 Anthropic 方案\n\n\nContinue（開源）\n開源、可接多家 AI 模型、能自帶 API 金鑰\n免費（自備模型 API）\n\n\n\n\n⚠️ 這些工具的免費額度、方案、介面常常改版（光 2026 年就有不少變動），實際以各自官網最新公告為準——這正是第 5 章教的「對不上就問 AI / 查官方」。\n\n\n🟡 給新手的建議路線（呼應 §2.3）：別急著一上來就裝 AI 助手。先用對話型 AI（ChatGPT / Claude 網頁版）＋ 這份講義把邏輯練熟；等你要做第 7 章的網站、開始在 VS Code 裡寫比較多程式時，再挑一個 AI 助手裝進來加速。\n\n\n\n🎯 VS Code 準備好了（裝好 Python extension、選到 .venv、介面也中文化），就可以回到第 7.3，在編輯器裡寫 app.py、用終端機 streamlit run app.py 把網站跑起來。\n\n\n給同學的提問範本（VS Code 版，可直接複製）\n\n「我用 ___（Windows / Mac），剛裝好 VS Code，完全是新手。請一步步教我：①安裝 Python extension；②把介面改成繁體中文；③用 Python: Select Interpreter 選到我專案 .venv 裡的直譯器。每一步都告訴我要點哪裡、輸入什麼，並怎麼確認成功。」"
   }
 ]

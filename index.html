@@ -234,6 +234,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#給同學的提問範本uv-版可直接複製" id="toc-給同學的提問範本uv-版可直接複製" class="nav-link" data-scroll-target="#給同學的提問範本uv-版可直接複製">給同學的提問範本（uv 版，可直接複製）</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#補充章節-c架好你的本機編輯器vs-code" id="toc-補充章節-c架好你的本機編輯器vs-code" class="nav-link" data-scroll-target="#補充章節-c架好你的本機編輯器vs-code">補充章節 C：架好你的本機編輯器（VS Code）</a>
+  <ul class="collapse">
+  <li><a href="#補c-1為什麼是-vs-code" id="toc-補c-1為什麼是-vs-code" class="nav-link" data-scroll-target="#補c-1為什麼是-vs-code">補C-1：為什麼是 VS Code？</a></li>
+  <li><a href="#補c-2裝好-vs-code打開你的專案資料夾" id="toc-補c-2裝好-vs-code打開你的專案資料夾" class="nav-link" data-scroll-target="#補c-2裝好-vs-code打開你的專案資料夾">補C-2：裝好 VS Code、打開你的專案資料夾</a></li>
+  <li><a href="#補c-3四個你會用到的-extension" id="toc-補c-3四個你會用到的-extension" class="nav-link" data-scroll-target="#補c-3四個你會用到的-extension">補C-3：四個你會用到的 extension</a></li>
+  <li><a href="#補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步" id="toc-補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步" class="nav-link" data-scroll-target="#補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步">補C-4：選對 Python 直譯器 → 指到你的 <code>.venv</code>（最關鍵的一步）</a></li>
+  <li><a href="#補c-5把介面變成繁體中文" id="toc-補c-5把介面變成繁體中文" class="nav-link" data-scroll-target="#補c-5把介面變成繁體中文">補C-5：把介面變成繁體中文</a></li>
+  <li><a href="#補c-6ai-助手-extension點名-定位自己挑一個" id="toc-補c-6ai-助手-extension點名-定位自己挑一個" class="nav-link" data-scroll-target="#補c-6ai-助手-extension點名-定位自己挑一個">補C-6：AI 助手 extension（點名 + 定位，自己挑一個）</a>
+  <ul class="collapse">
+  <li><a href="#給同學的提問範本vs-code-版可直接複製" id="toc-給同學的提問範本vs-code-版可直接複製" class="nav-link" data-scroll-target="#給同學的提問範本vs-code-版可直接複製">給同學的提問範本（VS Code 版，可直接複製）</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#附錄可直接複製的提示詞範本" id="toc-附錄可直接複製的提示詞範本" class="nav-link" data-scroll-target="#附錄可直接複製的提示詞範本">附錄：可直接複製的提示詞範本</a></li>
   </ul>
 </nav>
@@ -350,8 +362,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCLmiJHmiJDlip/l
 </tr>
 <tr class="odd">
 <td>補充章節</td>
-<td>為什麼要用 venv ＋ 用 uv 管理專案（進階）</td>
-<td>搞懂虛擬環境、做網站，與可重現的依賴管理</td>
+<td>為什麼用 venv、架好 VS Code ＋ 用 uv 管理專案（進階）</td>
+<td>在自己電腦上把開發環境準備好，與可重現的依賴管理</td>
 </tr>
 <tr class="even">
 <td>附錄</td>
@@ -534,6 +546,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCLmiJHmiJDlip/l
 <blockquote class="blockquote">
 <p><strong>給 0 基礎的建議路線</strong>： <strong>先用「對話型 AI」+ 這份互動講義</strong>，把基本邏輯摸熟（第 3～6 章）。 等你大概知道程式長怎樣、跑起來是什麼感覺了，<strong>再升級到「編輯器整合型」工具</strong>去做網站（第 7 章）。</p>
 <p>一開始就用太強的自動化工具，反而會因為「看不懂它在幹嘛」而失去判斷力。先學會走，再學會跑。</p>
+<p>🛠️ 這些「編輯器整合型」工具大多住在 <strong>VS Code</strong> 裡。等你要用它們、或要做第 7 章的網站，<strong>補充章節 C〈架好你的本機編輯器（VS Code）〉</strong> 會帶你把開發環境一次準備好。</p>
 </blockquote>
 <hr>
 </section>
@@ -1562,6 +1575,151 @@ matplotlib</code></pre>
 </blockquote>
 <blockquote class="blockquote">
 <p>「我的 uv 專案要部署到 Streamlit Community Cloud。請告訴我：哪些檔案要 commit 進 GitHub、哪些不該進版控，以及為什麼 uv.lock 一定要進去。」</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="補充章節-c架好你的本機編輯器vs-code" class="level1">
+<h1>補充章節 C：架好你的本機編輯器（VS Code）</h1>
+<blockquote class="blockquote">
+<p>🟡 <strong>什麼時候需要這章？</strong> 第 1～6 章都在這個網頁裡跑，你<strong>不需要任何編輯器</strong>。 但等你要做第 7 章的<strong>網站</strong>（在自己電腦上寫 <code>app.py</code>、跑 Streamlit），或想用 §2.3 提到的「<strong>編輯器整合型</strong> AI 工具」，就需要一個住在你電腦上的程式編輯器。最主流、免費、對新手最友善的就是 <strong>VS Code（Visual Studio Code）</strong>。這章帶你最快把它架好。</p>
+</blockquote>
+<section id="補c-1為什麼是-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="補c-1為什麼是-vs-code">補C-1：為什麼是 VS Code？</h2>
+<ul>
+<li><strong>免費、跨平台</strong>（Windows / Mac 都有），微軟出的。</li>
+<li><strong>最主流</strong>：教學、範例、AI 幾乎都以它為預設，遇到問題最好查。</li>
+<li><strong>extension 生態最大</strong>：缺什麼裝什麼；而且幾乎所有「編輯器整合型」AI 工具（GitHub Copilot、Claude、Cursor…）都直接住在 VS Code 裡，或以它為基礎。</li>
+</ul>
+<p>一句話：先把 VS Code 裝好，後面要接 AI 工具、做網站都順。</p>
+</section>
+<section id="補c-2裝好-vs-code打開你的專案資料夾" class="level2">
+<h2 class="anchored" data-anchor-id="補c-2裝好-vs-code打開你的專案資料夾">補C-2：裝好 VS Code、打開你的專案資料夾</h2>
+<ol type="1">
+<li>到官網 <a href="https://code.visualstudio.com" class="uri">https://code.visualstudio.com</a> 下載安裝（不確定步驟就問 AI：「我用 Windows / Mac，請一步步教我安裝 VS Code」）。</li>
+<li>開啟 VS Code →「File → Open Folder」→ 選你第 7 章的專案資料夾（例如 <code>futures-tool</code>）。</li>
+</ol>
+<blockquote class="blockquote">
+<p>🔗 還沒建專案資料夾 / venv？那是第 7.3 步的事（建 venv、裝 Streamlit），原理在<strong>補充章節 A〈為什麼要用 venv〉</strong>。這章只負責「把 VS Code 接到那個專案」。</p>
+</blockquote>
+</section>
+<section id="補c-3四個你會用到的-extension" class="level2">
+<h2 class="anchored" data-anchor-id="補c-3四個你會用到的-extension">補C-3：四個你會用到的 extension</h2>
+<p>安裝方式都一樣：點左側活動列的 <strong>Extensions 圖示</strong>（或按 <code>Ctrl+Shift+X</code>）→ 在搜尋框打名字 → 按 <strong>Install</strong>。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Extension</th>
+<th>做什麼</th>
+<th>要不要裝</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Python</strong>（發行者 Microsoft）</td>
+<td>Python 開發的核心。裝它會<strong>自動一起裝</strong> Pylance（智慧補全、錯誤提示）和除錯器</td>
+<td>✅ 必裝</td>
+</tr>
+<tr class="even">
+<td><strong>Chinese (Traditional) Language Pack</strong>（Microsoft）</td>
+<td>把 VS Code 介面變成<strong>繁體中文</strong>（見補C-5 啟用）</td>
+<td>✅ 想要中文介面就裝</td>
+</tr>
+<tr class="odd">
+<td><strong>Jupyter</strong>（Microsoft）</td>
+<td>想在 VS Code 裡開 <code>.ipynb</code>、跑 notebook 才需要</td>
+<td>🟡 選配</td>
+</tr>
+<tr class="even">
+<td><strong>AI 助手</strong></td>
+<td>讓 AI 直接住進編輯器幫你寫</td>
+<td>見補C-6</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>⚠️ 搜尋 extension 時，<strong>認明發行者是 Microsoft</strong>（或你要的官方）。市集裡常有同名的山寨 / 第三方版本，別裝錯。</p>
+</blockquote>
+</section>
+<section id="補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步" class="level2">
+<h2 class="anchored" data-anchor-id="補c-4選對-python-直譯器-指到你的-.venv最關鍵的一步">補C-4：選對 Python 直譯器 → 指到你的 <code>.venv</code>（最關鍵的一步）</h2>
+<p>這一步最多人卡：VS Code 要知道「<strong>這個專案要用哪一個 Python</strong>」。指錯了，就會出現「明明裝了套件，卻說找不到」的鬼打牆。</p>
+<p>做法：</p>
+<ol type="1">
+<li>按 <code>Ctrl+Shift+P</code> 打開命令面板。</li>
+<li>輸入並選 <strong><code>Python: Select Interpreter</code></strong>。</li>
+<li>在清單裡選<strong>路徑含 <code>.venv</code> 的那一個</strong>（也就是你在第 7.3 / 補 A 為這個專案建的虛擬環境）。</li>
+</ol>
+<p>選好之後，VS Code 開的終端機會自動 activate 這個 <code>.venv</code>，你在裡面 <code>pip install</code> / <code>streamlit run</code> 都會用到對的環境。</p>
+<blockquote class="blockquote">
+<p>🔗 <code>.venv</code> 是什麼、怎麼建：見<strong>補充章節 A〈為什麼要用 venv〉</strong>與第 <strong>7.3</strong>。</p>
+</blockquote>
+</section>
+<section id="補c-5把介面變成繁體中文" class="level2">
+<h2 class="anchored" data-anchor-id="補c-5把介面變成繁體中文">補C-5：把介面變成繁體中文</h2>
+<p>裝好上面的 <strong>Chinese (Traditional) Language Pack</strong> 後：</p>
+<ol type="1">
+<li>按 <code>Ctrl+Shift+P</code> → 輸入並選 <strong><code>Configure Display Language</code></strong>。</li>
+<li>選 <strong>中文(繁體)</strong>（語言代碼 <code>zh-TW</code>）。</li>
+<li>依提示<strong>重新啟動 VS Code</strong>，介面就變中文了。</li>
+</ol>
+<blockquote class="blockquote">
+<p>💡 通常一裝好語言包，VS Code 右下角就會跳出「要不要切換語言並重啟？」的提示，直接按它最快。</p>
+</blockquote>
+</section>
+<section id="補c-6ai-助手-extension點名-定位自己挑一個" class="level2">
+<h2 class="anchored" data-anchor-id="補c-6ai-助手-extension點名-定位自己挑一個">補C-6：AI 助手 extension（點名 + 定位，自己挑一個）</h2>
+<p>這就是 §2.3 說的「<strong>編輯器整合型</strong>」工具——直接住在 VS Code 裡，能讀你整個專案、邊寫邊給建議、甚至幫你改檔。常見的幾個：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>工具</th>
+<th>定位 / 特點</th>
+<th>費用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub Copilot</strong></td>
+<td>最主流、和 VS Code 整合最深；補全 + 對話都有</td>
+<td>有免費方案（額度有限）＋付費</td>
+</tr>
+<tr class="even">
+<td><strong>Claude Code</strong>（Anthropic 官方 extension）</td>
+<td>Agentic：能讀整個 codebase、改檔、跑指令；VS Code / 終端機 / 桌面版都有</td>
+<td>extension 免費，需 Anthropic 方案</td>
+</tr>
+<tr class="odd">
+<td><strong>Continue</strong>（開源）</td>
+<td>開源、可接多家 AI 模型、能自帶 API 金鑰</td>
+<td>免費（自備模型 API）</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>⚠️ 這些工具的<strong>免費額度、方案、介面常常改版</strong>（光 2026 年就有不少變動），實際以<strong>各自官網最新公告</strong>為準——這正是第 5 章教的「對不上就問 AI / 查官方」。</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>🟡 <strong>給新手的建議路線</strong>（呼應 §2.3）：別急著一上來就裝 AI 助手。<strong>先用對話型 AI（ChatGPT / Claude 網頁版）＋ 這份講義</strong>把邏輯練熟；等你要做第 7 章的網站、開始在 VS Code 裡寫比較多程式時，<strong>再挑一個</strong> AI 助手裝進來加速。</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote">
+<p>🎯 VS Code 準備好了（裝好 Python extension、選到 <code>.venv</code>、介面也中文化），就可以回到<strong>第 7.3</strong>，在編輯器裡寫 <code>app.py</code>、用終端機 <code>streamlit run app.py</code> 把網站跑起來。</p>
+</blockquote>
+<section id="給同學的提問範本vs-code-版可直接複製" class="level3">
+<h3 class="anchored" data-anchor-id="給同學的提問範本vs-code-版可直接複製">給同學的提問範本（VS Code 版，可直接複製）</h3>
+<blockquote class="blockquote">
+<p>「我用 ___（Windows / Mac），剛裝好 VS Code，完全是新手。請一步步教我：①安裝 Python extension；②把介面改成繁體中文；③用 <code>Python: Select Interpreter</code> 選到我專案 <code>.venv</code> 裡的直譯器。每一步都告訴我要點哪裡、輸入什麼，並怎麼確認成功。」</p>
 </blockquote>
 </section>
 </section>
