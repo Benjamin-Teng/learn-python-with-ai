@@ -282,29 +282,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="這份講義怎麼用" class="level3">
 <h3 class="anchored" data-anchor-id="這份講義怎麼用">這份講義怎麼用？</h3>
-<p>這是一份<strong>互動式講義</strong>：你不只是「讀」，還能<strong>直接動手把程式跑起來</strong>。內容由一段段文字和一格格「程式碼」組成：</p>
-<ul>
-<li><strong>文字</strong>：像現在你正在讀的這段，用來說明觀念。</li>
-<li><strong>程式碼</strong>：灰底的區塊。<strong>每一格的程式碼你都可以自己直接改</strong>，改完按按鈕就會跑。</li>
-</ul>
-<p>每一格程式碼都附有下面這兩個按鈕（這裡這兩顆只是「示範外觀」，按了不會有反應）：</p>
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin:.6rem 0 1.1rem;">
-  <span class="btn d-inline-flex align-items-center gap-1" style="background-color:#0d6efd;border:1px solid #0d6efd;color:#fff;padding:.25rem .5rem;font-size:1rem;border-radius:.375rem;pointer-events:none;cursor:default;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"></path></svg>Run Code
-  </span>
-  <span class="btn d-inline-flex align-items-center gap-1" style="background-color:transparent;border:1px solid #333;color:#333;padding:.25rem .5rem;font-size:1rem;border-radius:.375rem;pointer-events:none;cursor:default;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"></path><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"></path></svg>Start Over
-  </span>
-</div>
-<ul>
-<li><strong><code>Run Code</code></strong>（藍色那顆）：執行這格程式，結果會印在下方。</li>
-<li><strong><code>Start Over</code></strong>：把這格<strong>還原成一開始的樣子</strong>——萬一改壞了、或想重來，按它就回到原始程式碼，所以儘管放心大膽地改。</li>
-</ul>
-<p><strong>操作方式（最重要的一個動作）</strong>： 看到程式碼，就<strong>直接在上面打字改改看、按一下 <code>Run Code</code></strong>，結果會印在下方——完全在你的瀏覽器裡跑，不用安裝任何東西、也不用註冊任何帳號。改亂了也不怕，按 <code>Start Over</code> 就回到原狀。</p>
-<blockquote class="blockquote">
-<p>💡 整份講義的精神：<strong>看到程式碼，就動手改、按 Run 跑跑看。</strong> 程式不會因為你按錯而壞掉，改亂了就按 <code>Start Over</code> 重來。 ⏳ <strong>第一次</strong>按 Run 會先下載 Python 環境（約幾秒～十幾秒），之後就很快。</p>
-</blockquote>
-<p>先試一格 👇（把 <code>"我成功執行了第一格程式！"</code> 雙引號裡面的字改成別的，再按 <code>Run Code</code>）</p>
+<p>這是一份<strong>互動式講義</strong>：你不只是「讀」，還能<strong>直接動手把程式跑起來</strong>。下面這一格就是一塊真的能跑的「程式碼」——四個氣泡先帶你認識它，然後就<strong>直接在格子裡改、按 Run Code</strong> 跑跑看 👇</p>
+<div class="cell-anatomy-live">
+<style>
+.cell-anatomy-live{--ca-paper:#fbfaf5;--ca-ink:#2b313c;--ca-c1:#5a54c8;--ca-c2:#dd8a1c;--ca-c3:#2f9e6f;--ca-c4:#d4477f;container-type:inline-size;position:relative;margin:1.4rem 0 1rem;padding:clamp(1rem,3vw,2.1rem) clamp(.7rem,3vw,1.8rem) clamp(1.1rem,3vw,2rem);background:radial-gradient(circle at 1px 1px,rgba(44,111,179,.08) 1.5px,transparent 0) 0 0/22px 22px,var(--ca-paper);border:1px solid #ece6d7;border-radius:16px;box-shadow:0 1px 0 #fff inset,0 14px 34px -20px rgba(40,46,60,.5);display:grid;grid-template-columns:auto auto 1fr;column-gap:clamp(.6rem,2vw,1.4rem);grid-template-areas:"b1 b2 b3" "cell cell cell" "b4 b4 .";align-items:end;}
+.cell-anatomy-live>div:has(.exercise-cell){grid-area:cell;position:relative;z-index:2;margin:.2rem 0;min-width:0;}
+.cell-anatomy-live .ca-bubble{position:relative;background:#fff;border:2.5px solid var(--c);border-radius:21px 25px 18px 27px/25px 18px 27px 20px;padding:.6rem .72rem;max-width:205px;font-size:.9rem;line-height:1.5;color:var(--ca-ink);box-shadow:3px 4px 0 rgba(0,0,0,.06);transform:rotate(var(--rot));animation:cal-pop .5s both;}
+.cell-anatomy-live .ca-bubble p{margin:0;}
+.cell-anatomy-live .ca-bubble b{color:var(--c);}
+.cell-anatomy-live .ca-bubble mark{background:linear-gradient(transparent 58%,color-mix(in srgb,var(--c) 30%,transparent) 58%);color:inherit;font-weight:700;padding:0 .08em;}
+.cell-anatomy-live .ca-num{position:absolute;left:-13px;top:-14px;width:28px;height:28px;display:grid;place-items:center;font-weight:800;font-size:.95rem;color:#fff;background:var(--c);border-radius:58% 42% 56% 44%/52% 60% 40% 48%;box-shadow:2px 2px 0 rgba(0,0,0,.13);transform:rotate(-7deg);}
+.cell-anatomy-live .ca-b1{grid-area:b1;justify-self:start;--c:var(--ca-c1);--rot:-1.6deg;margin-bottom:48px;animation-delay:.05s;}
+.cell-anatomy-live .ca-b2{grid-area:b2;justify-self:start;--c:var(--ca-c2);--rot:1.1deg;margin-bottom:48px;animation-delay:.18s;}
+.cell-anatomy-live .ca-b3{grid-area:b3;justify-self:end;--c:var(--ca-c3);--rot:-1deg;margin-bottom:48px;animation-delay:.31s;}
+.cell-anatomy-live .ca-b4{grid-area:b4;justify-self:start;--c:var(--ca-c4);--rot:1.4deg;margin-top:50px;animation-delay:.44s;}
+.cell-anatomy-live .ca-arrow{position:absolute;left:50%;bottom:-52px;width:42px;height:58px;color:var(--c);pointer-events:none;}
+.cell-anatomy-live .ca-arrow path{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:92;stroke-dashoffset:92;animation:cal-draw .55s ease forwards;}
+.cell-anatomy-live .ca-b1 .ca-arrow{left:40%;transform:translateX(-50%) rotate(-7deg);}
+.cell-anatomy-live .ca-b2 .ca-arrow{left:24%;transform:translateX(-50%) rotate(45deg);}
+.cell-anatomy-live .ca-b3 .ca-arrow{left:60%;transform:translateX(-50%) rotate(8deg);}
+.cell-anatomy-live .ca-b4 .ca-arrow{top:-50px;bottom:auto;left:60%;transform:translateX(-50%) rotate(168deg);}
+.cell-anatomy-live .ca-b1 .ca-arrow path{animation-delay:.4s;}
+.cell-anatomy-live .ca-b2 .ca-arrow path{animation-delay:.53s;}
+.cell-anatomy-live .ca-b3 .ca-arrow path{animation-delay:.66s;}
+.cell-anatomy-live .ca-b4 .ca-arrow path{animation-delay:.79s;}
+@keyframes cal-pop{from{opacity:0;transform:rotate(var(--rot)) translateY(9px) scale(.96);}to{opacity:1;transform:rotate(var(--rot)) translateY(0) scale(1);}}
+@keyframes cal-draw{to{stroke-dashoffset:0;}}
+@container (max-width:660px){
+.cell-anatomy-live{grid-template-columns:1fr;grid-template-areas:"b1" "b2" "b3" "b4" "cell";gap:.7rem;align-items:stretch;}
+.cell-anatomy-live .ca-bubble{max-width:none;width:100%;justify-self:stretch;transform:none;--rot:0deg;margin:0;}
+.cell-anatomy-live .ca-arrow{display:none;}
+.cell-anatomy-live>div:has(.exercise-cell){margin-top:.3rem;}
+}
+@media (prefers-reduced-motion:reduce){
+.cell-anatomy-live .ca-bubble{animation:none;opacity:1;transform:rotate(var(--rot));}
+.cell-anatomy-live .ca-arrow path{animation:none;stroke-dashoffset:0;}
+}
+</style>
+<div class="ca-bubble ca-b1"><span class="ca-num">1</span><p>最左邊的 <b>Python Code</b>：這一整格就是一塊<mark>程式碼</mark>，能寫、也能跑。</p><svg class="ca-arrow" viewbox="0 0 48 58" aria-hidden="true"><path d="M24 5 C 17 19, 31 30, 23 50"></path><path d="M23 50 L 14 44 M23 50 L 31 41"></path></svg></div>
+<div class="ca-bubble ca-b2"><span class="ca-num">2</span><p>它右邊的 <b>Start Over</b>：改壞了想重來，<mark>一鍵還原</mark>成最初的樣子。</p><svg class="ca-arrow" viewbox="0 0 48 58" aria-hidden="true"><path d="M24 5 C 17 19, 31 30, 23 50"></path><path d="M23 50 L 14 44 M23 50 L 31 41"></path></svg></div>
+<div class="ca-bubble ca-b3"><span class="ca-num">3</span><p>藍色的 <b>Run Code</b>：按下去就<mark>執行</mark>，結果印在下面。</p><svg class="ca-arrow" viewbox="0 0 48 58" aria-hidden="true"><path d="M24 5 C 17 19, 31 30, 23 50"></path><path d="M23 50 L 14 44 M23 50 L 31 41"></path></svg></div>
+<div class="ca-bubble ca-b4"><span class="ca-num">4</span><p>中間這塊是<b>程式碼本體</b>，<mark>整段都能自由打字修改</mark>。</p><svg class="ca-arrow" viewbox="0 0 48 58" aria-hidden="true"><path d="M24 5 C 17 19, 31 30, 23 50"></path><path d="M23 50 L 14 44 M23 50 L 31 41"></path></svg></div>
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
@@ -313,8 +331,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCLmiJHmiJDlip/ln7fooYzkuobnrKzkuIDmoLznqIvlvI/vvIFcIikifQ==
 </script>
 </div>
+</div>
+<blockquote class="blockquote">
+<p>⏳ <strong>第一次</strong>按 <code>Run Code</code> 會先下載 Python 環境（約幾秒～十幾秒），之後就很快。改亂了不用怕，按 <code>Start Over</code> 就回到原狀。</p>
+</blockquote>
 <p>有看到下面跳出一行字嗎？恭喜，你已經「執行」了人生第一支程式 🎉</p>
-<p>現在把雙引號裡的字改成你的名字，再按一次 <code>Run Code</code>，看看結果會不會跟著變。改完想還原，就按 <code>Start Over</code> 試試看——它會把這格變回最初的 <code>print("我成功執行了第一格程式！")</code>。</p>
+<p><strong>換你改改看</strong>：把雙引號裡的 <code>我成功執行了第一格程式！</code> 改成「你好」加上你自己的名字（例如 <code>print("你好，我是王小明")</code>），再按一次 <code>Run Code</code>，看看印出來的字是不是跟著變了。</p>
+<p>不確定怎麼改？<strong>這正是 AI 派上用場的時候</strong>——把這格程式碼複製給你的 AI 助理，問它：「我想讓它印出『你好，我是王小明』，這段要怎麼改？」照它說的改，再按 <code>Run Code</code> 跑跑看。</p>
 <hr>
 </section>
 <section id="這份講義的地圖" class="level3">
