@@ -285,13 +285,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>這是一份<strong>互動式講義</strong>：你不只是「讀」，還能<strong>直接動手把程式跑起來</strong>。內容由一段段文字和一格格「程式碼」組成：</p>
 <ul>
 <li><strong>文字</strong>：像現在你正在讀的這段，用來說明觀念。</li>
-<li><strong>程式碼</strong>：灰底、附有 <strong><code>Run Code</code></strong> 按鈕的，是可以「執行」的程式。</li>
+<li><strong>程式碼</strong>：灰底的區塊。<strong>每一格的程式碼你都可以自己直接改</strong>，改完按按鈕就會跑。</li>
 </ul>
-<p><strong>操作方式（最重要的一個動作）</strong>： 看到程式碼，就<strong>直接改改看、按一下 <code>Run Code</code></strong>，結果會印在下方——完全在你的瀏覽器裡跑，不用安裝任何東西、也不用註冊任何帳號。</p>
+<p>每一格程式碼都附有下面這兩個按鈕（這裡這兩顆只是「示範外觀」，按了不會有反應）：</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin:.6rem 0 1.1rem;">
+  <span class="btn d-inline-flex align-items-center gap-1" style="background-color:#0d6efd;border:1px solid #0d6efd;color:#fff;padding:.25rem .5rem;font-size:1rem;border-radius:.375rem;pointer-events:none;cursor:default;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"></path></svg>Run Code
+  </span>
+  <span class="btn d-inline-flex align-items-center gap-1" style="background-color:transparent;border:1px solid #333;color:#333;padding:.25rem .5rem;font-size:1rem;border-radius:.375rem;pointer-events:none;cursor:default;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"></path><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"></path></svg>Start Over
+  </span>
+</div>
+<ul>
+<li><strong><code>Run Code</code></strong>（藍色那顆）：執行這格程式，結果會印在下方。</li>
+<li><strong><code>Start Over</code></strong>：把這格<strong>還原成一開始的樣子</strong>——萬一改壞了、或想重來，按它就回到原始程式碼，所以儘管放心大膽地改。</li>
+</ul>
+<p><strong>操作方式（最重要的一個動作）</strong>： 看到程式碼，就<strong>直接在上面打字改改看、按一下 <code>Run Code</code></strong>，結果會印在下方——完全在你的瀏覽器裡跑，不用安裝任何東西、也不用註冊任何帳號。改亂了也不怕，按 <code>Start Over</code> 就回到原狀。</p>
 <blockquote class="blockquote">
-<p>💡 整份講義的精神：<strong>看到程式碼，就動手改、按 Run 跑跑看。</strong> 程式不會因為你按錯而壞掉，大不了重跑一次。 ⏳ <strong>第一次</strong>按 Run 會先下載 Python 環境（約幾秒～十幾秒），之後就很快。</p>
+<p>💡 整份講義的精神：<strong>看到程式碼，就動手改、按 Run 跑跑看。</strong> 程式不會因為你按錯而壞掉，改亂了就按 <code>Start Over</code> 重來。 ⏳ <strong>第一次</strong>按 Run 會先下載 Python 環境（約幾秒～十幾秒），之後就很快。</p>
 </blockquote>
-<p>先試一格 👇（改改看裡面的字，再按 <code>Run Code</code>）</p>
+<p>先試一格 👇（把 <code>"我成功執行了第一格程式！"</code> 雙引號裡面的字改成別的，再按 <code>Run Code</code>）</p>
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
@@ -301,7 +314,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHJpbnQoXCLmiJHmiJDlip/l
 </script>
 </div>
 <p>有看到下面跳出一行字嗎？恭喜，你已經「執行」了人生第一支程式 🎉</p>
-<p>現在把上面那格的文字改成你的名字，再按一次 <code>Run Code</code>，看看結果會不會跟著變。</p>
+<p>現在把雙引號裡的字改成你的名字，再按一次 <code>Run Code</code>，看看結果會不會跟著變。改完想還原，就按 <code>Start Over</code> 試試看——它會把這格變回最初的 <code>print("我成功執行了第一格程式！")</code>。</p>
 <hr>
 </section>
 <section id="這份講義的地圖" class="level3">
